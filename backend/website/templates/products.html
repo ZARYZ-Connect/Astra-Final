@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products – Astra Technologies</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/products.css">
+</head>
+
+<body>
+
+    <header-component></header-component>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="container page-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span style="color:var(--white);">Products</span>
+            </div>
+            <div class="tag">Full Catalogue</div>
+            <h1>Our <em>Product</em> Range</h1>
+            <p>Enterprise-grade biometric devices, access control systems, software platforms, and security inspection
+                tools — all engineered for India's most demanding environments.</p>
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Search products, e.g. fingerprint, turnstile, RFID…">
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="container stats-bar-inner">
+            <div class="stat-item">
+                <div class="stat-val">11<span>+</span></div>
+                <div class="stat-lbl">Product Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">60<span>+</span></div>
+                <div class="stat-lbl">Product Lines</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">500<span>+</span></div>
+                <div class="stat-lbl">Sites Deployed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-val">99<span>.9%</span></div>
+                <div class="stat-lbl">Uptime SLA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <div class="marquee-item"><span class="dot"></span>Biometric Access Control</div>
+            <div class="marquee-item"><span class="dot"></span>Time &amp; Attendance</div>
+            <div class="marquee-item"><span class="dot"></span>Smart Door Lock</div>
+            <div class="marquee-item"><span class="dot"></span>Turnstile Solutions</div>
+            <div class="marquee-item"><span class="dot"></span>Visitor Management</div>
+            <div class="marquee-item"><span class="dot"></span>Security Inspection</div>
+            <div class="marquee-item"><span class="dot"></span>Identity Platform</div>
+            <div class="marquee-item"><span class="dot"></span>HRMS Integration</div>
+            <div class="marquee-item"><span class="dot"></span>Biometric Access Control</div>
+            <div class="marquee-item"><span class="dot"></span>Time &amp; Attendance</div>
+            <div class="marquee-item"><span class="dot"></span>Smart Door Lock</div>
+            <div class="marquee-item"><span class="dot"></span>Turnstile Solutions</div>
+            <div class="marquee-item"><span class="dot"></span>Visitor Management</div>
+            <div class="marquee-item"><span class="dot"></span>Security Inspection</div>
+            <div class="marquee-item"><span class="dot"></span>Identity Platform</div>
+            <div class="marquee-item"><span class="dot"></span>HRMS Integration</div>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCTS LAYOUT -->
+    <div class="container">
+        <div class="products-layout">
+
+            <!-- SIDEBAR -->
+            <button class="sidebar-toggle" id="sidebarToggle">☰ Browse Categories</button>
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Categories</div>
+                    <button class="cat-btn active" data-cat="all">
+                        <span class="cat-icon">🏠</span> All Products <span class="cat-count">60+</span>
+                    </button>
+                    <button class="cat-btn" data-cat="time-attendance">
+                        <span class="cat-icon">⏱️</span> Time Attendance <span class="cat-count">8</span>
+                    </button>
+                    <button class="cat-btn" data-cat="access-control">
+                        <span class="cat-icon">🔑</span> Access Controller <span class="cat-count">9</span>
+                    </button>
+                    <button class="cat-btn" data-cat="android-terminals">
+                        <span class="cat-icon">📱</span> Android Terminals <span class="cat-count">3</span>
+                    </button>
+                    <button class="cat-btn" data-cat="smart-door-lock">
+                        <span class="cat-icon">🔒</span> Smart Door Lock <span class="cat-count">7</span>
+                    </button>
+                    <button class="cat-btn" data-cat="software">
+                        <span class="cat-icon">💻</span> Software <span class="cat-count">4</span>
+                    </button>
+                    <button class="cat-btn" data-cat="armatura">
+                        <span class="cat-icon">🛡️</span> Armatura <span class="cat-count">5</span>
+                    </button>
+                    <button class="cat-btn" data-cat="smart-entrance">
+                        <span class="cat-icon">🚧</span> Smart Entrance Control <span class="cat-count">9</span>
+                    </button>
+                    <button class="cat-btn" data-cat="security-inspection">
+                        <span class="cat-icon">🔬</span> Security Inspection <span class="cat-count">4</span>
+                    </button>
+                    <button class="cat-btn" data-cat="multi-purpose">
+                        <span class="cat-icon">📡</span> Multi-Purpose Integration <span class="cat-count">2</span>
+                    </button>
+                    <button class="cat-btn" data-cat="accessories">
+                        <span class="cat-icon">🔧</span> Accessories <span class="cat-count">4</span>
+                    </button>
+                    <button class="cat-btn" data-cat="video-surveillance">
+                        <span class="cat-icon">📷</span> Video Surveillance <span class="cat-count">4</span>
+                    </button>
+                </div>
+                <div class="sidebar-section" style="margin-top:.5rem;">
+                    <div class="sidebar-title">Need Help?</div>
+                    <div
+                        style="background:rgba(0,180,216,.06);border:1px solid rgba(0,180,216,.15);border-radius:10px;padding:1rem;font-size:.83rem;color:var(--muted);">
+                        <p style="color:var(--white);font-weight:600;font-family:var(--font-h);margin-bottom:.4rem;">
+                            Talk to an Expert</p>
+                        <p>Not sure which product fits your site? Our engineers will assess and recommend.</p>
+                        <a href="#" class="btn btn-primary"
+                            style="margin-top:.85rem;font-size:.78rem;padding:.5rem 1rem;border-radius:6px;">Book a Demo
+                            →</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- PRODUCT CONTENT -->
+            <main id="productMain">
+
+                <!-- TIME ATTENDANCE -->
+                <div class="cat-section reveal" data-category="time-attendance" id="time-attendance">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">⏱️</div>
+                        <div>
+                            <div class="cat-section-label">Time Attendance</div>
+                            <div class="cat-section-desc">Accurate, biometric-grade attendance for every workforce type
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="Visible Light Series">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🌟</div>
+                            <div class="product-card-name">Visible Light Series <span class="badge-new">New</span></div>
+                            <div class="product-card-sub">Next-gen visible light facial recognition for high-accuracy,
+                                liveness-detected attendance.</div>
+                            <div class="product-card-tags"><span class="product-tag">Face Recognition</span><span
+                                    class="product-tag">Liveness Detection</span></div>
+                        </div>
+                        <div class="product-card" data-name="Fingerprint Attendance">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🖐️</div>
+                            <div class="product-card-name">Fingerprint Attendance</div>
+                            <div class="product-card-sub">Classic iClock, Classic, and WL series — proven fingerprint
+                                accuracy for any scale.</div>
+                            <div class="product-card-tags"><span class="product-tag">iClock Series</span><span
+                                    class="product-tag">WL Series</span></div>
+                        </div>
+                        <div class="product-card" data-name="Face Attendance">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">😊</div>
+                            <div class="product-card-name">Face Attendance</div>
+                            <div class="product-card-sub">Standalone facial recognition terminals with onboard
+                                processing — no server required.</div>
+                            <div class="product-card-tags"><span class="product-tag">Standalone</span><span
+                                    class="product-tag">Touchless</span></div>
+                        </div>
+                        <div class="product-card" data-name="Multi-Modal Attendance">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔀</div>
+                            <div class="product-card-name">Multi-Modal Terminal</div>
+                            <div class="product-card-sub">Face + Fingerprint + Card in one device — maximum flexibility
+                                for diverse workforce needs.</div>
+                            <div class="product-card-tags"><span class="product-tag">Face</span><span
+                                    class="product-tag">Fingerprint</span><span class="product-tag">RFID</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCESS CONTROLLER -->
+                <div class="cat-section reveal" data-category="access-control" id="access-control">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🔑</div>
+                        <div>
+                            <div class="cat-section-label">Access Controller</div>
+                            <div class="cat-section-desc">Multi-door, standalone, and reader-based access control
+                                ecosystems</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card" data-name="Multi Door Controller">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🏢</div>
+                            <div class="product-card-name">Multi Door Controller</div>
+                            <div class="product-card-sub">External panels, biometric control panels, RFID panels, and
+                                Atlas Series for campus-wide control.</div>
+                            <div class="product-card-tags"><span class="product-tag">Atlas Series</span><span
+                                    class="product-tag">RFID Panel</span></div>
+                        </div>
+                        <div class="product-card featured" data-name="Standalone Devices">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🖥️</div>
+                            <div class="product-card-name">Standalone Devices <span class="badge-popular">Popular</span>
+                            </div>
+                            <div class="product-card-sub">RFID, fingerprint, android, and biometric terminal models —
+                                plug-and-play door access.</div>
+                            <div class="product-card-tags"><span class="product-tag">RFID</span><span
+                                    class="product-tag">Fingerprint</span><span class="product-tag">Android</span></div>
+                        </div>
+                        <div class="product-card" data-name="Biometric Readers">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📡</div>
+                            <div class="product-card-name">Biometric Readers</div>
+                            <div class="product-card-sub">Wiegand and OSDP biometric and RFID readers for integration
+                                with any control panel.</div>
+                            <div class="product-card-tags"><span class="product-tag">Wiegand</span><span
+                                    class="product-tag">OSDP</span></div>
+                        </div>
+                        <div class="product-card" data-name="Elevator Access Controller">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🛗</div>
+                            <div class="product-card-name">Elevator Access Controller</div>
+                            <div class="product-card-sub">Floor-by-floor elevator access control — restrict which floors
+                                each credential can reach.</div>
+                            <div class="product-card-tags"><span class="product-tag">Floor Control</span><span
+                                    class="product-tag">RFID</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ANDROID TERMINALS -->
+                <div class="cat-section reveal" data-category="android-terminals" id="android-terminals">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">📱</div>
+                        <div>
+                            <div class="cat-section-label">Android Terminals</div>
+                            <div class="cat-section-desc">Smart Android-powered biometric terminals for custom app
+                                deployments</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="Android Smart Terminal">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🤖</div>
+                            <div class="product-card-name">Android Smart Terminal <span class="badge-new">New</span>
+                            </div>
+                            <div class="product-card-sub">Full Android OS with biometric sensors — deploy your own apps
+                                on a secure identity device.</div>
+                            <div class="product-card-tags"><span class="product-tag">Android</span><span
+                                    class="product-tag">Custom App</span></div>
+                        </div>
+                        <div class="product-card" data-name="Visitor Management Kiosk">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🗂️</div>
+                            <div class="product-card-name">Visitor Management Kiosk</div>
+                            <div class="product-card-sub">Self-service visitor check-in kiosk with camera, QR reader,
+                                and thermal printer support.</div>
+                            <div class="product-card-tags"><span class="product-tag">Self-Service</span><span
+                                    class="product-tag">Touchscreen</span></div>
+                        </div>
+                        <div class="product-card" data-name="Portable Android Device">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🧭</div>
+                            <div class="product-card-name">Portable Android Device</div>
+                            <div class="product-card-sub">Handheld biometric terminal for field enrolment, patrol check,
+                                and mobile access control.</div>
+                            <div class="product-card-tags"><span class="product-tag">Handheld</span><span
+                                    class="product-tag">Field Use</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMART DOOR LOCK -->
+                <div class="cat-section reveal" data-category="smart-door-lock" id="smart-door-lock">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🔒</div>
+                        <div>
+                            <div class="cat-section-label">Smart Door Lock</div>
+                            <div class="cat-section-desc">Hybrid biometric, Bluetooth, and hotel-grade smart lock
+                                solutions</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card" data-name="Hybrid Biometric Lock">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🤚</div>
+                            <div class="product-card-name">Hybrid Biometric Lock</div>
+                            <div class="product-card-sub">Fingerprint + PIN + card in one sleek lock. Cabinet, glass
+                                door, standalone, and padlock variants.</div>
+                            <div class="product-card-tags"><span class="product-tag">Fingerprint</span><span
+                                    class="product-tag">Cabinet</span><span class="product-tag">Glass Door</span></div>
+                        </div>
+                        <div class="product-card featured" data-name="Bluetooth Smart Lock">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📶</div>
+                            <div class="product-card-name">Bluetooth Smart Lock <span class="badge-new">New</span></div>
+                            <div class="product-card-sub">IoT-enabled wireless locks — control and monitor via mobile
+                                app. BLE + fingerprint options.</div>
+                            <div class="product-card-tags"><span class="product-tag">IoT</span><span
+                                    class="product-tag">Mobile App</span><span class="product-tag">BLE</span></div>
+                        </div>
+                        <div class="product-card" data-name="Hotel Smart Lock">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🏨</div>
+                            <div class="product-card-name">Hotel Smart Lock</div>
+                            <div class="product-card-sub">Wireless hotel locks and standalone hotel locks — RFID card
+                                and mobile key compatible.</div>
+                            <div class="product-card-tags"><span class="product-tag">Wireless</span><span
+                                    class="product-tag">RFID Card</span><span class="product-tag">Hotel PMS</span></div>
+                        </div>
+                        <div class="product-card" data-name="Fingerprint Padlock">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔐</div>
+                            <div class="product-card-name">Fingerprint Padlock</div>
+                            <div class="product-card-sub">Portable biometric padlock — no key, no PIN. Up to 20
+                                fingerprint profiles stored onboard.</div>
+                            <div class="product-card-tags"><span class="product-tag">Portable</span><span
+                                    class="product-tag">Keyless</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOFTWARE -->
+                <div class="cat-section reveal" data-category="software" id="software">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">💻</div>
+                        <div>
+                            <div class="cat-section-label">Software</div>
+                            <div class="cat-section-desc">Cloud and on-premise platforms for attendance, access, and
+                                security management</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="Time Attendance Software">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📊</div>
+                            <div class="product-card-name">Time Attendance Software <span
+                                    class="badge-popular">Popular</span></div>
+                            <div class="product-card-sub">Powerful on-premise TA software with shift management, payroll
+                                export, and multi-site support.</div>
+                            <div class="product-card-tags"><span class="product-tag">On-Premise</span><span
+                                    class="product-tag">Payroll</span><span class="product-tag">Multi-Site</span></div>
+                        </div>
+                        <div class="product-card" data-name="Cloud Attendance Software">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">☁️</div>
+                            <div class="product-card-name">Cloud Attendance</div>
+                            <div class="product-card-sub">SaaS attendance platform — access reports from anywhere, any
+                                device, with zero server hassle.</div>
+                            <div class="product-card-tags"><span class="product-tag">SaaS</span><span
+                                    class="product-tag">Mobile App</span></div>
+                        </div>
+                        <div class="product-card" data-name="ZKBio Security Software">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🛡️</div>
+                            <div class="product-card-name">Security Management Platform</div>
+                            <div class="product-card-sub">Unified access control, video, and visitor management in one
+                                enterprise-grade platform.</div>
+                            <div class="product-card-tags"><span class="product-tag">Access Control</span><span
+                                    class="product-tag">Video</span><span class="product-tag">Visitor</span></div>
+                        </div>
+                        <div class="product-card" data-name="HRMS Integration Platform">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔗</div>
+                            <div class="product-card-name">HRMS Integration</div>
+                            <div class="product-card-sub">API-ready middleware to connect biometric data with SAP,
+                                Oracle, Zoho, and any HRMS.</div>
+                            <div class="product-card-tags"><span class="product-tag">API</span><span
+                                    class="product-tag">SAP</span><span class="product-tag">Zoho</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARMATURA -->
+                <div class="cat-section reveal" data-category="armatura" id="armatura">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🛡️</div>
+                        <div>
+                            <div class="cat-section-label">Armatura</div>
+                            <div class="cat-section-desc">Advanced access controller ecosystem with unified management
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="Armatura One">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">⚡</div>
+                            <div class="product-card-name">Armatura One <span class="badge-new">New</span></div>
+                            <div class="product-card-sub">All-in-one intelligent access control terminal — face, card,
+                                and PIN in a premium form factor.</div>
+                            <div class="product-card-tags"><span class="product-tag">All-in-One</span><span
+                                    class="product-tag">AI Face</span></div>
+                        </div>
+                        <div class="product-card" data-name="Armatura Standalone Terminal">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🖥️</div>
+                            <div class="product-card-name">Armatura Standalone</div>
+                            <div class="product-card-sub">Standalone Armatura terminals with independent operation — no
+                                controller box needed.</div>
+                            <div class="product-card-tags"><span class="product-tag">Standalone</span><span
+                                    class="product-tag">Self-Contained</span></div>
+                        </div>
+                        <div class="product-card" data-name="Armatura Reader">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📡</div>
+                            <div class="product-card-name">Armatura Reader</div>
+                            <div class="product-card-sub">Sleek OSDP and Wiegand readers designed to pair with the
+                                Armatura controller ecosystem.</div>
+                            <div class="product-card-tags"><span class="product-tag">OSDP</span><span
+                                    class="product-tag">Wiegand</span></div>
+                        </div>
+                        <div class="product-card" data-name="Armatura Controller">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🧠</div>
+                            <div class="product-card-name">Armatura Controller</div>
+                            <div class="product-card-sub">Centralized multi-door Armatura controller with built-in web
+                                server and cloud connectivity.</div>
+                            <div class="product-card-tags"><span class="product-tag">Multi-Door</span><span
+                                    class="product-tag">Cloud-Ready</span></div>
+                        </div>
+                        <div class="product-card" data-name="Armatura Entrance Control">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🚪</div>
+                            <div class="product-card-name">Armatura Entrance Control</div>
+                            <div class="product-card-sub">Armatura-integrated flap barriers and turnstiles for premium
+                                lobby and campus entrances.</div>
+                            <div class="product-card-tags"><span class="product-tag">Flap Barrier</span><span
+                                    class="product-tag">Turnstile</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMART ENTRANCE CONTROL -->
+                <div class="cat-section reveal" data-category="smart-entrance" id="smart-entrance">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🚧</div>
+                        <div>
+                            <div class="cat-section-label">Smart Entrance Control</div>
+                            <div class="cat-section-desc">Pedestrian and vehicle entrance control for high-traffic sites
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card" data-name="Tripod Turnstile">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">♟️</div>
+                            <div class="product-card-name">Tripod Turnstile</div>
+                            <div class="product-card-sub">Robust three-arm turnstiles for factories, parks, and
+                                mid-security checkpoints.</div>
+                            <div class="product-card-tags"><span class="product-tag">Mid-Security</span><span
+                                    class="product-tag">Outdoor</span></div>
+                        </div>
+                        <div class="product-card featured" data-name="Flap Barrier">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🚦</div>
+                            <div class="product-card-name">Flap Barrier <span class="badge-popular">Popular</span></div>
+                            <div class="product-card-sub">Premium glass flap barriers for corporate lobbies, IT parks,
+                                and co-working spaces.</div>
+                            <div class="product-card-tags"><span class="product-tag">Glass Panel</span><span
+                                    class="product-tag">Lobby</span></div>
+                        </div>
+                        <div class="product-card" data-name="Swing Barrier">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔄</div>
+                            <div class="product-card-name">Swing Barrier</div>
+                            <div class="product-card-sub">Wide-lane swing barriers accommodating wheelchairs, trolleys,
+                                and oversized access needs.</div>
+                            <div class="product-card-tags"><span class="product-tag">Wide Lane</span><span
+                                    class="product-tag">ADA Compliant</span></div>
+                        </div>
+                        <div class="product-card" data-name="Full Height Turnstile">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🏗️</div>
+                            <div class="product-card-name">Full Height Turnstile</div>
+                            <div class="product-card-sub">360° rotating full-height gates for maximum security
+                                perimeters — no tailgating possible.</div>
+                            <div class="product-card-tags"><span class="product-tag">High Security</span><span
+                                    class="product-tag">Anti-Tailgate</span></div>
+                        </div>
+                        <div class="product-card" data-name="Boom Barrier">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🚗</div>
+                            <div class="product-card-name">Boom Barrier</div>
+                            <div class="product-card-sub">Fast-acting vehicle boom barriers for parking lots, gated
+                                communities, and industrial gates.</div>
+                            <div class="product-card-tags"><span class="product-tag">Vehicle</span><span
+                                    class="product-tag">Parking</span></div>
+                        </div>
+                        <div class="product-card" data-name="LPR Camera">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔭</div>
+                            <div class="product-card-name">LPR — Number Plate Recognition</div>
+                            <div class="product-card-sub">AI licence plate recognition cameras for touchless vehicle
+                                access and parking management.</div>
+                            <div class="product-card-tags"><span class="product-tag">AI</span><span
+                                    class="product-tag">Touchless</span><span class="product-tag">ANPR</span></div>
+                        </div>
+                        <div class="product-card" data-name="Automatic Bollard">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">⚠️</div>
+                            <div class="product-card-name">Automatic Bollard</div>
+                            <div class="product-card-sub">Hydraulic rising bollards for perimeter security, VIP zones,
+                                and anti-ram protection.</div>
+                            <div class="product-card-tags"><span class="product-tag">Hydraulic</span><span
+                                    class="product-tag">Anti-Ram</span></div>
+                        </div>
+                        <div class="product-card" data-name="Parking Management">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🅿️</div>
+                            <div class="product-card-name">Parking Management System</div>
+                            <div class="product-card-sub">Ticket dispenser, parking lock, radar sensor, and long-range
+                                RFID reader — complete parking suite.</div>
+                            <div class="product-card-tags"><span class="product-tag">Ticket System</span><span
+                                    class="product-tag">Long-Range RFID</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECURITY INSPECTION -->
+                <div class="cat-section reveal" data-category="security-inspection" id="security-inspection">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🔬</div>
+                        <div>
+                            <div class="cat-section-label">Security Inspection</div>
+                            <div class="cat-section-desc">X-ray, metal detection, and threat detection equipment for
+                                high-security venues</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="Baggage Scanner">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📦</div>
+                            <div class="product-card-name">X-Ray Baggage Scanner <span
+                                    class="badge-popular">Popular</span></div>
+                            <div class="product-card-sub">High-resolution X-ray baggage scanners for airports, hotels,
+                                courts, and corporate buildings.</div>
+                            <div class="product-card-tags"><span class="product-tag">X-Ray</span><span
+                                    class="product-tag">High-Resolution</span></div>
+                        </div>
+                        <div class="product-card" data-name="Walk Through Metal Detector">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🚶</div>
+                            <div class="product-card-name">Door Frame Metal Detector</div>
+                            <div class="product-card-sub">Multi-zone walk-through metal detectors with precise threat
+                                localisation — low false alarm rate.</div>
+                            <div class="product-card-tags"><span class="product-tag">Multi-Zone</span><span
+                                    class="product-tag">Low False Alarm</span></div>
+                        </div>
+                        <div class="product-card" data-name="Hand Held Metal Detector">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🪄</div>
+                            <div class="product-card-name">Hand-Held Metal Detector</div>
+                            <div class="product-card-sub">Lightweight, ergonomic HHMD for secondary screening — high
+                                sensitivity with audio/vibration alert.</div>
+                            <div class="product-card-tags"><span class="product-tag">Portable</span><span
+                                    class="product-tag">Secondary Screen</span></div>
+                        </div>
+                        <div class="product-card" data-name="Smartphone Detector">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📵</div>
+                            <div class="product-card-name">Smartphone Detector</div>
+                            <div class="product-card-sub">Detects concealed mobile phones in exam halls, prisons, and
+                                secure government facilities.</div>
+                            <div class="product-card-tags"><span class="product-tag">Anti-Cheating</span><span
+                                    class="product-tag">Govt. Grade</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MULTI PURPOSE INTEGRATION -->
+                <div class="cat-section reveal" data-category="multi-purpose" id="multi-purpose">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">📡</div>
+                        <div>
+                            <div class="cat-section-label">Multi-Purpose Integration</div>
+                            <div class="cat-section-desc">Communication and intercom systems that integrate with access
+                                control</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card featured" data-name="SIP Video Intercom">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📞</div>
+                            <div class="product-card-name">SIP Video Intercom <span class="badge-new">New</span></div>
+                            <div class="product-card-sub">IP video doorbell and intercom stations — two-way HD video,
+                                remote door release, and SIP integration.</div>
+                            <div class="product-card-tags"><span class="product-tag">HD Video</span><span
+                                    class="product-tag">SIP/VoIP</span><span class="product-tag">Remote Unlock</span>
+                            </div>
+                        </div>
+                        <div class="product-card" data-name="IP Intercom System">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🎙️</div>
+                            <div class="product-card-name">Indoor IP Intercom Station</div>
+                            <div class="product-card-sub">Wall-mount indoor touchscreen intercom units for apartment
+                                buildings and multi-tenant offices.</div>
+                            <div class="product-card-tags"><span class="product-tag">Touchscreen</span><span
+                                    class="product-tag">Multi-Tenant</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCESSORIES -->
+                <div class="cat-section reveal" data-category="accessories" id="accessories">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">🔧</div>
+                        <div>
+                            <div class="cat-section-label">Accessories</div>
+                            <div class="cat-section-desc">Locks, cards, scanners, and hardware accessories to complete
+                                your installation</div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card" data-name="Electric Lock">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔩</div>
+                            <div class="product-card-name">Electric Lock</div>
+                            <div class="product-card-sub">Magnetic locks, electric strikes, and bolt locks — compatible
+                                with all Astra access controllers.</div>
+                            <div class="product-card-tags"><span class="product-tag">Mag Lock</span><span
+                                    class="product-tag">Electric Strike</span></div>
+                        </div>
+                        <div class="product-card" data-name="Exit Button">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🔘</div>
+                            <div class="product-card-name">Exit Button</div>
+                            <div class="product-card-sub">Vandal-proof push-to-exit buttons, touch-free IR exit sensors
+                                — surface and flush-mount options.</div>
+                            <div class="product-card-tags"><span class="product-tag">Touch-Free IR</span><span
+                                    class="product-tag">Flush Mount</span></div>
+                        </div>
+                        <div class="product-card" data-name="RFID Card">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">💳</div>
+                            <div class="product-card-name">RFID Card &amp; Fob</div>
+                            <div class="product-card-sub">125 kHz EM, 13.56 MHz Mifare, and DESFire cards — bulk supply
+                                for large access control deployments.</div>
+                            <div class="product-card-tags"><span class="product-tag">Mifare</span><span
+                                    class="product-tag">DESFire</span><span class="product-tag">125kHz</span></div>
+                        </div>
+                        <div class="product-card" data-name="Fingerprint Scanner">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🖱️</div>
+                            <div class="product-card-name">USB Fingerprint Scanner</div>
+                            <div class="product-card-sub">Desktop USB fingerprint scanners for PC-based enrolment, HR
+                                workflows, and verification kiosks.</div>
+                            <div class="product-card-tags"><span class="product-tag">USB</span><span
+                                    class="product-tag">Enrolment</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIDEO SURVEILLANCE -->
+                <div class="cat-section reveal" data-category="video-surveillance" id="video-surveillance">
+                    <div class="cat-section-title">
+                        <div class="cat-section-icon">📷</div>
+                        <div>
+                            <div class="cat-section-label">Video Surveillance</div>
+                            <div class="cat-section-desc">IP and HD analogue cameras for integrated security monitoring
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card" data-name="Lite Series Network Camera">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📹</div>
+                            <div class="product-card-name">Lite IP Camera</div>
+                            <div class="product-card-sub">Budget-friendly 2MP and 5MP H.265 IP cameras for offices,
+                                retail, and general surveillance.</div>
+                            <div class="product-card-tags"><span class="product-tag">2MP / 5MP</span><span
+                                    class="product-tag">H.265</span></div>
+                        </div>
+                        <div class="product-card featured" data-name="Pro Series Network Camera">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🎥</div>
+                            <div class="product-card-name">Pro IP Camera <span class="badge-popular">Popular</span>
+                            </div>
+                            <div class="product-card-sub">2MP Starlight, 4MP, 5MP, and 8MP 4K pro-grade IP cameras with
+                                IR night vision and AI analytics.</div>
+                            <div class="product-card-tags"><span class="product-tag">4K / 8MP</span><span
+                                    class="product-tag">Starlight</span><span class="product-tag">AI</span></div>
+                        </div>
+                        <div class="product-card" data-name="Full Color IP Camera">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">🌈</div>
+                            <div class="product-card-name">Full Color Night Camera</div>
+                            <div class="product-card-sub">Always-on colour imaging day and night — no more
+                                black-and-white night footage.</div>
+                            <div class="product-card-tags"><span class="product-tag">24/7 Color</span><span
+                                    class="product-tag">2MP / 5MP</span></div>
+                        </div>
+                        <div class="product-card" data-name="HD Analog Camera">
+                            <div class="product-card-arrow">↗</div>
+                            <div class="product-card-icon">📡</div>
+                            <div class="product-card-name">HD Analogue Camera</div>
+                            <div class="product-card-sub">HD-TVI/AHD cameras for upgrading existing analogue CCTV
+                                infrastructure without rewiring.</div>
+                            <div class="product-card-tags"><span class="product-tag">HD-TVI</span><span
+                                    class="product-tag">Legacy Upgrade</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA BANNER -->
+                <div class="cta-banner reveal">
+                    <h3>Can't Find the Right Product?</h3>
+                    <p>Our solutions team will survey your site and design a custom biometric system that fits perfectly
+                        — at the right budget.</p>
+                    <div class="cta-actions">
+                        <a href="#contact" class="btn btn-primary">Book a Free
+                            Consultation</a>
+                        <a href="#contact" class="btn btn-outline">Download Catalogue</a>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="contact-inner reveal">
+            <div class="contact-left">
+              <div class="tag">Get In Touch</div>
+              <h2 class="contact-title">Let's Secure Your <em>Premises</em></h2>
+              <p class="contact-sub">Talk to our biometric experts. We'll assess your site and propose the perfect solution — at the right budget.</p>
+              <div class="contact-details">
+                <div class="contact-detail-item"><span class="contact-detail-icon">📍</span><div><strong>Astra Technologies</strong><span>Bengaluru, Karnataka, India</span></div></div>
+                <div class="contact-detail-item"><span class="contact-detail-icon">📞</span><div><strong>Call Us</strong><a href="tel:+919483201072">+91 94832 01072</a></div></div>
+                <div class="contact-detail-item"><span class="contact-detail-icon">✉️</span><div><strong>Email Us</strong><a href="mailto:sales@astratechnologies.in">sales@astratechnologies.in</a></div></div>
+              </div>
+            </div>
+            <div class="contact-right">
+              <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                  <div class="form-group"><label>Your Name *</label><input type="text" placeholder="John Doe" required></div>
+                  <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+                </div>
+                <div class="form-group"><label>Email Address *</label><input type="email" placeholder="john@company.com" required></div>
+                <div class="form-group"><label>Company / Organisation</label><input type="text" placeholder="Your company name"></div>
+                <div class="form-group"><label>What do you need?</label>
+                  <select><option value="">Select a product / service…</option><option>Time Attendance System</option><option>Access Control</option><option>Smart Entrance / Turnstile</option><option>Smart Door Lock</option><option>Security Inspection Equipment</option><option>Video Surveillance</option><option>Software / Integration</option><option>AMC / Support</option><option>Other</option></select>
+                </div>
+                <div class="form-group"><label>Message</label><textarea rows="4" placeholder="Tell us about your site or requirements…"></textarea></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:.95rem;padding:.9rem">Send Message ✉️</button>
+                <p class="form-note">We respond within 24 hours on business days.</p>
+              </form>
+              <div class="form-success" id="formSuccess" style="display:none">
+                <div class="success-icon">✅</div><h3>Message Sent!</h3><p>Thank you. Our team will get back to you within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer-component></footer-component>
+  <script src="../js/nav.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+
+</html>

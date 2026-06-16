@@ -1,0 +1,58 @@
+# ================================
+# Frontend
+# ================================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ================================
+# Backend (Django / Python)
+# ================================
+backend/.venv/
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/**/*.pyc
+backend/db.sqlite3
+
+# Secret environment variables - NEVER commit this!
+backend/.env
+.env
+.env.*
+!.env.example
+
+# Django collected static files
+backend/staticfiles/
+backend/media/
+
+# Python cache
+*.pyo
+*.pyd
+.Python
+
+# ================================
+# OS / Misc
+# ================================
+Thumbs.db
+*.zip
