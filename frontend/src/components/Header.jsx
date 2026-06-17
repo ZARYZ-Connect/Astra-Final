@@ -83,7 +83,7 @@ export default function Header({ currentPath, navigate }) {
         <a href="index.html" className={isActive('index.html')} onClick={(e) => handleLinkClick(e, 'index.html')}>Home</a>
         <a href="about.html" className={isActive('about.html')} onClick={(e) => handleLinkClick(e, 'about.html')}>About Us</a>
         <a href="products.html" className={isActive('products.html')} onClick={(e) => handleLinkClick(e, 'products.html')}>Products</a>
-        <a href="solutions.html" className={isActive('solutions.html')} onClick={(e) => handleLinkClick(e, 'solutions.html')}>Solutions</a>
+        <a href="support.html" className={isActive('support.html')} onClick={(e) => handleLinkClick(e, 'support.html')}>Support</a>
         <a href="contact.html" onClick={(e) => handleLinkClick(e, 'contact.html')}>Contact Us</a>
       </div>
 
@@ -190,7 +190,7 @@ export default function Header({ currentPath, navigate }) {
                 </div>
               </div>
             </li>
-            <li><a href="solutions.html" className={isActive('solutions.html')} onClick={(e) => handleLinkClick(e, 'solutions.html')}>Solutions</a></li>
+            <li><a href="support.html" className={isActive('support.html')} onClick={(e) => handleLinkClick(e, 'support.html')}>Support</a></li>
             <li><a href="contact.html" onClick={(e) => handleLinkClick(e, 'contact.html')}>Contact Us</a></li>
           </ul>
           <button className="hamburger" id="hamburger" aria-label="Menu" onClick={() => setMenuOpen(true)}>

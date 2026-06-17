@@ -40,6 +40,8 @@ function App() {
         return <Products navigate={navigate} />;
       case '/solutions':
       case '/solutions.html':
+      case '/support':
+      case '/support.html':
         return <Solutions navigate={navigate} />;
       case '/contact':
       case '/contact.html':

@@ -153,11 +153,48 @@ export default function About({ navigate }) {
                 </svg>
 
                 {/* Floating Glassmorphic Nodes */}
-                <div className="floating-node node-gov">🏛️</div>
-                <div className="floating-node node-factory">🏭</div>
-                <div className="floating-node node-id">🪪</div>
-                <div className="floating-node node-shield">🛡️</div>
-                <div className="floating-node node-door">🚪</div>
+                <div className="floating-node node-gov" title="Government & Banking">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00f2fe" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 3px rgba(0, 242, 254, 0.4))' }}>
+                    <path d="M3 21h18" />
+                    <path d="M19 21v-4" />
+                    <path d="M5 21v-4" />
+                    <path d="M9 21v-4" />
+                    <path d="M13 21v-4" />
+                    <path d="M3 10h18" />
+                    <path d="M3 7l9-4 9 4H3z" />
+                  </svg>
+                </div>
+                <div className="floating-node node-factory" title="Manufacturing & Logistics">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00f2fe" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 3px rgba(0, 242, 254, 0.4))' }}>
+                    <path d="M2 20h20" />
+                    <path d="M21 18V8l-4 4-4-4-4 4-4-4v10" />
+                    <path d="M17 18h4" />
+                    <path d="M3 18h4" />
+                    <path d="M10 18v-4" />
+                    <path d="M14 18v-4" />
+                  </svg>
+                </div>
+                <div className="floating-node node-id" title="Identity & Authentication">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00f2fe" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 3px rgba(0, 242, 254, 0.4))' }}>
+                    <rect x="3" y="4" width="18" height="16" rx="2" ry="2" />
+                    <circle cx="9" cy="10" r="2.5" />
+                    <path d="M6 17a3 3 0 0 1 6 0" />
+                    <line x1="14" y1="9" x2="18" y2="9" />
+                    <line x1="14" y1="13" x2="18" y2="13" />
+                  </svg>
+                </div>
+                <div className="floating-node node-shield" title="Security & Compliance">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00f2fe" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 3px rgba(0, 242, 254, 0.4))' }}>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <div className="floating-node node-door" title="Access Control & Lock systems">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="#00f2fe" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 3px rgba(0, 242, 254, 0.4))' }}>
+                    <path d="M3 21h18" />
+                    <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16" />
+                    <circle cx="14" cy="12" r="1.5" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -173,8 +210,6 @@ export default function About({ navigate }) {
               <h2 className="story-title">India's Trusted Partner in <em>Biometric Security</em></h2>
               <div className="story-body">
                 <p>Astra Technologies is a Bengaluru-based systems integrator and authorised distributor of ZKTeco biometric products across India. We combine world-class hardware with deep local expertise to deliver identity and access control solutions that are reliable, scalable, and affordable.</p>
-                <p>From a single-door fingerprint lock for a startup to a multi-building turnstile and CCTV network for a 10,000-employee campus, we have designed and deployed them all. Our tagline is a promise: <strong style={{ color: '#fff' }}>Your Rightful Identity, Securely Delivered.</strong></p>
-                <p>We provide end-to-end services: site survey, product selection, installation, commissioning, software configuration, training, and Annual Maintenance Contracts — so you are never alone after the sale.</p>
               </div>
             </div>
             <div className="story-visual reveal">
@@ -194,7 +229,7 @@ export default function About({ navigate }) {
                   </div>
                   <div className="value-text">
                     <h4>Long-Term Partnership</h4>
-                    <p>We stay with you post-installation — AMC contracts, firmware updates, and 24×7 remote support.</p>
+                    <p>We stay with you post-installation — remote support during business hours.</p>
                   </div>
                 </div>
                 <div className="value-item">
@@ -228,48 +263,25 @@ export default function About({ navigate }) {
             <h2 className="section-title">What Sets Us Apart</h2>
             <p className="section-sub" style={{ marginInline: 'auto' }}>Not just a reseller — a solutions partner that understands security infrastructure from the ground up.</p>
           </div>
-          <div className="why-grid">
+          <div className="why-grid why-grid-2">
             <div className="why-card reveal">
               <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="#00f2fe" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 4px rgba(0, 242, 254, 0.5))' }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
               </div>
               <h3>Authorised Distributor</h3>
               <p>Direct access to the full biometric product range with genuine warranty, firmware support, and replacement guarantees.</p>
             </div>
             <div className="why-card reveal">
               <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
-              </div>
-              <h3>End-to-End Installation</h3>
-              <p>We handle everything from cable trunking and power supply to software configuration and user training on site.</p>
-            </div>
-            <div className="why-card reveal">
-              <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-              </div>
-              <h3>Deep Integrations</h3>
-              <p>HRMS, payroll, SAP, Oracle, Zoho, custom APIs — we connect your biometric data to your existing business systems.</p>
-            </div>
-            <div className="why-card reveal">
-              <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="#00f2fe" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 0 4px rgba(0, 242, 254, 0.5))' }}>
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
               </div>
               <h3>Responsive Support</h3>
-              <p>Dedicated support engineers for remote assistance, on-site visits, and same-day response for critical failures.</p>
-            </div>
-            <div className="why-card reveal">
-              <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <h3>Competitive Pricing</h3>
-              <p>Direct sourcing and large-volume procurement allow us to offer the best prices without compromising on quality.</p>
-            </div>
-            <div className="why-card reveal">
-              <div className="why-card-icon">
-                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" strokeWidth="1.8" fill="none"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h.01M12 8h.01M17 8h.01M7 12h10"/></svg>
-              </div>
-              <h3>Custom System Design</h3>
-              <p>No cookie-cutter solutions. Every site gets a tailored architecture designed after a thorough in-person survey.</p>
+              <p>Support engineers for remote assistance and same-day response for critical failures.</p>
             </div>
           </div>
         </div>

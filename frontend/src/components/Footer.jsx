@@ -46,7 +46,7 @@ export default function Footer({ currentPath, navigate }) {
     { icon: '🔐', label: 'Biometric\nTechnology' },
     { icon: '🛡️', label: 'Advanced\nSecurity' },
     { icon: '🔗', label: 'Seamless\nIntegration' },
-    { icon: '🎧', label: '24/7\nSupport' },
+    { icon: '🎧', label: 'Business Hours\nSupport' },
   ];
 
   const products = [
@@ -60,7 +60,7 @@ export default function Footer({ currentPath, navigate }) {
 
   const company = [
     { label: 'About Us', href: 'about.html' },
-    { label: 'Solutions', href: 'solutions.html' },
+    { label: 'Support', href: 'support.html' },
     { label: 'Products', href: 'products.html' },
     { label: 'Contact Us', href: 'contact.html' },
   ];
@@ -172,7 +172,7 @@ export default function Footer({ currentPath, navigate }) {
                   <span className="ft-enquiry-icon">📞</span>
                   <div>
                     <strong>Still Enquiry?</strong>
-                    <span>We're just a call away — reach us anytime.</span>
+                    <span>We're just a call away — reach us during business hours.</span>
                   </div>
                 </div>
                 <button

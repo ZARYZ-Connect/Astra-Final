@@ -157,47 +157,93 @@ export default function Home({ navigate }) {
               <p className="section-sub">Organisations across India rely on Astra to secure offices, warehouses, plants, and campuses — where uptime, accuracy, and reliability are non-negotiable.</p>
               <div className="trust-stats-row">
                 <div className="trust-stat">
-                  <div className="trust-stat-val">500<span>+</span></div>
-                  <div className="trust-stat-lbl">Sites Secured</div>
+                  <div className="trust-stat-val">300<span>+</span></div>
+                  <div className="trust-stat-lbl">Projects Delivered</div>
                 </div>
                 <div className="trust-stat">
-                  <div className="trust-stat-val">15<span>+</span></div>
-                  <div className="trust-stat-lbl">Industries</div>
+                  <div className="trust-stat-val">6<span> Yrs</span></div>
+                  <div className="trust-stat-lbl">Years of Expertise</div>
                 </div>
                 <div className="trust-stat">
-                  <div className="trust-stat-val">99<span>.9%</span></div>
-                  <div className="trust-stat-lbl">Uptime SLA</div>
+                  <div className="trust-stat-val">100<span>+</span></div>
+                  <div className="trust-stat-lbl">Product Models</div>
                 </div>
               </div>
             </div>
             <div className="trust-cards reveal">
               <div className="trust-card">
-                <div className="trust-card-icon">🏭</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 20h20" />
+                    <path d="M21 18V8l-4 4-4-4-4 4-4-4v10" />
+                    <path d="M17 18h4" />
+                    <path d="M3 18h4" />
+                    <path d="M10 18v-4" />
+                    <path d="M14 18v-4" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">Manufacturing &amp; Logistics</div>
                 <div className="trust-card-sub">Factory floors, warehouses, and distribution hubs</div>
               </div>
               <div className="trust-card">
-                <div className="trust-card-icon">🏥</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 21h18" />
+                    <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16" />
+                    <path d="M10 12h4" />
+                    <path d="M12 10v4" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">Healthcare</div>
                 <div className="trust-card-sub">Hospitals, clinics, and pharmaceutical plants</div>
               </div>
               <div className="trust-card">
-                <div className="trust-card-icon">🏦</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 21h18" />
+                    <path d="M19 21v-4" />
+                    <path d="M5 21v-4" />
+                    <path d="M9 21v-4" />
+                    <path d="M13 21v-4" />
+                    <path d="M3 10h18" />
+                    <path d="M3 7l9-4 9 4H3z" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">BFSI &amp; Finance</div>
                 <div className="trust-card-sub">Banks, NBFCs, and financial data centres</div>
               </div>
               <div className="trust-card">
-                <div className="trust-card-icon">🏢</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10 22V8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v14" />
+                    <path d="M22 22V12a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v10" />
+                    <path d="M2 22h20" />
+                    <path d="M6 10h.01M6 14h.01M6 18h.01M14 14h.01M14 18h.01M18 14h.01M18 18h.01" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">Corporate &amp; IT Parks</div>
                 <div className="trust-card-sub">Campus-wide access and attendance management</div>
               </div>
               <div className="trust-card">
-                <div className="trust-card-icon">🛒</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">Retail &amp; E-Commerce</div>
                 <div className="trust-card-sub">Back offices, fulfilment centres, flagship stores</div>
               </div>
               <div className="trust-card">
-                <div className="trust-card-icon">🚌</div>
+                <div className="trust-card-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="1" y="3" width="15" height="13" />
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="18.5" cy="18.5" r="2.5" />
+                  </svg>
+                </div>
                 <div className="trust-card-name">Transportation</div>
                 <div className="trust-card-sub">Depots, terminals, and fleet management hubs</div>
               </div>
@@ -219,16 +265,30 @@ export default function Home({ navigate }) {
               <p className="contact-sub">Talk to our biometric experts. We'll assess your site and propose the perfect solution — at the right budget.</p>
               <div className="contact-details">
                 <div className="contact-detail-item">
-                  <span className="contact-detail-icon">📍</span>
+                  <span className="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
                   <div><strong>Astra Technologies</strong><span>Bengaluru, Karnataka, India</span></div>
                 </div>
                 <div className="contact-detail-item">
-                  <span className="contact-detail-icon">📞</span>
+                  <span className="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
                   <div><strong>Call Us</strong><a href="tel:+919483201072">+91 94832 01072</a></div>
                 </div>
 
                 <div className="contact-detail-item">
-                  <span className="contact-detail-icon">✉️</span>
+                  <span className="contact-detail-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </span>
                   <div><strong>Email Us</strong><a href="mailto:sales@astratechnologies.in">sales@astratechnologies.in</a></div>
                 </div>
               </div>
@@ -273,14 +333,23 @@ export default function Home({ navigate }) {
                     <label>Message</label>
                     <textarea rows="4" placeholder="Tell us about your site or requirements…"></textarea>
                   </div>
-                  <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '.95rem', padding: '.9rem' }}>
-                    Send Message ✉️
+                  <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', alignItems: 'center', gap: '8px', fontSize: '.95rem', padding: '.9rem' }}>
+                    Send Message
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13" />
+                      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
                   </button>
                   <p className="form-note">We respond within 24 hours on business days.</p>
                 </form>
               ) : (
                 <div className="form-success" id="formSuccess" style={{ display: 'flex' }}>
-                  <div className="success-icon">✅</div>
+                  <div className="success-icon">
+                    <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#22c55e' }}>
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
                   <h3>Message Sent!</h3>
                   <p>Thank you. Our team will get back to you within 24 hours.</p>
                 </div>

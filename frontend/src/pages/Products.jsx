@@ -470,20 +470,16 @@ export default function Products({ navigate }) {
       <div className="stats-bar">
         <div className="container stats-bar-inner">
           <div className="stat-item">
-            <div className="stat-val">8<span>+</span></div>
-            <div className="stat-lbl">Premium Categories</div>
+            <div className="stat-val">300<span>+</span></div>
+            <div className="stat-lbl">Projects Delivered</div>
           </div>
           <div className="stat-item">
-            <div className="stat-val">133<span>+</span></div>
-            <div className="stat-lbl">ZKTeco Models</div>
+            <div className="stat-val">6<span> Yrs</span></div>
+            <div className="stat-lbl">Years of Expertise</div>
           </div>
           <div className="stat-item">
-            <div className="stat-val">500<span>+</span></div>
-            <div className="stat-lbl">Sites Deployed</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-val">99<span>.9%</span></div>
-            <div className="stat-lbl">Uptime SLA</div>
+            <div className="stat-val">100<span>+</span></div>
+            <div className="stat-lbl">Product Models</div>
           </div>
         </div>
       </div>
