@@ -1,106 +1,83 @@
-# Astra React + Django
+# Astra Technologies — Full-Stack Web Application
 
-Full-stack structure for the Astra Technologies website.
+Comprehensive enterprise web application built with **React (Vite)** frontend and **Django** backend.
+
+---
+
+## 📁 Project Structure
 
 ```
 astra-react-django/
-├─ frontend/                        # React (Vite) front-end
-│   ├─ package.json
-│   ├─ vite.config.js
-│   ├─ index.html                   # Vite root HTML
-│   ├─ src/
-│   │   ├─ index.jsx                # React entry point
-│   │   ├─ App.jsx
-│   │   ├─ components/
-│   │   │   ├─ header.html          # Original header fragment (reference)
-│   │   │   └─ footer.html          # Original footer fragment (reference)
-│   │   └─ assets/
-│   │       ├─ js/                  # Original JS files (unchanged)
-│   │       │   ├─ about.js
-│   │       │   ├─ home.js
-│   │       │   ├─ nav.js
-│   │       │   ├─ products.js
-│   │       │   └─ solutions.js
-│   │       └─ css/                 # Original CSS files (unchanged)
-│   │           ├─ base.css
-│   │           ├─ about.css
-│   │           ├─ home.css
-│   │           ├─ products.css
-│   │           └─ solutions.css
-│   └─ public/
-│       ├─ index.html               # Home page (static reference)
-│       ├─ about.html
-│       ├─ products.html
-│       └─ solutions.html
+├── frontend/                        # React (Vite) Front-End
+│   ├── src/
+│   │   ├── components/             # Reusable UI components (Header, Footer, etc.)
+│   │   ├── pages/                  # Page components (Home, About, Products, Solutions)
+│   │   ├── css/                    # Custom CSS design system
+│   │   └── App.jsx                 # Application entry & router
+│   ├── public/
+│   │   └── images/                 # Product images & assets
+│   ├── package.json
+│   └── vite.config.js
 │
-├─ backend/                         # Django back-end
-│   ├─ manage.py
-│   ├─ astra_website/               # Django project package
-│   │   ├─ __init__.py
-│   │   ├─ settings.py
-│   │   ├─ urls.py
-│   │   └─ wsgi.py
-│   └─ website/                     # Django app
-│       ├─ __init__.py
-│       ├─ admin.py
-│       ├─ apps.py
-│       ├─ models.py
-│       ├─ views.py                 # Renders HTML templates
-│       ├─ urls.py                  # App URL patterns
-│       ├─ templates/               # HTML templates (unchanged)
-│       │   ├─ index.html
-│       │   ├─ about.html
-│       │   ├─ products.html
-│       │   ├─ solutions.html
-│       │   └─ components/
-│       │       ├─ header.html
-│       │       └─ footer.html
-│       └─ static/                  # Static files served by Django
-│           ├─ js/
-│           │   ├─ about.js
-│           │   ├─ home.js
-│           │   ├─ nav.js
-│           │   ├─ products.js
-│           │   └─ solutions.js
-│           └─ css/
-│               ├─ base.css
-│               ├─ about.css
-│               ├─ home.css
-│               ├─ products.css
-│               └─ solutions.css
+├── backend/                         # Django Back-End
+│   ├── astra_website/              # Django settings & root configuration
+│   ├── website/                    # Core Django app (views, models, templates)
+│   │   ├── static/                 # Synced static CSS, JS & images
+│   │   └── templates/              # Server-rendered HTML templates
+│   ├── Dockerfile
+│   ├── entrypoint.sh
+│   ├── requirements.txt
+│   └── manage.py
 │
-└─ README.md
+├── docker-compose.yml              # Container orchestration
+└── README.md
 ```
 
 ---
 
-## Running the Front-End (React / Vite)
+## 🚀 Quick Start
+
+### 1. Front-End (React / Vite)
 
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-
-Visit: http://localhost:5173
+- **Local URL**: `http://localhost:5173`
 
 ---
 
-## Running the Back-End (Django)
-
-> **Prerequisites**: Python 3.10+, Django installed (`pip install django`)
+### 2. Back-End (Django)
 
 ```bash
 cd backend
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
+- **Local URL**: `http://127.0.0.1:8000`
 
-Visit: http://127.0.0.1:8000
+---
 
-Pages available:
-- `/`           → Home
-- `/about/`     → About Us
-- `/products/`  → Products
-- `/solutions/` → Solutions
-- `/admin/`     → Django Admin
+### 3. Docker Deployment
+
+```bash
+docker-compose up --build
+```
+
+---
+
+## 🛠️ Main Features & Product Categories
+
+- **Time Attendance Systems**: Biometric, Facial Recognition, RFID, & Smart Terminals.
+- **Access Control**: Turnstiles, RFID Readers, Controllers, & Smart Locks.
+- **Security & Inspection**: Metal Detectors, X-Ray Scanners, and Entrance Systems.
+- **Software Platforms**: Enterprise Attendance, WDMS, & Cafeteria Management.
+
+---
+
+## 📜 License & Ownership
+Copyright © Zaryz Solutions LLP / Astra Technologies. All rights reserved.
