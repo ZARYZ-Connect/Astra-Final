@@ -1,4 +1,17 @@
 import { useState, useEffect } from 'react';
+import {
+  LuFingerprint,
+  LuShieldCheck,
+  LuLink,
+  LuHeadphones,
+  LuMapPin,
+  LuPhone,
+  LuMail,
+  LuGlobe,
+  LuSmartphone,
+  LuArrowUp,
+} from 'react-icons/lu';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer({ currentPath, navigate }) {
   const [showBackTop, setShowBackTop] = useState(false);
@@ -43,10 +56,10 @@ export default function Footer({ currentPath, navigate }) {
   };
 
   const features = [
-    { icon: '🔐', label: 'Biometric\nTechnology' },
-    { icon: '🛡️', label: 'Advanced\nSecurity' },
-    { icon: '🔗', label: 'Seamless\nIntegration' },
-    { icon: '🎧', label: 'Business Hours\nSupport' },
+    { icon: <LuFingerprint size={22} />, label: 'Biometric\nTechnology' },
+    { icon: <LuShieldCheck size={22} />, label: 'Advanced\nSecurity' },
+    { icon: <LuLink size={22} />, label: 'Seamless\nIntegration' },
+    { icon: <LuHeadphones size={22} />, label: 'Business Hours\nSupport' },
   ];
 
   const products = [
@@ -126,28 +139,28 @@ export default function Footer({ currentPath, navigate }) {
               <h4 className="ft-col-title">Get In Touch</h4>
               <div className="ft-contact-list">
                 <div className="ft-contact-item">
-                  <span className="ft-contact-icon">📍</span>
+                  <span className="ft-contact-icon"><LuMapPin size={18} /></span>
                   <div>
                     <strong>Address</strong>
                     <span>no 72/A, 1st Floor, Chamundi Arcade, 29th Cross, 2nd Block Rajajinagar, Bangalore-560010</span>
                   </div>
                 </div>
                 <div className="ft-contact-item">
-                  <span className="ft-contact-icon">📞</span>
+                  <span className="ft-contact-icon"><LuPhone size={18} /></span>
                   <div>
                     <strong>Phone</strong>
                     <a href="tel:+919483201072">+91 94832 01072</a>
                   </div>
                 </div>
                 <div className="ft-contact-item">
-                  <span className="ft-contact-icon">✉️</span>
+                  <span className="ft-contact-icon"><LuMail size={18} /></span>
                   <div>
                     <strong>Email</strong>
                     <a href="mailto:sales@astratechnologies.in">sales@astratechnologies.in</a>
                   </div>
                 </div>
                 <div className="ft-contact-item">
-                  <span className="ft-contact-icon">🌐</span>
+                  <span className="ft-contact-icon"><LuGlobe size={18} /></span>
                   <div>
                     <strong>Website</strong>
                     <a href="https://astratechnologies.in" target="_blank" rel="noreferrer">www.astratechnologies.in</a>
@@ -162,14 +175,12 @@ export default function Footer({ currentPath, navigate }) {
               <p className="ft-stay-desc">Follow us for updates, insights and innovations.</p>
               <div className="ft-socials">
                 <a href="https://www.linkedin.com/company/astra-technologies" target="_blank" rel="noreferrer" className="ft-social" aria-label="LinkedIn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
+                  <FaLinkedinIn size={18} />
                 </a>
               </div>
               <div className="ft-enquiry-box">
                 <div className="ft-enquiry-header">
-                  <span className="ft-enquiry-icon">📞</span>
+                  <span className="ft-enquiry-icon"><LuPhone size={18} /></span>
                   <div>
                     <strong>Still Enquiry?</strong>
                     <span>We're just a call away — reach us during business hours.</span>
@@ -179,7 +190,8 @@ export default function Footer({ currentPath, navigate }) {
                   className="ft-enquiry-btn"
                   onClick={() => setShowPhonePopup(prev => !prev)}
                 >
-                  📲 Call Us Now
+                  <LuSmartphone size={16} style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+                  Call Us Now
                 </button>
                 {showPhonePopup && (
                   <div className="ft-phone-popup">
@@ -197,14 +209,14 @@ export default function Footer({ currentPath, navigate }) {
           {/* ─── bottom bar ─── */}
           <div className="ft-bottom">
             <p>© {new Date().getFullYear()} Astra Technologies. All rights reserved.</p>
-            <p className="ft-bottom-right">Designed & Built for Secure Futures.</p>
+            <p className="ft-bottom-right">Designed &amp; Built for Secure Futures.</p>
           </div>
         </div>
       </footer>
 
       {/* Back to top */}
       <button className={`back-top ${showBackTop ? 'show' : ''}`} id="backTop" aria-label="Back to top" onClick={handleBackToTop}>
-        ↑
+        <LuArrowUp size={18} />
       </button>
     </>
   );

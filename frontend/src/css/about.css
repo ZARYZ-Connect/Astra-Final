@@ -313,51 +313,7 @@
       }
     }
 
-    /* MOBILE MENU */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(5, 16, 31, .98);
-      backdrop-filter: blur(20px);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.25rem;
-      padding: 2rem
-    }
 
-    .mobile-menu.open {
-      display: flex
-    }
-
-    .mobile-nav-logo {
-      height: 26px;
-      filter: brightness(0) invert(1);
-      margin-bottom: .25rem
-    }
-
-    .mobile-menu a {
-      font-family: var(--font-h);
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, .85);
-      text-decoration: none;
-      letter-spacing: .04em;
-      transition: var(--tr);
-      padding: .4rem 1.5rem;
-      border-radius: 8px;
-      width: 100%;
-      text-align: center;
-      max-width: 260px
-    }
-
-    .mobile-menu a:hover,
-    .mobile-menu a.active {
-      color: var(--accent);
-      background: rgba(0, 180, 216, .08)
-    }
 
     .mobile-divider {
       width: 40px;

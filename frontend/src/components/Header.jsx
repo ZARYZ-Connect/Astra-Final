@@ -70,21 +70,184 @@ export default function Header({ currentPath, navigate }) {
 
   return (
     <>
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU OVERLAY */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} id="mobileMenu">
-        <button className="mobile-close" id="mobileClose" onClick={() => setMenuOpen(false)}>✕</button>
-        <img 
-          src="https://astratechnologies.in/wp-content/uploads/2025/11/astra-technologies.png" 
-          alt="Astra" 
-          className="mobile-nav-logo" 
-          onError={(e) => { e.target.style.display = 'none'; }}
-        />
-        <div className="mobile-divider"></div>
-        <a href="index.html" className={isActive('index.html')} onClick={(e) => handleLinkClick(e, 'index.html')}>Home</a>
-        <a href="about.html" className={isActive('about.html')} onClick={(e) => handleLinkClick(e, 'about.html')}>About Us</a>
-        <a href="products.html" className={isActive('products.html')} onClick={(e) => handleLinkClick(e, 'products.html')}>Products</a>
-        <a href="support.html" className={isActive('support.html')} onClick={(e) => handleLinkClick(e, 'support.html')}>Support</a>
-        <a href="contact.html" onClick={(e) => handleLinkClick(e, 'contact.html')}>Contact Us</a>
+        <div className="mobile-menu-bg-glow"></div>
+        <div className="mobile-menu-grid-pattern"></div>
+
+        {/* Mobile Menu Header Bar */}
+        <div className="mobile-menu-header">
+          <a 
+            href="index.html" 
+            className="mobile-brand" 
+            onClick={(e) => handleLinkClick(e, 'index.html')}
+          >
+            <img 
+              src="https://astratechnologies.in/wp-content/uploads/2025/11/astra-technologies.png" 
+              alt="Astra Technologies" 
+              className="mobile-nav-logo" 
+              onError={(e) => { 
+                e.target.style.display = 'none'; 
+                const txt = e.target.nextSibling;
+                if (txt) txt.style.display = 'flex';
+              }}
+            />
+            <div className="mobile-logo-text-fallback" style={{ display: 'none' }}>
+              <span className="brand-primary">ASTRA</span>
+              <span className="brand-sub">TECHNOLOGIES</span>
+            </div>
+          </a>
+
+          <button 
+            className="mobile-close-btn" 
+            id="mobileClose" 
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation Cards List */}
+        <div className="mobile-nav-list">
+          {/* Home */}
+          <a 
+            href="index.html" 
+            className={`mobile-nav-card ${isActive('index.html')}`} 
+            onClick={(e) => handleLinkClick(e, 'index.html')}
+          >
+            <div className="mobile-nav-card-left">
+              <div className="mobile-nav-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span className="mobile-nav-card-label">Home</span>
+            </div>
+            <div className="mobile-nav-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          {/* About Us */}
+          <a 
+            href="about.html" 
+            className={`mobile-nav-card ${isActive('about.html')}`} 
+            onClick={(e) => handleLinkClick(e, 'about.html')}
+          >
+            <div className="mobile-nav-card-left">
+              <div className="mobile-nav-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span className="mobile-nav-card-label">About Us</span>
+            </div>
+            <div className="mobile-nav-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          {/* Products */}
+          <a 
+            href="products.html" 
+            className={`mobile-nav-card ${isActive('products.html')}`} 
+            onClick={(e) => handleLinkClick(e, 'products.html')}
+          >
+            <div className="mobile-nav-card-left">
+              <div className="mobile-nav-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <span className="mobile-nav-card-label">Products</span>
+            </div>
+            <div className="mobile-nav-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          {/* Support */}
+          <a 
+            href="support.html" 
+            className={`mobile-nav-card ${isActive('support.html')}`} 
+            onClick={(e) => handleLinkClick(e, 'support.html')}
+          >
+            <div className="mobile-nav-card-left">
+              <div className="mobile-nav-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+              <span className="mobile-nav-card-label">Support</span>
+            </div>
+            <div className="mobile-nav-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+
+          {/* Contact Us */}
+          <a 
+            href="contact.html" 
+            className={`mobile-nav-card ${isActive('contact.html')}`} 
+            onClick={(e) => handleLinkClick(e, 'contact.html')}
+          >
+            <div className="mobile-nav-card-left">
+              <div className="mobile-nav-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span className="mobile-nav-card-label">Contact Us</span>
+            </div>
+            <div className="mobile-nav-card-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        {/* Mobile Menu Footer (NO Social Media Links as requested) */}
+        <div className="mobile-menu-footer">
+          <div className="mobile-menu-divider"></div>
+          <div className="mobile-menu-tagline">
+            INNOVATE. INTEGRATE. <span className="highlight">ELEVATE.</span>
+          </div>
+          <svg className="mobile-menu-wave" viewBox="0 0 500 80" preserveAspectRatio="none">
+            <path d="M0,40 Q125,70 250,40 T500,40 L500,80 L0,80 Z" fill="url(#waveGrad)" opacity="0.4" />
+            <path d="M0,50 Q125,20 250,50 T500,50 L500,80 L0,80 Z" fill="url(#waveGrad2)" opacity="0.2" />
+            <defs>
+              <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00508c" />
+                <stop offset="100%" stopColor="#00d4ff" />
+              </linearGradient>
+              <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00d4ff" />
+                <stop offset="100%" stopColor="#002b4d" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
       </div>
 
       {/* NAV */}
