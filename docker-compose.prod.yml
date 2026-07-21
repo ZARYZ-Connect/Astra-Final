@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: astra-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - sqlite_data:/app/db.sqlite3
+      - static_volume:/app/staticfiles
+    expose:
+      - "8000"
+    ports:
+      - "8015:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: astra-frontend
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    depends_on:
+      - backend
+
+volumes:
+  sqlite_data:
+  static_volume:
