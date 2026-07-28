@@ -313,38 +313,25 @@ export default function Header({ currentPath, navigate }) {
                   <a href="products.html#armatura-entrance" onClick={(e) => handleLinkClick(e, 'products.html#armatura-entrance')}>Armatura Entrance Control</a>
                   <a href="products.html#armatura" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#armatura')}>More &gt;</a>
 
-                  <h4 style={{marginTop: '1.5rem'}}>Accessories</h4>
-                  <a href="products.html#lock" onClick={(e) => handleLinkClick(e, 'products.html#lock')}>Lock</a>
-                  <a href="products.html#exit-button" onClick={(e) => handleLinkClick(e, 'products.html#exit-button')}>Exit Button</a>
-                  <a href="products.html#rfid-card" onClick={(e) => handleLinkClick(e, 'products.html#rfid-card')}>RFID Card</a>
-                  <a href="products.html#fingerprint-scanner" onClick={(e) => handleLinkClick(e, 'products.html#fingerprint-scanner')}>Fingerprint Scanner</a>
-                  <a href="products.html#accessories" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#accessories')}>More &gt;</a>
+
                 </div>
 
                 <div className="mega-menu-col">
-                  <h4>Android Terminals</h4>
-                  <a href="products.html#android-terminals" onClick={(e) => handleLinkClick(e, 'products.html#android-terminals')}>Android Terminals</a>
-                  <a href="products.html#android-terminals" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#android-terminals')}>More &gt;</a>
-
-                  <h4 style={{marginTop: '1.5rem'}}>Smart Entrance Control</h4>
+                  <h4>Smart Entrance Control</h4>
                   <a href="products.html#smart-security-gate" onClick={(e) => handleLinkClick(e, 'products.html#smart-security-gate')}>Smart Security Gate</a>
                   <a href="products.html#smart-vehicle-inspection" onClick={(e) => handleLinkClick(e, 'products.html#smart-vehicle-inspection')}>Smart Vehicle &amp; Inspection</a>
                   <a href="products.html#entrance-control" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#entrance-control')}>More &gt;</a>
 
-                  <h4 style={{marginTop: '1.5rem'}}>Video Surveillance</h4>
-                  <a href="products.html#network-camera" onClick={(e) => handleLinkClick(e, 'products.html#network-camera')}>Network Camera</a>
-                  <a href="products.html#hd-analog-camera" onClick={(e) => handleLinkClick(e, 'products.html#hd-analog-camera')}>HD Analog Camera</a>
-                  <a href="products.html#video-surveillance" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#video-surveillance')}>More &gt;</a>
+                  <h4 style={{marginTop: '1.5rem'}}>Camera Surveillance</h4>
+                  <a href="products.html#dome-series" onClick={(e) => handleLinkClick(e, 'products.html#dome-series')}>Dome Series</a>
+                  <a href="products.html#bullet-series" onClick={(e) => handleLinkClick(e, 'products.html#bullet-series')}>Bullet Series</a>
+                  <a href="products.html#ptz-series" onClick={(e) => handleLinkClick(e, 'products.html#ptz-series')}>PTZ Series</a>
+                  <a href="products.html#nvr" onClick={(e) => handleLinkClick(e, 'products.html#nvr')}>NVR</a>
+                  <a href="products.html#camera-surveillance" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#camera-surveillance')}>More &gt;</a>
                 </div>
 
                 <div className="mega-menu-col">
-                  <h4>Smart Door Lock</h4>
-                  <a href="products.html#hybrid-biometric-lock" onClick={(e) => handleLinkClick(e, 'products.html#hybrid-biometric-lock')}>Hybrid Biometric Lock</a>
-                  <a href="products.html#bluetooth-locks" onClick={(e) => handleLinkClick(e, 'products.html#bluetooth-locks')}>Bluetooth Locks</a>
-                  <a href="products.html#hotel-lock" onClick={(e) => handleLinkClick(e, 'products.html#hotel-lock')}>Hotel Lock</a>
-                  <a href="products.html#smart-lock" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#smart-lock')}>More &gt;</a>
-
-                  <h4 style={{marginTop: '1.5rem'}}>Security Inspection</h4>
+                  <h4>Security Inspection</h4>
                   <a href="products.html#baggage-scanner" onClick={(e) => handleLinkClick(e, 'products.html#baggage-scanner')}>Baggage Scanner</a>
                   <a href="products.html#door-frame-metal-detector" onClick={(e) => handleLinkClick(e, 'products.html#door-frame-metal-detector')}>Door Frame Metal Detector</a>
                   <a href="products.html#hand-held-metal-detector" onClick={(e) => handleLinkClick(e, 'products.html#hand-held-metal-detector')}>Hand Held Metal Detector</a>

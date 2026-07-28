@@ -452,6 +452,118 @@
       background: var(--accent);
     }
 
+    /* ─── MINI DISTRIBUTOR PANEL (INSIDE HERO CARD) ─── */
+    .mini-dp-wrap {
+      margin-top: 1rem;
+      border-top: 1px solid rgba(0, 180, 216, 0.15);
+      padding-top: 1rem;
+    }
+
+    .mini-dp-header {
+      text-align: center;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .mini-dp-slashes {
+      color: rgba(0, 180, 216, 0.5);
+      font-weight: 800;
+      font-size: 0.7rem;
+      letter-spacing: -1px;
+    }
+
+    .mini-dp-title {
+      font-family: var(--font-h);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mini-dp-carousel {
+      position: relative;
+    }
+
+    .mini-dp-track-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .mini-dp-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: mini-dp-scroll 15s linear infinite;
+    }
+
+    .mini-dp-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes mini-dp-scroll {
+      to {
+        transform: translateX(calc(-50% - 0.5rem));
+      }
+    }
+
+    .mini-dp-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 6px;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      gap: 0.25rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    .mini-dp-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      width: 70%;
+      height: 2px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .mini-dp-card.glow-green::after {
+      background: #22c55e;
+      box-shadow: 0 -1px 5px #22c55e;
+    }
+
+    .mini-dp-card.glow-blue::after {
+      background: #00b4d8;
+      box-shadow: 0 -1px 5px #00b4d8;
+    }
+
+    .mini-dp-card.glow-red::after {
+      background: #ef4444;
+      box-shadow: 0 -1px 5px #ef4444;
+    }
+
+    .mini-dp-card img {
+      width: 80px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .mini-dp-card p {
+      margin: 0;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
     /* ─── FEATURES PILLS ─── */
     .features-section {
       padding: 6rem 0;

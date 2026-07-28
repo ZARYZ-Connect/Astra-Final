@@ -110,6 +110,64 @@ export default function Home({ navigate }) {
                       </div>
                       <div className="hc-access">✓ Access</div>
                     </div>
+                    
+                    {/* ─── MINI DISTRIBUTOR PANEL ─── */}
+                    <div className="mini-dp-wrap">
+                      <div className="mini-dp-header">
+                        <span className="mini-dp-slashes">///</span> 
+                        <span className="mini-dp-title">AUTHORISED DISTRIBUTORS</span> 
+                        <span className="mini-dp-slashes">&#92;&#92;&#92;</span>
+                      </div>
+                      
+                      <div className="mini-dp-carousel">
+                        <div className="mini-dp-track-wrap">
+                          <div className="mini-dp-track">
+                            {/* First Set */}
+                            <div className="mini-dp-card glow-green">
+                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-blue">
+                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-red">
+                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
+                              <p>Distributor</p>
+                            </div>
+
+                            {/* Second Set for Loop */}
+                            <div className="mini-dp-card glow-green">
+                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-blue">
+                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-red">
+                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
+                              <p>Distributor</p>
+                            </div>
+                            
+                            {/* Third Set for Seamless Loop */}
+                            <div className="mini-dp-card glow-green">
+                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-blue">
+                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
+                              <p>Distributor</p>
+                            </div>
+                            <div className="mini-dp-card glow-red">
+                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
+                              <p>Distributor</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -140,7 +198,6 @@ export default function Home({ navigate }) {
           <div className="marquee-item"><span className="dot"></span>HRMS Integration</div>
         </div>
       </div>
-
 
 
 

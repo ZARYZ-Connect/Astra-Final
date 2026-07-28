@@ -3,77 +3,107 @@ import useScrollReveal from '../hooks/useScrollReveal';
 import '../css/products.css';
 
 const CATEGORIES = [
-  { id: 'access-control', label: 'Access Control', desc: 'IP-based multi-door controllers, biometric readers, standalone panels, smart locks, and entrance control systems' },
-  { id: 'time-attendance', label: 'Time Attendance', desc: 'Accurate, AI-biometric visible-light & fingerprint attendance terminals for every workforce' }
+  { id: 'time-attendance', label: 'Time Attendance', desc: 'Accurate, AI-biometric visible-light & fingerprint attendance terminals for every workforce' },
+  { id: 'access-control', label: 'Access Controller', desc: 'IP-based multi-door controllers, biometric readers, standalone panels, smart locks, and entrance control systems' },
+  { id: 'armatura', label: 'Armatura', desc: 'Advanced access controller ecosystem with unified management, high-security panels, and smart readers' },
+  { id: 'smart-entrance', label: 'Smart Entrance Control', desc: 'Pedestrian and vehicle entrance control, turnstiles, flap barriers, and boom barriers for high-traffic sites' },
+  { id: 'security-inspection', label: 'Security Inspection', desc: 'X-ray baggage scanners, walk-through metal detectors, and threat detection equipment for high-security venues' },
+  { id: 'video-surveillance', label: 'Video Surveillance', desc: 'Comprehensive video surveillance systems for enhanced security monitoring' }
 ];
 
-const ACCESS_CONTROL_SUBCATEGORIES = [
-  "RS485 Reader Series",
-  "SA32-E",
-  "KR600 Series",
-  "QR600 Series",
-  "KR500 Series",
-  "FR1500S",
-  "MR1010 MR1020",
-  "MA300",
-  "FR1200",
-  "SF100",
-  "SF1005",
-  "Atlas Prox Series",
-  "Atlas Bio Series",
-  "EC16 & DEX16",
-  "SC405",
-  "SA40",
-  "ProMA",
-  "MK-V1",
-  "F22",
-  "F21",
-  "F18",
-  "SC800",
-  "F09",
-  "EC10 & EX16",
-  "DM10",
-  "X7",
-  "InBio PC Series & DE10",
-  "C3-100 Plus",
-  "inBio-160 Pro Plus"
-];
+const ACCESS_CONTROL_HIERARCHY = {
+  "Multi Door Controller": [
+    "C3 Plus Series", "InBioPC Series & DE-10", "InBio Pro Plus Series", "DM10", "Atlas Prox Series", "Atlas Bio Series"
+  ],
+  "Standalone Devices": [
+    "F09", "SF1005", "MK-V1", "F18", "F22", "SF100", "X7", "SC405", "SC800", "SA40"
+  ],
+  "Readers": [
+    "QR600 Series", "FR1200", "FR1500S", "KR500 Series", "RS485 Reader Series"
+  ],
+  "Elevator Access Controller": [
+    "EC16 & DEX16", "EC10 & EX16"
+  ]
+};
 
-const TIME_ATTENDANCE_SUBCATEGORIES = [
-  "MB360",
-  "MB30",
-  "MB10-VL",
-  "K40 Pro",
-  "K45 Pro",
-  "LX50",
-  "IN01-A",
-  "iClock700",
-  "SpeedFace-V5 Palm",
-  "SpeedFaceM4",
-  "SpeedFace H5L",
-  "FaceDepot-7BL",
-  "FaceDepot 8AL",
-  "FaceDepot 4A",
-  "Eface 10",
-  "D3",
-  "MiniTA",
-  "SpeedFace V3L Series",
-  "SpeedFace - V5L",
-  "ProBio Plus Series",
-  "MiniAC",
-  "FaceDepot 7C",
-  "FaceDepot 7CL",
-  "MiniAC Plus"
-];
+const TIME_ATTENDANCE_HIERARCHY = {
+  "Visible Series": [
+    "MiniAC", "MiniAC Plus", "FaceDepot 7CL", "ProBio Plus Series",
+    "SpeedFace - V5L", "FaceDepot 7C", "MiniTA", "D3", "SpeedFace M4",
+    "EFace 10", "FaceDepot-7BL", "FaceDepot 8AL", "FaceDepot 4A", "SpeedFace H5L"
+  ],
+  "Fingerprint Attendance": [
+    "K40 Pro", "K45 Pro", "IN01-A"
+  ],
+  "Face Attendance": [
+    "MB30", "MB360"
+  ]
+};
+
+const ARMATURA_HIERARCHY = {
+  "Armatura Standalone Terminals": [
+    "OmniAC20", "OmniAC30"
+  ],
+  "Armatura One": [
+    "Armatura Datasheet"
+  ],
+  "Armatura Reader": [
+    "VG10CKQ", "AMT-FAPVR-30", "AMT-FAPVS-30", "AMT-PVS-50", "AMT-PVR-10", "EP10C", "EP30CF", "EP20 Series"
+  ],
+  "Armatura Controller": [
+    "AHDU Series", "AHEB Series", "AHSC-1000"
+  ],
+  "Armatura Entrance Control": [
+    "AMTL-BGM1000", "Aegis-2000", "Aegis-1000"
+  ]
+};
+
+const SMART_ENTRANCE_HIERARCHY = {
+  "Smart Security Gate": [
+    "SBTL3000", "Saturn Plus Series", "FHT2200L", "FHT2200DL", "Saturn-F1000 Series",
+    "Zophon-S1000", "Saturn-T1000", "SBTL8000 Series", "Saturn-S2000 Series",
+    "SBT3000S", "FBL700 Series", "FBL500 Series", "TS200 Pro", "TS2000 Plus Series",
+    "TS1000 Plus Series", "mTS1000 Series", "Saturn S1000 & S1200", "TS2000 Pro Series",
+    "SBTL500", "Comet Series", "FBL300", "Mars-S100 Series", "FBL320", "SBTL300",
+    "FBL200", "SBTL320", "FBL220", "SBT2000S", "FHT4000D-LA", "FHT4000S-LA",
+    "FHT3000D-LA", "FHT3000S-LA", "FHT2300"
+  ],
+  "Smart Vehicle & Inspection": [
+    "Boom Barrier - BGM300", "Boom Barrier - BGM500", "Boom Barrier - BGM400",
+    "Boom Barrier - BGM1000 Series", "Boom Barrier- BG300", "Boom Barrier - BG2000 Series",
+    "Boom Barrier - CMP200", "LRM300", "LPRS1000"
+  ]
+};
+
+const SECURITY_INSPECTION_HIERARCHY = {
+  "Baggage Scanner": [
+    "ZKX6040A", "ZKX6550A", "Baggage Scanners ZKX5030C", "Baggage Scanners ZKX5030A",
+    "Baggage Scanners ZKX6040", "Baggage Scanners ZKX6550", "ZKX100100"
+  ],
+  "Door Frame Metal Detector": [
+    "ZK-D3180V", "ZK-D1090", "ZK-D1010L", "ZK-D2110", "AMD1800 Pro",
+    "ZK-D1065", "ZK-D1065S", "ZK-D1065L", "ZK-D2180"
+  ],
+  "Hand Held Metal Detector": [
+    "ZK-D100S", "ZK-D180", "ZK-D160"
+  ]
+};
+
+const VIDEO_SURVEILLANCE_HIERARCHY = {
+  "Dome Series": [],
+  "Bullet Series": [],
+  "PTZ Series": [],
+  "NVR": []
+};
 
 const PRODUCTS = [
   // 1. RS485 Reader Series (3 items)
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series (Model 1)', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series (Model 2)', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-2.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series (Model 3)', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-3.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-2.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-3.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
 
   // 2. SA32-E (1 item)
-  { category: 'access-control', subCategory: 'SA32-E', name: 'SA32-E', sub: 'Standalone RFID Access Controller', tags: ['SA32-E', 'RFID'], image: '/images/products/Access Control/SA32-E/SA32-E.jpg', specs: { 'Type': 'Standalone RFID', 'Card Capacity': '1,000 Cards' } },
+  { category: 'access-control', subCategory: 'SA32-E', name: 'SA32-E', sub: 'Standalone RFID Access Controller', tags: ['SA32-E', 'RFID'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Standalone RFID', 'Card Capacity': '1,000 Cards' } },
 
   // 3. KR600 Series (4 items)
   { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600M_01', sub: 'Wiegand RFID Card Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Interface': 'Wiegand 26/34', 'Reading Range': 'Up to 5cm' } },
@@ -82,114 +112,114 @@ const PRODUCTS = [
   { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600M-S_02', sub: 'Stainless Steel RFID Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600M-S_02.png', specs: { 'Interface': 'Wiegand 26/34', 'Protection': 'IP65 Waterproof' } },
 
   // 4. QR600 Series (4 items)
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series (Model 1)', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series (Model 2)', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-2.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series (Model 3)', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-3.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series (Model 4)', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-4.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-2.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-3.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-4.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
 
   // 5. KR500 Series (3 items)
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series (Model 1)', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series (Model 2)', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-2.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series (Model 3)', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-3.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-2.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-3.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
 
   // 6. FR1500S (3 items)
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S (Model 1)', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S (Model 2)', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-2.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S (Model 3)', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-3.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-2.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-3.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
 
   // 7. MR1010 MR1020 (2 items)
-  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020 (Model 1)', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.jpg', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020 (Model 2)', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.png', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.jpg', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.png', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
 
   // 8. MA300 (2 items)
-  { category: 'access-control', subCategory: 'MA300', name: 'MA300 (Model 1)', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'MA300', name: 'MA300 (Model 2)', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300-2.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'MA300', name: 'MA300', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'MA300', name: 'MA300', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300-2.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
 
   // 9. FR1200 (2 items)
-  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200 (Model 1)', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
-  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200 (Model 2)', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200-2.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
+  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
+  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200-2.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
 
   // 10. SF100 (3 items)
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100 (Model 1)', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100 (Model 2)', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-2.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100 (Model 3)', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-3.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-2.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-3.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
 
   // 11. SF1005 (6 items)
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 1)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 2)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_01_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 3)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_02_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 4)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_03_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 5)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_04_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005 (Model 6)', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_01_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_02_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_03_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_04_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
 
   // 12. Atlas Prox Series (4 items)
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series (Model 1)', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series (Model 2)', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series (Model 3)', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-3.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series (Model 4)', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-4.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-3.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-4.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
 
   // 13. Atlas Bio Series (2 items)
-  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series (Model 1)', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
-  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series (Model 2)', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
+  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
+  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
 
   // 14. EC16 & DEX16 (2 items)
-  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16 (Model 1)', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
-  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16 (Model 2)', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16-2.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
+  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
+  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16-2.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
 
   // 15. SC405 (2 items)
-  { category: 'access-control', subCategory: 'SC405', name: 'SC405 (Model 1)', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
-  { category: 'access-control', subCategory: 'SC405', name: 'SC405 (Model 2)', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405-2.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
+  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
+  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405-2.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
 
   // 16. SA40 (1 item)
   { category: 'access-control', subCategory: 'SA40', name: 'SA40', sub: 'Touch Keypad Standalone Controller', tags: ['SA40', 'Keypad'], image: '/images/products/Access Control/SA40/SA40.jpg', specs: { 'Keypad': 'Touch Keypad with Backlight', 'Capacity': '1,000 Users' } },
 
   // 17. ProMA (3 items)
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA (Model 1)', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], badge: 'new', image: '/images/products/Access Control/ProMA/ProMA_02_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA (Model 2)', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_03_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA (Model 3)', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_04_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
+  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], badge: 'new', image: '/images/products/Access Control/ProMA/ProMA_02_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
+  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_03_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
+  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_04_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
 
   // 18. MK-V1 (2 items)
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1 (Model 1)', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1 (Model 2)', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1_01.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1_01.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
 
   // 19. F22 (3 items)
-  { category: 'access-control', subCategory: 'F22', name: 'F22 (Model 1)', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22 (Model 2)', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-2.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22 (Model 3)', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-3.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-2.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-3.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
 
   // 20. F21 (2 items)
-  { category: 'access-control', subCategory: 'F21', name: 'F21 (Model 1)', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
-  { category: 'access-control', subCategory: 'F21', name: 'F21 (Model 2)', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21-2.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
+  { category: 'access-control', subCategory: 'F21', name: 'F21', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
+  { category: 'access-control', subCategory: 'F21', name: 'F21', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21-2.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
 
   // 21. F18 (2 items)
-  { category: 'access-control', subCategory: 'F18', name: 'F18 (Model 1)', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'F18', name: 'F18 (Model 2)', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18-2.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18-2.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
 
   // 22. SC800 (2 items)
-  { category: 'access-control', subCategory: 'SC800', name: 'SC800 (Model 1)', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'SC800', name: 'SC800 (Model 2)', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800-2.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800-2.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
 
   // 23. F09 (3 items)
-  { category: 'access-control', subCategory: 'F09', name: 'F09 (Model 1)', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09 (Model 2)', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-1.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09 (Model 3)', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-2.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-1.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-2.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
 
   // 24. EC10 & EX16 (3 items)
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16 (Model 1)', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16 (Model 2)', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-2.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16 (Model 3)', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-2.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
 
   // 25. DM10 (1 item)
   { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/DM10/DM10.jpg', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
 
   // 26. X7 (3 items)
-  { category: 'access-control', subCategory: 'X7', name: 'X7 (Model 1)', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7 (Model 2)', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-2.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7 (Model 3)', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-2.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
 
   // 27. InBio PC Series & DE10 (2 items)
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10 (Model 1)', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC Series & DE10.jpg', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10 (Model 2)', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC Series & DE10.jpg', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
 
   // 28. C3-100 Plus (3 items)
   { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/C3-100 Plus/C3-100 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
@@ -205,8 +235,8 @@ const PRODUCTS = [
 
   // 1. MB360 (3 items)
   { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Time Attendance & Access Control Terminal', tags: ['MB360', 'Face & Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/MB360/MB360.png', specs: { 'Recognition': 'Face & Fingerprint', 'Capacity': '1,500 Faces / 2,000 Fingerprints', 'Display': '2.8-inch TFT Screen' } },
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360 (Model 1)', sub: 'Multi-Biometric Terminal with Card Reader', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-1.jpg', specs: { 'Recognition': 'Face & Fingerprint & Card', 'Display': '2.8-inch Color Display' } },
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360 (Model 2)', sub: 'Advanced Hybrid Biometric Terminal', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-2.png', specs: { 'Communication': 'TCP/IP, USB Host', 'Display': '2.8-inch Color Display' } },
+  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Terminal with Card Reader', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-1.jpg', specs: { 'Recognition': 'Face & Fingerprint & Card', 'Display': '2.8-inch Color Display' } },
+  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Advanced Hybrid Biometric Terminal', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-2.png', specs: { 'Communication': 'TCP/IP, USB Host', 'Display': '2.8-inch Color Display' } },
 
   // 2. MB30 (1 item)
   { category: 'time-attendance', subCategory: 'MB30', name: 'MB30', sub: 'Multi-Biometric Time Attendance Terminal', tags: ['MB30', 'Face & Fingerprint'], image: '/images/products/Time Attendance/MB30/MB30.png', specs: { 'Recognition': 'Face & Fingerprint', 'Display': '2.8-inch TFT Screen', 'Capacity': '1,000 Faces' } },
@@ -230,75 +260,75 @@ const PRODUCTS = [
   // 8. iClock700 (1 item)
   { category: 'time-attendance', subCategory: 'iClock700', name: 'iClock700', sub: 'Enterprise Biometric Time Attendance Terminal', tags: ['iClock700', 'iClock Series'], image: '/images/products/Time Attendance/iClock700/iClock700.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '3.5-inch TFT Screen', 'Camera': 'Built-in Camera' } },
 
-  // 9. SpeedFace-V5 Palm (2 items)
-  { category: 'time-attendance', subCategory: 'SpeedFace-V5 Palm', name: 'SpeedFace-V5 Palm', sub: 'Touchless Palm & Face Recognition Terminal', tags: ['SpeedFace-V5 Palm', 'Palm Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/speedface-v5-palm.png', specs: { 'Recognition': 'Touchless Palm & Face', 'Display': '5-inch Touch Screen', 'Platform': 'Linux' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace-V5 Palm', name: 'SpeedFace-V5 Palm (Model 2)', sub: 'Touchless Multi-Biometric Attendance Unit', tags: ['SpeedFace-V5 Palm', 'Palm Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/SpeedFace-V5 Palm-2.png', specs: { 'Recognition': 'Palm & Facial AI', 'Display': '5-inch Touch Screen' } },
+  // 9. SpeedFace-V5 (2 items)
+  { category: 'time-attendance', subCategory: 'SpeedFace-V5', name: 'SpeedFace-V5', sub: 'Touchless Face Recognition Terminal', tags: ['SpeedFace-V5', 'Face Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/speedface-v5-palm.png', specs: { 'Recognition': 'Touchless Face', 'Display': '5-inch Touch Screen', 'Platform': 'Linux' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace-V5', name: 'SpeedFace-V5', sub: 'Touchless Multi-Biometric Attendance Unit', tags: ['SpeedFace-V5', 'Face Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/SpeedFace-V5 Palm-2.png', specs: { 'Recognition': 'Facial AI', 'Display': '5-inch Touch Screen' } },
 
   // 10. SpeedFaceM4 (3 items)
-  { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4', sub: 'Outdoor Visible Light Facial & Palm Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_500x500.png', specs: { 'Ingress Protection': 'IP66 Waterproof', 'Recognition': 'Visible Light Facial & Palm', 'Display': '4-inch Touch Screen' } },
+  { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4', sub: 'Outdoor Visible Light Facial Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_500x500.png', specs: { 'Ingress Protection': 'IP66 Waterproof', 'Recognition': 'Visible Light Facial', 'Display': '4-inch Touch Screen' } },
   { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4 (Capacitive)', sub: 'Visible Light & QR Code Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_cap_500x500.png', specs: { 'Display': '4-inch Capacitive Touch', 'Protection': 'IP66 Waterproof' } },
   { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4 (Side View)', sub: 'Slim Outdoor Biometric Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_Side_500x500.png', specs: { 'Display': '4-inch Touch Screen', 'Housing': 'Vandal-proof & IP66' } },
 
   // 11. SpeedFace H5L (2 items)
   { category: 'time-attendance', subCategory: 'SpeedFace H5L', name: 'SpeedFace H5L', sub: 'Visible Light Facial Recognition Terminal', tags: ['SpeedFace H5L', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace H5L/SpeedFace H5L.png', specs: { 'Display': '5-inch Color LCD', 'Recognition': 'Visible Light AI', 'Capacity': '6,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace H5L', name: 'SpeedFace H5L (Model 2)', sub: 'Visible Light Terminal with RFID Support', tags: ['SpeedFace H5L', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace H5L/SpeedFace H5L-2.png', specs: { 'Display': '5-inch Touchscreen', 'Verification': '<0.35s High Speed' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace H5L', name: 'SpeedFace H5L', sub: 'Visible Light Terminal with RFID Support', tags: ['SpeedFace H5L', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace H5L/SpeedFace H5L-2.png', specs: { 'Display': '5-inch Touchscreen', 'Verification': '<0.35s High Speed' } },
 
   // 12. FaceDepot-7BL (3 items)
   { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Indoor Visible Light Facial Recognition Station', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL.png', specs: { 'Display': '7-inch Touch Screen', 'Capacity': '10,000 Face Templates', 'Platform': 'Android' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL (Model 2)', sub: 'Facial Terminal with Turnstile Integration', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-2.png', specs: { 'Display': '7-inch Screen', 'Mounting': 'Turnstile / Wall Mount' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL (Model 3)', sub: 'Visible Light Station for High-Traffic Entry', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-3.png', specs: { 'Display': '7-inch HD Display', 'Capacity': '10,000 Face Templates' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Facial Terminal with Turnstile Integration', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-2.png', specs: { 'Display': '7-inch Screen', 'Mounting': 'Turnstile / Wall Mount' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Visible Light Station for High-Traffic Entry', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-3.png', specs: { 'Display': '7-inch HD Display', 'Capacity': '10,000 Face Templates' } },
 
   // 13. FaceDepot 8AL (3 items)
   { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor Facial Recognition Terminal with Large Screen', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL.jpg', specs: { 'Display': '8-inch Touchscreen', 'Protection': 'IP68 Waterproof', 'Capacity': '30,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL (Model 2)', sub: 'Outdoor High-Capacity Facial Terminal', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-2.jpg', specs: { 'Display': '8-inch Screen', 'Protection': 'IP68 Rating' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL (Model 3)', sub: 'Biometric Access & Attendance Station', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-3.jpg', specs: { 'Display': '8-inch Touchscreen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor High-Capacity Facial Terminal', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-2.jpg', specs: { 'Display': '8-inch Screen', 'Protection': 'IP68 Rating' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Biometric Access & Attendance Station', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-3.jpg', specs: { 'Display': '8-inch Touchscreen', 'Camera': '2MP Dual Lens' } },
 
   // 14. FaceDepot 4A (1 item)
   { category: 'time-attendance', subCategory: 'FaceDepot 4A', name: 'FaceDepot 4A', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['FaceDepot 4A', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 4A/FaceDepot 4A.png', specs: { 'Display': '4-inch Color Touch', 'Recognition': 'Visible Light Facial AI', 'Capacity': '3,000 Faces' } },
 
   // 15. Eface 10 (2 items)
   { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10', sub: 'Economical Visible Light Facial Recognition Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10.png', specs: { 'Display': '4.3-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Capacity': '500 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10 (Model 2)', sub: 'Compact Facial Attendance Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10-2.png', specs: { 'Display': '4.3-inch Touch Screen', 'Communication': 'TCP/IP, USB Host' } },
+  { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10', sub: 'Compact Facial Attendance Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10-2.png', specs: { 'Display': '4.3-inch Touch Screen', 'Communication': 'TCP/IP, USB Host' } },
 
   // 16. D3 (3 items)
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3 (Model 1)', sub: 'Desktop Visible Light Facial Recognition Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-1.png', specs: { 'Design': 'Desktop Ergonomic Form Factor', 'Display': '4-inch Touchscreen', 'Recognition': 'Visible Light Facial' } },
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3 (Model 2)', sub: 'Smart Desktop Attendance Unit', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-2.png', specs: { 'Display': '4-inch Touch Panel', 'Communication': 'Wi-Fi & TCP/IP' } },
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3 (Model 3)', sub: 'AI Visible Light Desktop Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-4.png', specs: { 'Display': '4-inch Touchscreen', 'Camera': 'Wide Angle HD Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'Desktop Visible Light Facial Recognition Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-1.png', specs: { 'Design': 'Desktop Ergonomic Form Factor', 'Display': '4-inch Touchscreen', 'Recognition': 'Visible Light Facial' } },
+  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'Smart Desktop Attendance Unit', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-2.png', specs: { 'Display': '4-inch Touch Panel', 'Communication': 'Wi-Fi & TCP/IP' } },
+  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'AI Visible Light Desktop Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-4.png', specs: { 'Display': '4-inch Touchscreen', 'Camera': 'Wide Angle HD Dual Lens' } },
 
   // 17. MiniTA (2 items)
-  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA (Model 1)', sub: 'Ultra-Compact Time Attendance Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA.png', specs: { 'Display': '2.8-inch TFT Color Screen', 'Recognition': 'Facial & Fingerprint', 'Form Factor': 'Ultra-Compact' } },
-  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA (Model 2)', sub: 'Mini Time Attendance & Access Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA-2.png', specs: { 'Display': '2.8-inch Color Screen', 'Communication': 'TCP/IP, USB' } },
+  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA', sub: 'Ultra-Compact Time Attendance Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA.png', specs: { 'Display': '2.8-inch TFT Color Screen', 'Recognition': 'Facial & Fingerprint', 'Form Factor': 'Ultra-Compact' } },
+  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA', sub: 'Mini Time Attendance & Access Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA-2.png', specs: { 'Display': '2.8-inch Color Screen', 'Communication': 'TCP/IP, USB' } },
 
   // 18. SpeedFace V3L Series (2 items)
-  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series (Model 1)', sub: 'Slim Visible Light Facial & RFID Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-1.png', specs: { 'Display': '2.4-inch Touch Screen', 'Protection': 'IP65 Water & Dust Resistant', 'Recognition': 'Visible Light Facial' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series (Model 2)', sub: 'Slim Facial & Fingerprint Attendance Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-2.png', specs: { 'Display': '2.4-inch Touch Screen', 'Sensor': 'Fingerprint & Facial AI' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series', sub: 'Slim Visible Light Facial & RFID Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-1.png', specs: { 'Display': '2.4-inch Touch Screen', 'Protection': 'IP65 Water & Dust Resistant', 'Recognition': 'Visible Light Facial' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series', sub: 'Slim Facial & Fingerprint Attendance Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-2.png', specs: { 'Display': '2.4-inch Touch Screen', 'Sensor': 'Fingerprint & Facial AI' } },
 
   // 19. SpeedFace - V5L (2 items)
   { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L', sub: 'High-Performance Visible Light Facial Recognition Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L.png', specs: { 'Display': '5-inch Touch Screen', 'Capacity': '6,000 Face Templates', 'Verification': '<0.35s Speed' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L (Model 2)', sub: 'Visible Light & RFID Reader Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L-2.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wiegand, RS485' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L', sub: 'Visible Light & RFID Reader Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L-2.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wiegand, RS485' } },
 
   // 20. ProBio Plus Series (1 item)
   { category: 'time-attendance', subCategory: 'ProBio Plus Series', name: 'ProBio Plus Series', sub: 'High-Security Biometric Access & Attendance Terminal', tags: ['ProBio Plus Series', 'ProBio'], image: '/images/products/Time Attendance/ProBio Plus Series/ProBio Plus Series.png', specs: { 'Sensor': 'SilkID Fingerprint Sensor', 'Display': '2.8-inch Color Display', 'Security': 'Push Data & Firmware' } },
 
   // 21. MiniAC (3 items)
   { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC.png', specs: { 'Display': '5-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Platform': 'Linux' } },
-  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC (Model 2)', sub: 'Linux-Based Visible Light Station', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-2.png', specs: { 'Display': '5-inch Touch Display', 'Capacity': '3,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC (Model 3)', sub: 'Smart Facial Access & Attendance Unit', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-3.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
+  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Linux-Based Visible Light Station', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-2.png', specs: { 'Display': '5-inch Touch Display', 'Capacity': '3,000 Face Templates' } },
+  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Smart Facial Access & Attendance Unit', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-3.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
 
   // 22. FaceDepot 7C (3 items)
   { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: '7-inch Visible Light Facial Recognition Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C.png', specs: { 'Display': '7-inch Touch Screen', 'Recognition': 'Visible Light Facial AI', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C (Model 2)', sub: 'Indoor Facial Attendance Station', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-2.png', specs: { 'Display': '7-inch Touch Panel', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C (Model 3)', sub: 'Large Display Visible Light Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-3.png', specs: { 'Display': '7-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: 'Indoor Facial Attendance Station', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-2.png', specs: { 'Display': '7-inch Touch Panel', 'Capacity': '10,000 Faces' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: 'Large Display Visible Light Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-3.png', specs: { 'Display': '7-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
 
   // 23. FaceDepot 7CL (3 items)
   { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Outdoor Visible Light Facial Recognition Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL.png', specs: { 'Display': '7-inch Touch Screen', 'Ingress Protection': 'Weatherproof Rating', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL (Model 2)', sub: 'High-Capacity Outdoor Facial Terminal', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-2.png', specs: { 'Display': '7-inch Touch Screen', 'Camera': 'Wide Angle 2MP HD' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL (Model 3)', sub: 'Turnstile & Wall Mount Facial Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-3.png', specs: { 'Display': '7-inch Touch Panel', 'Mounting': 'Turnstile / Stand Mount' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'High-Capacity Outdoor Facial Terminal', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-2.png', specs: { 'Display': '7-inch Touch Screen', 'Camera': 'Wide Angle 2MP HD' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Turnstile & Wall Mount Facial Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-3.png', specs: { 'Display': '7-inch Touch Panel', 'Mounting': 'Turnstile / Stand Mount' } },
 
   // 24. MiniAC Plus (3 items)
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial & Palm Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.jpg', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light & Palm', 'Capacity': '3,000 Faces / 1,500 Palms' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus (Model 2)', sub: 'Multi-Biometric Facial & Palm Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.jpg', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus (Model 3)', sub: 'Palm & Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.jpg', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.jpg', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Multi-Biometric Facial Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.jpg', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.jpg', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
 
   // Additional Software & Terminals
   {
@@ -336,7 +366,134 @@ const PRODUCTS = [
       'API Integrations': 'Zoho, SAP, ADP, Zoho Peoples, Oracle middleware',
       'Mobile App': 'ZKBio Time Mobile App (Geo-Fencing attendance)'
     }
-  }
+  },
+
+  // ----------------------------------------------------
+  // ARMATURA CATEGORY PRODUCTS
+  // ----------------------------------------------------
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC20', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC20', 'Standalone'], image: '/images/products/Access Control/ProMA/ProMA_02_500x500.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC30', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC30', 'Standalone'], image: '/images/products/Access Control/ProMA/ProMA_03_500x500.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+
+  { category: 'armatura', subCategory: 'Armatura One', name: 'Armatura Datasheet', sub: 'Armatura One comprehensive specifications', tags: ['Armatura One'], image: '/images/products/Access Control/ProMA/ProMA_04_500x500.png', specs: { 'Platform': 'Armatura One', 'Document': 'Datasheet' } },
+
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'VG10CKQ', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVR-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVS-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVS-50', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVR-10', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP10C', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP30CF', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP20 Series', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHDU Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHEB Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHSC-1000', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
+
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'AMTL-BGM1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
+
+  // ----------------------------------------------------
+  // SMART ENTRANCE CONTROL PRODUCTS
+  // ----------------------------------------------------
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL3000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200L', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200DL', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-F1000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Zophon-S1000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-T1000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL8000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-S2000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT3000S', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL700 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL500 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS200 Pro', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS1000 Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'mTS1000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn S1000 & S1200', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Pro Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL500', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Comet Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Mars-S100 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL320', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL200', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL320', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL220', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT2000S', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000D-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000S-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000D-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000S-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM500', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM400', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM1000 Series', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier- BG300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BG2000 Series', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - CMP200', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LRM300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LPRS1000', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
+
+  // ----------------------------------------------------
+  // SECURITY INSPECTION PRODUCTS
+  // ----------------------------------------------------
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6040A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6550A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030C', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6040', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6550', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX100100', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
+
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D3180V', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1090', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1010L', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2110', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'AMD1800 Pro', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065S', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065L', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2180', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
+
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D100S', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D180', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D160', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
+
+  // Video Surveillance - Dome Series
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Mini Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Mini Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Fixed Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '8MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/8MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '8MP', 'Type': 'Fixed Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Vandalproof Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Vandalproof Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Vandalproof Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Varifocal Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Varifocal Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: '8MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/8MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '8MP', 'Type': 'Motorized Varifocal Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: 'GV-DNC8742', sub: '12MP Fisheye Dome IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '12MP', 'Type': 'Fisheye Dome' } },
+  { category: 'video-surveillance', subCategory: 'Dome Series', name: 'GV-DNC283(C)', sub: '2MP Color Dome IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Color Dome' } },
+
+  // Video Surveillance - Bullet Series
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Fixed Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Mini Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '8MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '8MP', 'Type': 'Fixed Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Varifocal Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Varifocal Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '8MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '8MP', 'Type': 'Motorized Varifocal Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Bullet' } },
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Color Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Color Bullet' } }
 ];
 
 export default function Products({ navigate }) {
@@ -344,10 +501,20 @@ export default function Products({ navigate }) {
   const [activeSubcategory, setActiveSubcategory] = useState(null);
   const [accessControlOpen, setAccessControlOpen] = useState(true);
   const [timeAttendanceOpen, setTimeAttendanceOpen] = useState(true);
+  const [armaturaOpen, setArmaturaOpen] = useState(true);
+  const [smartEntranceOpen, setSmartEntranceOpen] = useState(true);
+  const [securityInspectionOpen, setSecurityInspectionOpen] = useState(true);
+  const [videoSurveillanceOpen, setVideoSurveillanceOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [timeSubOpen, setTimeSubOpen] = useState({});
+  const [accessSubOpen, setAccessSubOpen] = useState({});
+  const [armaturaSubOpen, setArmaturaSubOpen] = useState({});
+  const [smartEntranceSubOpen, setSmartEntranceSubOpen] = useState({});
+  const [securityInspectionSubOpen, setSecurityInspectionSubOpen] = useState({});
+  const [videoSurveillanceSubOpen, setVideoSurveillanceSubOpen] = useState({});
 
   useEffect(() => {
     const handleProductSearch = (e) => {
@@ -397,11 +564,40 @@ export default function Products({ navigate }) {
     let productsInCat = PRODUCTS.filter(p => p.category === catId);
 
     if (activeSubcategory) {
-      productsInCat = productsInCat.filter(p =>
-        p.subCategory === activeSubcategory ||
-        p.name === activeSubcategory ||
-        p.tags.includes(activeSubcategory)
-      );
+      if (activeSubcategory === 'Visible Series') {
+        const visibleList = [
+          'miniac', 'miniac plus', 'facedepot 7cl', 'facedepot 7c', 'probio plus series',
+          'speedface - v5l', 'speedface-v5l', 'minita', 'd3', 'speedfacem4', 'speedface m4',
+          'eface 10', 'facedepot-7bl', 'facedepot 8al', 'facedepot 4a', 'speedface h5l',
+          'speedface v3l series', 'speedface-v5', 'mb10-vl'
+        ];
+        productsInCat = productsInCat.filter(p =>
+          visibleList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+        );
+      } else if (activeSubcategory === 'Fingerprint Attendance') {
+        const fpList = ['k40 pro', 'k45 pro', 'in01-a'];
+        productsInCat = productsInCat.filter(p =>
+          fpList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+        );
+      } else if (activeSubcategory === 'Face Attendance') {
+        const faceList = ['mb30', 'mb360'];
+        productsInCat = productsInCat.filter(p =>
+          faceList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+        );
+      } else {
+        let lookupCat = activeSubcategory;
+        if (lookupCat === 'C3 Plus Series') lookupCat = 'C3-100 Plus';
+        if (lookupCat === 'InBioPC Series & DE-10') lookupCat = 'InBio PC Series & DE10';
+        if (lookupCat === 'InBio Pro Plus Series') lookupCat = 'inBio-160 Pro Plus';
+        
+        productsInCat = productsInCat.filter(p =>
+          p.subCategory === lookupCat ||
+          p.name === lookupCat ||
+          p.tags.includes(lookupCat) ||
+          p.subCategory.toLowerCase().includes(lookupCat.toLowerCase()) ||
+          p.name.toLowerCase().includes(lookupCat.toLowerCase())
+        );
+      }
     }
 
     if (!searchQuery) return productsInCat;
@@ -513,6 +709,10 @@ export default function Products({ navigate }) {
               {CATEGORIES.map(cat => {
                 const isAccessControl = cat.id === 'access-control';
                 const isTimeAttendance = cat.id === 'time-attendance';
+                const isArmatura = cat.id === 'armatura';
+                const isSmartEntrance = cat.id === 'smart-entrance';
+                const isSecurityInspection = cat.id === 'security-inspection';
+                const isVideoSurveillance = cat.id === 'video-surveillance';
                 const count = PRODUCTS.filter(p => p.category === cat.id).length;
                 return (
                   <div key={cat.id} style={{ width: '100%' }}>
@@ -526,6 +726,18 @@ export default function Products({ navigate }) {
                         }
                         if (isTimeAttendance) {
                           setTimeAttendanceOpen(!timeAttendanceOpen);
+                        }
+                        if (isArmatura) {
+                          setArmaturaOpen(!armaturaOpen);
+                        }
+                        if (isSmartEntrance) {
+                          setSmartEntranceOpen(!smartEntranceOpen);
+                        }
+                        if (isSecurityInspection) {
+                          setSecurityInspectionOpen(!securityInspectionOpen);
+                        }
+                        if (isVideoSurveillance) {
+                          setVideoSurveillanceOpen(!videoSurveillanceOpen);
                         }
                         setSidebarOpen(false);
                         const el = document.getElementById(cat.id);
@@ -544,6 +756,26 @@ export default function Products({ navigate }) {
                             {timeAttendanceOpen ? '▲' : '▼'}
                           </span>
                         )}
+                        {isArmatura && (
+                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
+                            {armaturaOpen ? '▲' : '▼'}
+                          </span>
+                        )}
+                        {isSmartEntrance && (
+                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
+                            {smartEntranceOpen ? '▲' : '▼'}
+                          </span>
+                        )}
+                        {isSecurityInspection && (
+                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
+                            {securityInspectionOpen ? '▲' : '▼'}
+                          </span>
+                        )}
+                        {isVideoSurveillance && (
+                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
+                            {videoSurveillanceOpen ? '▲' : '▼'}
+                          </span>
+                        )}
                       </span>
                       <span className="cat-count">{count}</span>
                     </button>
@@ -551,23 +783,93 @@ export default function Products({ navigate }) {
                     {/* Access Control Subcategory Dropdown */}
                     {isAccessControl && accessControlOpen && (
                       <div className="subcat-menu">
-                        {ACCESS_CONTROL_SUBCATEGORIES.map((subName) => {
+                        {Object.keys(ACCESS_CONTROL_HIERARCHY).map((subName) => {
                           const isSubActive = activeCategory === 'access-control' && activeSubcategory === subName;
-                          const subCount = PRODUCTS.filter(p => p.category === 'access-control' && p.subCategory === subName).length;
+                          const isExpanded = accessSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'access-control');
+                          let subCount = 0;
+                          
+                          if (subName === 'Multi Door Controller') {
+                            const list = ['c3-', 'inbio pc', 'inbio-160', 'dm10', 'atlas prox', 'atlas bio'];
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else if (subName === 'Standalone Devices') {
+                            const list = ['f09', 'sf1005', 'mk-v1', 'f18', 'f22', 'sf100', 'x7', 'sc405', 'sc800', 'sa40'];
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase() === s || p.name.toLowerCase().includes(s) || p.subCategory.toLowerCase().includes(s))).length;
+                          } else if (subName === 'Readers') {
+                            const list = ['qr600', 'fr1200', 'fr1500s', 'kr500', 'rs485 reader'];
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else if (subName === 'Elevator Access Controller') {
+                            const list = ['ec16 & dex16', 'ec10 & ex16'];
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else {
+                            subCount = subProds.filter(p => p.subCategory === subName).length;
+                          }
+                          
                           return (
-                            <button
-                              key={subName}
-                              className={`subcat-btn ${isSubActive ? 'active' : ''}`}
-                              onClick={() => {
-                                setActiveCategory('access-control');
-                                setActiveSubcategory(subName);
-                                setSearchQuery('');
-                                setSidebarOpen(false);
-                              }}
-                            >
-                              <span>{subName}</span>
-                              <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
-                            </button>
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('access-control');
+                                  setActiveSubcategory(subName);
+                                  setAccessSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {ACCESS_CONTROL_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'access-control' && activeSubcategory === modelName;
+                                    let lookupCat = modelName;
+                                    if (lookupCat === 'C3 Plus Series') lookupCat = 'C3-100 Plus';
+                                    if (lookupCat === 'InBioPC Series & DE-10') lookupCat = 'InBio PC Series & DE10';
+                                    if (lookupCat === 'InBio Pro Plus Series') lookupCat = 'inBio-160 Pro Plus';
+                                    
+                                    const modelCount = subProds.filter(p => p.subCategory === lookupCat || p.name === lookupCat || p.tags.includes(lookupCat) || p.subCategory.toLowerCase().includes(lookupCat.toLowerCase())).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('access-control');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
                           );
                         })}
                       </div>
@@ -576,23 +878,380 @@ export default function Products({ navigate }) {
                     {/* Time Attendance Subcategory Dropdown */}
                     {isTimeAttendance && timeAttendanceOpen && (
                       <div className="subcat-menu">
-                        {TIME_ATTENDANCE_SUBCATEGORIES.map((subName) => {
+                        {Object.keys(TIME_ATTENDANCE_HIERARCHY).map((subName) => {
                           const isSubActive = activeCategory === 'time-attendance' && activeSubcategory === subName;
-                          const subCount = PRODUCTS.filter(p => p.category === 'time-attendance' && p.subCategory === subName).length;
+                          const isExpanded = timeSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'time-attendance');
+                          let subCount = 0;
+                          
+                          if (subName === 'Visible Series') {
+                            const list = TIME_ATTENDANCE_HIERARCHY['Visible Series'].map(s => s.toLowerCase());
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else if (subName === 'Fingerprint Attendance') {
+                            const list = TIME_ATTENDANCE_HIERARCHY['Fingerprint Attendance'].map(s => s.toLowerCase());
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else if (subName === 'Face Attendance') {
+                            const list = TIME_ATTENDANCE_HIERARCHY['Face Attendance'].map(s => s.toLowerCase());
+                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                          } else {
+                            subCount = subProds.filter(p => p.subCategory === subName).length;
+                          }
+                          
                           return (
-                            <button
-                              key={subName}
-                              className={`subcat-btn ${isSubActive ? 'active' : ''}`}
-                              onClick={() => {
-                                setActiveCategory('time-attendance');
-                                setActiveSubcategory(subName);
-                                setSearchQuery('');
-                                setSidebarOpen(false);
-                              }}
-                            >
-                              <span>{subName}</span>
-                              <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
-                            </button>
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('time-attendance');
+                                  setActiveSubcategory(subName);
+                                  setTimeSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {TIME_ATTENDANCE_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'time-attendance' && activeSubcategory === modelName;
+                                    const mList = [modelName.toLowerCase()];
+                                    const modelCount = subProds.filter(p => mList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('time-attendance');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                    {/* Armatura Subcategory Dropdown */}
+                    {isArmatura && armaturaOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(ARMATURA_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'armatura' && activeSubcategory === subName;
+                          const isExpanded = armaturaSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'armatura');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('armatura');
+                                  setActiveSubcategory(subName);
+                                  setArmaturaSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {ARMATURA_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'armatura' && activeSubcategory === modelName;
+                                    const modelCount = subProds.filter(p => p.subCategory === subName && p.name === modelName).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('armatura');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Smart Entrance Subcategory Dropdown */}
+                    {isSmartEntrance && smartEntranceOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(SMART_ENTRANCE_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'smart-entrance' && activeSubcategory === subName;
+                          const isExpanded = smartEntranceSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'smart-entrance');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('smart-entrance');
+                                  setActiveSubcategory(subName);
+                                  setSmartEntranceSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {SMART_ENTRANCE_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'smart-entrance' && activeSubcategory === modelName;
+                                    const modelCount = subProds.filter(p => p.subCategory === subName && p.name === modelName).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('smart-entrance');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Security Inspection Subcategory Dropdown */}
+                    {isSecurityInspection && securityInspectionOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(SECURITY_INSPECTION_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'security-inspection' && activeSubcategory === subName;
+                          const isExpanded = securityInspectionSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'security-inspection');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('security-inspection');
+                                  setActiveSubcategory(subName);
+                                  setSecurityInspectionSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {SECURITY_INSPECTION_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'security-inspection' && activeSubcategory === modelName;
+                                    const modelCount = subProds.filter(p => p.subCategory === subName && p.name === modelName).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('security-inspection');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Video Surveillance Subcategory Dropdown */}
+                    {isVideoSurveillance && videoSurveillanceOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(VIDEO_SURVEILLANCE_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'video-surveillance' && activeSubcategory === subName;
+                          const isExpanded = videoSurveillanceSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'video-surveillance');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('video-surveillance');
+                                  setActiveSubcategory(subName);
+                                  setVideoSurveillanceSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {VIDEO_SURVEILLANCE_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'video-surveillance' && activeSubcategory === modelName;
+                                    const modelCount = subProds.filter(p => p.subCategory === subName && p.name === modelName).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('video-surveillance');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
                           );
                         })}
                       </div>
