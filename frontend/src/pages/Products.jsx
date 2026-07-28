@@ -493,7 +493,19 @@ const PRODUCTS = [
   { category: 'video-surveillance', subCategory: 'Bullet Series', name: '8MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '8MP', 'Type': 'Motorized Varifocal Bullet' } },
   { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Bullet' } },
   { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Color Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Color Bullet' } }
+  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Color Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Color Bullet' } },
+
+  // Video Surveillance - NVR
+  { category: 'video-surveillance', subCategory: 'NVR', name: '8CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '8', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '256CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/Recording Server Placeholder.png', specs: { 'Channels': '256', 'Type': 'Recording Server' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '128CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/Recording Server Placeholder.png', specs: { 'Channels': '128', 'Type': 'Recording Server' } }
 ];
 
 export default function Products({ navigate }) {
