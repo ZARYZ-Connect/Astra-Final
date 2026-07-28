@@ -1,10 +1,9 @@
-
 services:
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: astra-test-backend
+    container_name: astra-backend
     restart: unless-stopped
     env_file:
       - ./backend/.env
@@ -14,16 +13,16 @@ services:
     expose:
       - "8000"
     ports:
-      - "8017:8000"
+      - "8015:8000"
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: astra-test-frontend
+    container_name: astra-frontend
     restart: unless-stopped
     ports:
-      - "8092:80"
+      - "8090:80"
     depends_on:
       - backend
 
