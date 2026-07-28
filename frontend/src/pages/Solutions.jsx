@@ -109,35 +109,35 @@ export default function Solutions({ navigate }) {
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
               <div>
-                <div className="download-name">EasyTimePro</div>
+                <div className="download-name">easyTimePro-10.2.5-win-x64</div>
                 <div className="download-type">Time &amp; Attendance Management</div>
               </div>
               <div className="download-type">zip</div>
               <div className="download-size">273.67 MB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/EasyTimePro#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260701/easy%20TimePro-10.2.5-win-x64..zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
               <div>
-                <div className="download-name">EasyCafeteria</div>
+                <div className="download-name">Easy Cafeteria</div>
                 <div className="download-type">Cafeteria Management Software</div>
               </div>
               <div className="download-type">zip</div>
               <div className="download-size">251.39 MB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/easy-cafeteria#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20230828/easy%20Cafeteria.zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
               <div>
-                <div className="download-name">easyWDMS</div>
+                <div className="download-name">easyWDMS-10.2.5-win-x64</div>
                 <div className="download-type">Document Management System</div>
               </div>
               <div className="download-type">zip</div>
               <div className="download-size">312.41 MB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/easyWDMS#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260630/easyWDMS-10.2.5-win-x64.zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div style={{ gridColumn: '1/-1', padding: '1rem 0 0.5rem', marginBottom: '0.5rem', borderTop: '1px dashed var(--border)', marginTop: '1rem' }}>
               <h4 style={{ fontFamily: 'var(--font-h)', fontWeight: 600, color: 'var(--text)', fontSize: '1.1rem' }}>Linux</h4>
@@ -145,38 +145,38 @@ export default function Solutions({ navigate }) {
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
               <div>
-                <div className="download-name">easyWDMS-10.2.4-linux-x64</div>
+                <div className="download-name">easyWDMS-10.2.5-linux-x64</div>
                 <div className="download-type">Document Management System</div>
               </div>
               <div className="download-type">zip</div>
               <div className="download-size">43.46 MB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/easyWDMS#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260630/easyWDMS-10.2.5-linux-x64.zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
               <div>
-                <div className="download-name">easyTimePro-10.2.4-linux-x64</div>
+                <div className="download-name">easyTimePro-10.2.5-linux-x64</div>
                 <div className="download-type">Time &amp; Attendance Management</div>
               </div>
               <div className="download-type">zip</div>
               <div className="download-size">43.5 MB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/EasyTimePro#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260701/easy%20TimePro-10.2.5-linux-x64..zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div style={{ gridColumn: '1/-1', padding: '1.5rem 0 0.5rem', borderBottom: '2px solid var(--border)', marginBottom: '1rem', marginTop: '1.5rem' }}>
               <h3 style={{ fontFamily: 'var(--font-h)', fontWeight: 700, color: 'var(--accent)', fontSize: '1.3rem' }}>Access Control solutions</h3>
             </div>
             <div className="download-item reveal">
-              <div className="download-icon">ZIP</div>
+              <div className="download-icon">EXE</div>
               <div>
                 <div className="download-name">Armatura ONE_Overseas_V4.5.0</div>
                 <div className="download-type">Access Control Solution</div>
               </div>
-              <div className="download-type">zip</div>
+              <div className="download-type">exe</div>
               <div className="download-size">Contact Sales</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/armatura-one#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260219/Armatura%20ONE_Overseas_V4.5.0_RELEASE_x64_2026-01-30-1734.exe" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div className="download-item reveal">
               <div className="download-icon">ZIP</div>
@@ -187,18 +187,18 @@ export default function Solutions({ navigate }) {
               <div className="download-type">zip</div>
               <div className="download-size">1.09 GB</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/time-attendance-software/easy-gymfit#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20251009/EasyGymFit_India_C20250718_6.1.1_R.zip" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
             <div className="download-item reveal">
-              <div className="download-icon">ZIP</div>
+              <div className="download-icon">EXE</div>
               <div>
-                <div className="download-name">ZKBio CVSecurity</div>
+                <div className="download-name">ZKBio CVSecurity 6.8.0 R x64</div>
                 <div className="download-type">Access Control Solution</div>
               </div>
-              <div className="download-type">zip</div>
+              <div className="download-type">exe</div>
               <div className="download-size">Contact Sales</div>
               <div className="download-date">Latest</div>
-              <a href="https://www.zkteco.in/ZKBio_CVSecurity/493#Download" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
+              <a href="https://d1agmp9y4cki1i.cloudfront.net/files/20260721/Overseas_ZKBio%20CVSecurity%206.8.0_R_x64.exe" className="download-btn" target="_blank" rel="noreferrer"><LuDownload size={14} style={{marginRight:'5px',verticalAlign:'middle'}}/>Download</a>
             </div>
           </div>
         </div>
