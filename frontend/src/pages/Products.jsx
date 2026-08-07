@@ -130,10 +130,10 @@ const PRODUCTS = [
   { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
 
   // 8. Atlas Prox Series (4 items)
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-3.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-4.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-2.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-3.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-4.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
 
   // 9. Atlas Bio Series (2 items)
   { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Bio Series/Atlas Bio Series-2.png', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
@@ -178,7 +178,7 @@ const PRODUCTS = [
   { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
 
   // 19. DM10 (1 item)
-  { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/DM10/DM10.jpg', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
+  { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/DM10/DM10.png', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
 
   // 20. X7 (3 items)
   { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
@@ -186,13 +186,13 @@ const PRODUCTS = [
   { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
 
   // 21. InBio PC Series & DE10 (2 items)
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC Series & DE10.jpg', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC Series & DE10.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
   { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
 
   // 22. C3-100 Plus (3 items)
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-100 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-200 Plus', sub: 'IP-Based 2-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-200 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-400 Plus', sub: 'IP-Based 4-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-400 Plus-A.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-100 Plus-01.png', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-200 Plus', sub: 'IP-Based 2-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-200 Plus-01.png', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-400 Plus', sub: 'IP-Based 4-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-400 Plus-A.png', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
 
   // 23. inBio-160 Pro Plus (3 items)
   { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-160 Pro Plus', sub: 'High Security 1-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], badge: 'popular', featured: true, image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
@@ -203,14 +203,14 @@ const PRODUCTS = [
 
   // 1. MB360 (3 items)
   { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Time Attendance & Access Control Terminal', tags: ['MB360', 'Face & Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/MB360/MB360.png', specs: { 'Recognition': 'Face & Fingerprint', 'Capacity': '1,500 Faces / 2,000 Fingerprints', 'Display': '2.8-inch TFT Screen' } },
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Terminal with Card Reader', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-1.jpg', specs: { 'Recognition': 'Face & Fingerprint & Card', 'Display': '2.8-inch Color Display' } },
+  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Terminal with Card Reader', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-1.png', specs: { 'Recognition': 'Face & Fingerprint & Card', 'Display': '2.8-inch Color Display' } },
   { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Advanced Hybrid Biometric Terminal', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-2.png', specs: { 'Communication': 'TCP/IP, USB Host', 'Display': '2.8-inch Color Display' } },
 
   // 2. MB30 (1 item)
   { category: 'time-attendance', subCategory: 'MB30', name: 'MB30', sub: 'Multi-Biometric Time Attendance Terminal', tags: ['MB30', 'Face & Fingerprint'], image: '/images/products/Time Attendance/MB30/MB30.png', specs: { 'Recognition': 'Face & Fingerprint', 'Display': '2.8-inch TFT Screen', 'Capacity': '1,000 Faces' } },
 
   // 3. MB10-VL (1 item)
-  { category: 'time-attendance', subCategory: 'MB10-VL', name: 'MB10-VL', sub: 'Visible Light Facial Recognition Terminal', tags: ['MB10-VL', 'Visible Light'], image: '/images/products/Time Attendance/MB10-VL/MB10-VL.jpg', specs: { 'Recognition': 'Visible Light Facial', 'Display': '2.8-inch TFT Screen', 'Capacity': '500 Faces' } },
+  { category: 'time-attendance', subCategory: 'MB10-VL', name: 'MB10-VL', sub: 'Visible Light Facial Recognition Terminal', tags: ['MB10-VL', 'Visible Light'], image: '/images/products/Time Attendance/MB10-VL/MB10-VL.png', specs: { 'Recognition': 'Visible Light Facial', 'Display': '2.8-inch TFT Screen', 'Capacity': '500 Faces' } },
 
   // 4. K40 Pro (2 items)
   { category: 'time-attendance', subCategory: 'K40 Pro', name: 'K40 Pro', sub: 'Fingerprint Time Attendance Terminal with Battery Backup', tags: ['K40 Pro', 'Fingerprint Attendance'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/K40 Pro/K40 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch TFT Screen', 'Battery': 'Built-in Backup Battery' } },
@@ -247,9 +247,9 @@ const PRODUCTS = [
   { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Visible Light Station for High-Traffic Entry', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-3.png', specs: { 'Display': '7-inch HD Display', 'Capacity': '10,000 Face Templates' } },
 
   // 13. FaceDepot 8AL (3 items)
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor Facial Recognition Terminal with Large Screen', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL.jpg', specs: { 'Display': '8-inch Touchscreen', 'Protection': 'IP68 Waterproof', 'Capacity': '30,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor High-Capacity Facial Terminal', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-2.jpg', specs: { 'Display': '8-inch Screen', 'Protection': 'IP68 Rating' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Biometric Access & Attendance Station', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-3.jpg', specs: { 'Display': '8-inch Touchscreen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor Facial Recognition Terminal with Large Screen', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL.png', specs: { 'Display': '8-inch Touchscreen', 'Protection': 'IP68 Waterproof', 'Capacity': '30,000 Face Templates' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor High-Capacity Facial Terminal', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-2.png', specs: { 'Display': '8-inch Screen', 'Protection': 'IP68 Rating' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Biometric Access & Attendance Station', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-3.png', specs: { 'Display': '8-inch Touchscreen', 'Camera': '2MP Dual Lens' } },
 
   // 14. FaceDepot 4A (1 item)
   { category: 'time-attendance', subCategory: 'FaceDepot 4A', name: 'FaceDepot 4A', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['FaceDepot 4A', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 4A/FaceDepot 4A.png', specs: { 'Display': '4-inch Color Touch', 'Recognition': 'Visible Light Facial AI', 'Capacity': '3,000 Faces' } },
@@ -295,8 +295,8 @@ const PRODUCTS = [
 
   // 24. MiniAC Plus (3 items)
   { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.png', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Multi-Biometric Facial Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.jpg', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.jpg', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Multi-Biometric Facial Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.png', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.png', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
 
   // Additional Software & Terminals
   {
@@ -307,7 +307,7 @@ const PRODUCTS = [
     tags: ['Android OS', '4-inch Screen', 'API Integration'],
     badge: 'new',
     featured: true,
-    image: 'https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211210/4e39c8665c47095ab4fd384d98808b1a.jpg',
+    image: 'https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211210/4e39c8665c47095ab4fd384d98808b1a.png',
     specs: {
       'Face Capacity': '8,000 templates',
       'Operating System': 'Android OS with security layer',
@@ -339,18 +339,18 @@ const PRODUCTS = [
   // ----------------------------------------------------
   // ARMATURA CATEGORY PRODUCTS
   // ----------------------------------------------------
-  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC20', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC20', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC20/OmniAC20-1.jpg', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
-  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC30', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC30', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC30/OmniAC30.jpg', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC20', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC20', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC20/OmniAC20-1.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC30', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC30', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC30/OmniAC30.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
 
-  { category: 'armatura', subCategory: 'Armatura One', name: 'Armatura One', sub: 'Armatura One comprehensive specifications', tags: ['Armatura One'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.jpg', specs: { 'Platform': 'Armatura One', 'Document': 'Datasheet' } },
+  { category: 'armatura', subCategory: 'Armatura One', name: 'Armatura One', sub: 'Armatura One comprehensive specifications', tags: ['Armatura One'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.png', specs: { 'Platform': 'Armatura One', 'Document': 'Datasheet' } },
 
   { category: 'armatura', subCategory: 'Armatura Reader', name: 'VG10CKQ', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/VG10CKQ/VG10CKQ-1.png', specs: { 'Type': 'Reader' } },
   { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVR-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVR-30/AMT-FAPVR-30-1.png', specs: { 'Type': 'Reader' } },
   { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVS-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVS-30/AMT-FAPVS-30.png', specs: { 'Type': 'Reader' } },
   { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVS-50', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-PVS-50/AMT-PVS-50.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVR-10', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (3).jpg', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP10C', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.jpg', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP30CF', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP30CF/EP30CF.jpg', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVR-10', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (3).png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP10C', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP30CF', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP30CF/EP30CF.png', specs: { 'Type': 'Reader' } },
   { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP20 Series', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP20 Series/EP20C Series.png', specs: { 'Type': 'Reader' } },
 
   { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHDU Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVR-30/AMT-FAPVR-30-2.png', specs: { 'Type': 'Controller' } },
@@ -358,8 +358,8 @@ const PRODUCTS = [
   { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHSC-1000', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Armatura/Armatura Reader/AMT-PVS-50/AMT-PVS-50-4.png', specs: { 'Type': 'Controller' } },
 
   { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'AMTL-BGM1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP20 Series/EP20CKQ-2.png', specs: { 'Type': 'Entrance Control' } },
-  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP30CF/Aegis-2000.jpg', specs: { 'Type': 'Entrance Control' } },
-  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (5).jpg', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP30CF/Aegis-2000.png', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (5).png', specs: { 'Type': 'Entrance Control' } },
 
   // ----------------------------------------------------
   // SMART ENTRANCE CONTROL PRODUCTS
@@ -1458,7 +1458,7 @@ export default function Products({ navigate }) {
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco Time Attendance Software is a powerful workforce management solution that simplifies attendance tracking, automates calculations, and provides valuable insights. With its comprehensive features, integration capabilities, and user-friendly interface, this software enhances efficiency, accuracy, and productivity in managing employee attendance.
                             </p>
-                            <img src="/images/products/Software/Time Attendance Software.jpg" alt="Time Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <img src="/images/products/Software/Time Attendance Software.png" alt="Time Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1499,7 +1499,7 @@ export default function Products({ navigate }) {
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco Cloud Attendance Software is a powerful, cloud-based time and attendance solution designed to streamline workforce management for businesses of all sizes. With real-time data access, advanced biometric integration, and intelligent reporting, it enables organizations to monitor employee attendance from anywhere, at any time.
                             </p>
-                            <img src="/images/products/Software/Cloud Attendance Sotware.jpg" alt="Cloud Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <img src="/images/products/Software/Cloud Attendance Sotware.png" alt="Cloud Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1534,7 +1534,7 @@ export default function Products({ navigate }) {
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               The ZKBioSecurity "All-in-One" Web security platform features multiple integrated modules for Personnel Management, Access Control, Attendance Management, Hotel Module, Consumption Management, Elevator Control (online/offline) With an optimized system architecture designed for high level biometric identification and a modern user friendly interface, it brings a whole new experience to users.
                             </p>
-                            <img src="/images/products/Software/ZKBio Security Software.jpg" alt="ZKBio Security Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <img src="/images/products/Software/ZKBio Security Software.png" alt="ZKBio Security Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[

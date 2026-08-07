@@ -9,7 +9,7 @@ export default function Home({ navigate }) {
   const slides = [
     '/images/Home Page Slide/Zkteco.png',
     '/images/Home Page Slide/Ajax.png',
-    '/images/Home Page Slide/Armatura.jpg',
+    '/images/Home Page Slide/Armatura.png',
     '/images/Home Page Slide/GVD.png'
   ];
   const [currentSlide, setCurrentSlide] = useState(0);

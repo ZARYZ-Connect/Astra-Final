@@ -181,7 +181,7 @@ export default function About({ navigate }) {
                 <p>Distributor</p>
               </div>
               <div className="about-big-card glow-green">
-                <img src="/images/LOgo/Armatura.jpeg" alt="Armatura" />
+                <img src="/images/LOgo/Armatura.png" alt="Armatura" />
                 <p>Distributor</p>
               </div>
               
@@ -199,7 +199,7 @@ export default function About({ navigate }) {
                 <p>Distributor</p>
               </div>
               <div className="about-big-card glow-green">
-                <img src="/images/LOgo/Armatura.jpeg" alt="Armatura" />
+                <img src="/images/LOgo/Armatura.png" alt="Armatura" />
                 <p>Distributor</p>
               </div>
               
@@ -217,7 +217,7 @@ export default function About({ navigate }) {
                 <p>Distributor</p>
               </div>
               <div className="about-big-card glow-green">
-                <img src="/images/LOgo/Armatura.jpeg" alt="Armatura" />
+                <img src="/images/LOgo/Armatura.png" alt="Armatura" />
                 <p>Distributor</p>
               </div>
             </div>
