@@ -163,8 +163,9 @@
     }
 
     .nav-logo {
-      height: 36px;
-      filter: brightness(0) invert(1);
+      height: 44px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -419,7 +420,7 @@
     }
 
     .mobile-nav-logo {
-      height: 34px;
+      height: 40px;
       width: auto;
       object-fit: contain;
     }
@@ -661,8 +662,7 @@
     }
 
     .ft-logo {
-      height: 30px;
-      filter: brightness(0) invert(1);
+      height: 36px;
       display: block;
     }
 

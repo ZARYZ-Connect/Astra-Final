@@ -172,8 +172,9 @@
     }
 
     .nav-logo {
-      height: 34px;
-      filter: brightness(0) invert(1)
+      height: 44px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-links {

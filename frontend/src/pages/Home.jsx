@@ -6,6 +6,21 @@ export default function Home({ navigate }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [scanState, setScanState] = useState(0);
 
+  const slides = [
+    '/images/Home Page Slide/Zkteco.png',
+    '/images/Home Page Slide/Ajax.png',
+    '/images/Home Page Slide/Armatura.jpg',
+    '/images/Home Page Slide/GVD.png'
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(slideTimer);
+  }, []);
+
   useScrollReveal();
 
   const scanStates = [
@@ -42,137 +57,57 @@ export default function Home({ navigate }) {
 
   return (
     <>
-      {/* ─── HERO ─── */}
-      <section className="hero">
-        <div className="hero-grid"></div>
-        <div className="hero-orb hero-orb-1"></div>
-        <div className="hero-orb hero-orb-2"></div>
-        <div className="container">
-          <div className="hero-inner-new">
-            {/* Left */}
-            <div className="hero-left-new reveal">
-              <h1 className="hero-title">
-                Secure Access.<br />
-                Seamless <em>Identity.</em><br />
-                Trusted Everywhere.
-              </h1>
-              <p className="hero-desc">
-                Astra Technologies delivers advanced biometric and access management solutions that help organizations secure people, places, and processes with confidence.
-              </p>
-              <div className="hero-actions">
-                <a href="products.html" className="btn btn-primary" onClick={(e) => handleLinkClick(e, 'products.html')} style={{display: 'inline-flex', alignItems: 'center', gap: '0.5rem'}}>
-                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                  Explore Products
-                </a>
-                <a href="contact.html" className="btn btn-outline" onClick={(e) => handleLinkClick(e, 'contact.html')} style={{display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.8rem'}}>
-                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  Contact Us
-                </a>
-              </div>
-            </div>
-
-            {/* Right visual */}
-            <div className="hero-right-new reveal">
-
-
-              <div className="hero-visual" style={{ margin: 0, padding: 0 }}>
-                <div className="hero-card-wrap">
-                  <div className="hero-card" style={{ margin: '0 auto' }}>
-                    <div className="hc-header">
-                      <div className="hc-dot red"></div>
-                      <div className="hc-dot yellow"></div>
-                      <div className="hc-dot green"></div>
-                      <div className="hc-title">Astra Identity Terminal</div>
-                    </div>
-                    <div className="hc-scan">
-                      <div className="fingerprint-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="32" cy="32" r="30" stroke="rgba(0,180,216,0.3)" strokeWidth="1" />
-                          <path d="M20 44 C20 44 22 20 32 20 C42 20 44 44 44 44" stroke="#00b4d8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                          <path d="M24 44 C24 44 24 26 32 26 C40 26 40 44 40 44" stroke="#00b4d8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                          <path d="M28 44 C28 44 28 32 32 32 C36 32 36 44 36 44" stroke="#00b4d8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                          <path d="M17 38 C17 38 17 16 32 16 C47 16 47 38 47 38" stroke="rgba(0,180,216,0.5)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                          <path d="M13 34 C13 34 13 12 32 12 C51 12 51 34 51 34" stroke="rgba(0,180,216,0.3)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                          <circle cx="32" cy="32" r="3" fill="#00b4d8" />
-                        </svg>
-                        <div className="scan-line"></div>
-                      </div>
-                      <div className="hc-status">
-                        <span className="hc-pulsar" style={scanStates[scanState].style}></span>
-                        {scanStates[scanState].text}
-                      </div>
-                    </div>
-                    <div className="hc-user">
-                      <div className="hc-avatar">AT</div>
-                      <div className="hc-user-info">
-                        <div className="hc-user-name">Authorised Personnel</div>
-                        <div className="hc-user-role">Level 3 — Corporate Campus</div>
-                      </div>
-                      <div className="hc-access">✓ Access</div>
-                    </div>
-                    
-                    {/* ─── MINI DISTRIBUTOR PANEL ─── */}
-                    <div className="mini-dp-wrap">
-                      <div className="mini-dp-header">
-                        <span className="mini-dp-slashes">///</span> 
-                        <span className="mini-dp-title">AUTHORISED DISTRIBUTORS</span> 
-                        <span className="mini-dp-slashes">&#92;&#92;&#92;</span>
-                      </div>
-                      
-                      <div className="mini-dp-carousel">
-                        <div className="mini-dp-track-wrap">
-                          <div className="mini-dp-track">
-                            {/* First Set */}
-                            <div className="mini-dp-card glow-green">
-                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-blue">
-                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-red">
-                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
-                              <p>Distributor</p>
-                            </div>
-
-                            {/* Second Set for Loop */}
-                            <div className="mini-dp-card glow-green">
-                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-blue">
-                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-red">
-                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
-                              <p>Distributor</p>
-                            </div>
-                            
-                            {/* Third Set for Seamless Loop */}
-                            <div className="mini-dp-card glow-green">
-                              <img src="/images/LOgo/ZKTeco.jpg" alt="ZKTeco" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-blue">
-                              <img src="/images/LOgo/AJAX.png" alt="AJAX" />
-                              <p>Distributor</p>
-                            </div>
-                            <div className="mini-dp-card glow-red">
-                              <img src="/images/LOgo/GVD-LOGO.png" alt="GVD" />
-                              <p>Distributor</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* ─── HERO SLIDER ─── */}
+      <section className="hero-slider" style={{ position: 'relative', width: '100%', height: '80vh', minHeight: '500px', overflow: 'hidden', background: '#041221', marginTop: '5rem' }}>
+        {slides.map((slide, index) => (
+          <div 
+            key={index} 
+            style={{ 
+              position: 'absolute', 
+              inset: 0, 
+              opacity: currentSlide === index ? 1 : 0, 
+              transition: 'opacity 1s ease-in-out',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: currentSlide === index ? 1 : 0
+            }}
+          >
+            <img src={slide} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
+        ))}
+
+        {/* Navigation Buttons */}
+        <button 
+          onClick={() => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))}
+          style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.3s' }}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,180,216,0.8)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'rgba(0,0,0,0.5)'}
+        >
+          &#10094;
+        </button>
+        <button 
+          onClick={() => setCurrentSlide(prev => (prev + 1) % slides.length)}
+          style={{ position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.3s' }}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,180,216,0.8)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'rgba(0,0,0,0.5)'}
+        >
+          &#10095;
+        </button>
+
+        {/* Dots */}
+        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem', zIndex: 10 }}>
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              style={{
+                width: '12px', height: '12px', borderRadius: '50%', border: 'none', cursor: 'pointer', transition: 'all 0.3s',
+                background: currentSlide === index ? 'var(--primary)' : 'rgba(255,255,255,0.5)',
+                transform: currentSlide === index ? 'scale(1.2)' : 'scale(1)'
+              }}
+            />
+          ))}
         </div>
       </section>
 

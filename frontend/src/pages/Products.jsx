@@ -8,85 +8,41 @@ const CATEGORIES = [
   { id: 'armatura', label: 'Armatura', desc: 'Advanced access controller ecosystem with unified management, high-security panels, and smart readers' },
   { id: 'smart-entrance', label: 'Smart Entrance Control', desc: 'Pedestrian and vehicle entrance control, turnstiles, flap barriers, and boom barriers for high-traffic sites' },
   { id: 'security-inspection', label: 'Security Inspection', desc: 'X-ray baggage scanners, walk-through metal detectors, and threat detection equipment for high-security venues' },
-  { id: 'video-surveillance', label: 'Video Surveillance', desc: 'Comprehensive video surveillance systems for enhanced security monitoring' }
+  { id: 'video-surveillance', label: 'Video Surveillance', desc: 'Comprehensive video surveillance systems for enhanced security monitoring' },
+  { id: 'software', label: 'Software', desc: 'Enterprise Attendance, WDMS, Cafeteria Management, and other software platforms' },
+  { id: 'ajax', label: 'Ajax', desc: 'Smart wireless security systems, detectors, and smart home devices' }
 ];
 
 const ACCESS_CONTROL_HIERARCHY = {
-  "Multi Door Controller": [
-    "C3 Plus Series", "InBioPC Series & DE-10", "InBio Pro Plus Series", "DM10", "Atlas Prox Series", "Atlas Bio Series"
-  ],
-  "Standalone Devices": [
-    "F09", "SF1005", "MK-V1", "F18", "F22", "SF100", "X7", "SC405", "SC800", "SA40"
-  ],
-  "Readers": [
-    "QR600 Series", "FR1200", "FR1500S", "KR500 Series", "RS485 Reader Series"
-  ],
-  "Elevator Access Controller": [
-    "EC16 & DEX16", "EC10 & EX16"
-  ]
+  "Multi Door Controller": [],
+  "Standalone Devices": [],
+  "Readers": [],
+  "Elevator Access Controller": []
 };
 
 const TIME_ATTENDANCE_HIERARCHY = {
-  "Visible Series": [
-    "MiniAC", "MiniAC Plus", "FaceDepot 7CL", "ProBio Plus Series",
-    "SpeedFace - V5L", "FaceDepot 7C", "MiniTA", "D3", "SpeedFace M4",
-    "EFace 10", "FaceDepot-7BL", "FaceDepot 8AL", "FaceDepot 4A", "SpeedFace H5L"
-  ],
-  "Fingerprint Attendance": [
-    "K40 Pro", "K45 Pro", "IN01-A"
-  ],
-  "Face Attendance": [
-    "MB30", "MB360"
-  ]
+  "Visible Series": [],
+  "Fingerprint Attendance": [],
+  "Face Attendance": []
 };
 
 const ARMATURA_HIERARCHY = {
-  "Armatura Standalone Terminals": [
-    "OmniAC20", "OmniAC30"
-  ],
-  "Armatura One": [
-    "Armatura Datasheet"
-  ],
-  "Armatura Reader": [
-    "VG10CKQ", "AMT-FAPVR-30", "AMT-FAPVS-30", "AMT-PVS-50", "AMT-PVR-10", "EP10C", "EP30CF", "EP20 Series"
-  ],
-  "Armatura Controller": [
-    "AHDU Series", "AHEB Series", "AHSC-1000"
-  ],
-  "Armatura Entrance Control": [
-    "AMTL-BGM1000", "Aegis-2000", "Aegis-1000"
-  ]
+  "Armatura Standalone Terminals": [],
+  "Armatura One": [],
+  "Armatura Reader": [],
+  "Armatura Controller": [],
+  "Armatura Entrance Control": []
 };
 
 const SMART_ENTRANCE_HIERARCHY = {
-  "Smart Security Gate": [
-    "SBTL3000", "Saturn Plus Series", "FHT2200L", "FHT2200DL", "Saturn-F1000 Series",
-    "Zophon-S1000", "Saturn-T1000", "SBTL8000 Series", "Saturn-S2000 Series",
-    "SBT3000S", "FBL700 Series", "FBL500 Series", "TS200 Pro", "TS2000 Plus Series",
-    "TS1000 Plus Series", "mTS1000 Series", "Saturn S1000 & S1200", "TS2000 Pro Series",
-    "SBTL500", "Comet Series", "FBL300", "Mars-S100 Series", "FBL320", "SBTL300",
-    "FBL200", "SBTL320", "FBL220", "SBT2000S", "FHT4000D-LA", "FHT4000S-LA",
-    "FHT3000D-LA", "FHT3000S-LA", "FHT2300"
-  ],
-  "Smart Vehicle & Inspection": [
-    "Boom Barrier - BGM300", "Boom Barrier - BGM500", "Boom Barrier - BGM400",
-    "Boom Barrier - BGM1000 Series", "Boom Barrier- BG300", "Boom Barrier - BG2000 Series",
-    "Boom Barrier - CMP200", "LRM300", "LPRS1000"
-  ]
+  "Smart Security Gate": [],
+  "Smart Vehicle & Inspection": []
 };
 
 const SECURITY_INSPECTION_HIERARCHY = {
-  "Baggage Scanner": [
-    "ZKX6040A", "ZKX6550A", "Baggage Scanners ZKX5030C", "Baggage Scanners ZKX5030A",
-    "Baggage Scanners ZKX6040", "Baggage Scanners ZKX6550", "ZKX100100"
-  ],
-  "Door Frame Metal Detector": [
-    "ZK-D3180V", "ZK-D1090", "ZK-D1010L", "ZK-D2110", "AMD1800 Pro",
-    "ZK-D1065", "ZK-D1065S", "ZK-D1065L", "ZK-D2180"
-  ],
-  "Hand Held Metal Detector": [
-    "ZK-D100S", "ZK-D180", "ZK-D160"
-  ]
+  "Baggage Scanner": [],
+  "Door Frame Metal Detector": [],
+  "Hand Held Metal Detector": []
 };
 
 const VIDEO_SURVEILLANCE_HIERARCHY = {
@@ -96,140 +52,152 @@ const VIDEO_SURVEILLANCE_HIERARCHY = {
   "NVR": []
 };
 
+const SOFTWARE_HIERARCHY = {
+  "Time Attendance Software": [],
+  "Cloud Attendance Software": [],
+  "ZKBio Security Software": []
+};
+
+const AJAX_HIERARCHY = {
+  "Glass break detectors": [],
+  "Hubs": [],
+  "Motion detectors": [],
+  "Opening detectors": [],
+  "Relays": []
+};
+
 const PRODUCTS = [
+  // Ajax (5 items)
+  { category: 'ajax', subCategory: 'Glass break detectors', name: 'GlassProtect Jeweller', sub: 'Wireless glass break detector with a microphone', tags: ['Ajax', 'Detector', 'Jeweller'], image: '/images/products/Ajax/Glass break detectors/Glass Break Detectors.png', specs: { 'Type': 'Wireless', 'Sensor': 'Microphone', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Hubs', name: 'Hub 2 Plus Jeweller', sub: 'Wireless control panel with support for photo verification. Connectable via Wi-Fi, Ethernet, and two SIM cards (2G/3G/LTE)', tags: ['Ajax', 'Hub', 'Jeweller'], image: '/images/products/Ajax/Hubs/Hub 2 Plus Jeweller.png', specs: { 'Type': 'Wireless Control Panel', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Hubs', name: 'Hub 2 (4G) Jeweller', sub: 'Wireless control panel with support for photo verification. Connectable via Ethernet and two SIM cards (2G/3G/LTE)', tags: ['Ajax', 'Hub', 'Jeweller'], image: '/images/products/Ajax/Hubs/Hub 2 (4G) Jeweller.png', specs: { 'Type': 'Wireless Control Panel', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Hubs', name: 'Hub 2 (2G) Jeweller', sub: 'Wireless control panel with support for photo verification. Connectable via Ethernet and two SIM cards (2G)', tags: ['Ajax', 'Hub', 'Jeweller'], image: '/images/products/Ajax/Hubs/Hub 2 (2G) Jeweller.png', specs: { 'Type': 'Wireless Control Panel', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Hubs', name: 'Hub (2G) Jeweller', sub: 'Wireless control panel. Connectable via Ethernet and SIM card (2G)', tags: ['Ajax', 'Hub', 'Jeweller'], image: '/images/products/Ajax/Hubs/Hub (2G) Jeweller.png', specs: { 'Type': 'Wireless Control Panel', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionProtect Jeweller', sub: 'Wireless IR motion detector', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/MotionProtect Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionProtect Plus Jeweller', sub: 'Wireless IR motion detector with an additional K-band microwave sensor', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/MotionProtect Plus Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionProtect Curtain Jeweller', sub: 'Wireless IR curtain motion detector', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/MotionProtect Curtain Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'CombiProtect Jeweller', sub: 'Wireless IR motion and glass break detector with microphone', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/CombiProtect Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionCam Jeweller', sub: 'Wireless IR motion detector supporting photo by alarm feature', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/MotionCam Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionCam (PhOD) Jeweller', sub: 'Wireless PIR motion detector with extended photo verification possibilities', tags: ['Ajax', 'Motion Detector', 'Jeweller'], image: '/images/products/Ajax/Motion Detectors/MotionCam (PhOD) Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'Curtain Outdoor Jeweller', sub: 'Wireless dual technology curtain motion detector for outdoor and indoor use', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/Curtain Outdoor Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'Curtain Outdoor Mini Jeweller', sub: 'Wireless dual-technology curtain motion detector for outdoor and indoor use', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/Curtain Outdoor Mini Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'DualCurtain Outdoor Jeweller', sub: 'Wireless bidirectional curtain IR motion detector', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/DualCurtain Outdoor Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionProtect Outdoor Jeweller', sub: 'Wireless IR motion detector for outdoor and indoor use', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/MotionProtect Outdoor Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionCam Outdoor Jeweller', sub: 'Wireless PIR motion detector that takes photos by alarm. For outdoor and indoor use', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/MotionCam Outdoor Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionCam Outdoor (PhOD) Jeweller', sub: 'Wireless PIR motion detector with extended photo verification possibilities. For outdoor and indoor use', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/MotionCam Outdoor (PhOD) Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Motion detectors', name: 'MotionCam Outdoor HighMount (PhOD) Jeweller', sub: 'Wireless PIR motion detector with extended photo verification possibilities. For outdoor installation at a height of 2–4 m.', tags: ['Ajax', 'Motion Detector', 'Jeweller', 'Outdoor'], image: '/images/products/Ajax/Motion Detectors/MotionCam Outdoor HighMount (PhOd) Jeweller.png', specs: { 'Type': 'Wireless', 'Color': 'White' } },
+  { category: 'ajax', subCategory: 'Opening detectors', name: 'DoorProtect Jeweller', sub: 'Wireless opening detector with reed switch', tags: ['Ajax', 'Detector', 'Jeweller'], image: '/images/products/Ajax/Opening detectors/DoorProtect Jeweller.png', specs: { 'Type': 'Wireless', 'Sensor': 'Reed Switch', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Opening detectors', name: 'DoorProtect Plus Jeweller', sub: 'Wireless combined opening, shock and tilt detector with reed switch and accelerometer', tags: ['Ajax', 'Detector', 'Jeweller'], image: '/images/products/Ajax/Opening detectors/DoorProtect Plus Jeweller.png', specs: { 'Type': 'Wireless', 'Sensors': 'Reed Switch, Accelerometer', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Relays', name: 'WallSwitch Jeweller', sub: 'Wireless power relay to control 110/230 V~ power supply remotely', tags: ['Ajax', 'Relay', 'Jeweller'], image: '/images/products/Ajax/Relays/WallSwitch Jeweller.png', specs: { 'Type': 'Wireless', 'Voltage': '110/230 V~', 'Color': 'Black' } },
+  { category: 'ajax', subCategory: 'Relays', name: 'Relay Jeweller', sub: 'Wireless dry contact relay', tags: ['Ajax', 'Relay', 'Jeweller'], image: '/images/products/Ajax/Relays/Relay Jeweller.png', specs: { 'Type': 'Wireless', 'Contact': 'Dry Contact', 'Color': 'Black' } },
+
   // 1. RS485 Reader Series (3 items)
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-2.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series-3.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series-2.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
+  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series-3.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
 
-  // 2. SA32-E (1 item)
-  { category: 'access-control', subCategory: 'SA32-E', name: 'SA32-E', sub: 'Standalone RFID Access Controller', tags: ['SA32-E', 'RFID'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Standalone RFID', 'Card Capacity': '1,000 Cards' } },
+  // 2. QR600 Series (4 items)
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-2.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-3.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-4.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
 
-  // 3. KR600 Series (4 items)
-  { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600M_01', sub: 'Wiegand RFID Card Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Interface': 'Wiegand 26/34', 'Reading Range': 'Up to 5cm' } },
-  { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600M_02', sub: 'Wiegand RFID Card Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600M_02.png', specs: { 'Interface': 'Wiegand 26/34', 'Reading Range': 'Up to 5cm' } },
-  { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600K_02', sub: 'Keypad & RFID Card Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600K_02.png', specs: { 'Interface': 'Wiegand 26/34', 'Keypad': 'Integrated Touch' } },
-  { category: 'access-control', subCategory: 'KR600 Series', name: 'KR600M-S_02', sub: 'Stainless Steel RFID Reader', tags: ['KR600 Series', 'RFID Reader'], image: '/images/products/Access Control/KR600 Series/KR600M-S_02.png', specs: { 'Interface': 'Wiegand 26/34', 'Protection': 'IP65 Waterproof' } },
+  // 3. KR500 Series (3 items)
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series-2.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series-3.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
 
-  // 4. QR600 Series (4 items)
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-2.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-3.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/QR600 Series/QR600 Series-4.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
+  // 4. FR1500S (3 items)
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S-2.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S-3.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
 
-  // 5. KR500 Series (3 items)
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-2.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/KR500 Series/KR500 Series-3.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
+  // 5. FR1200 (2 items)
+  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/Readers/FR1200/FR1200.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
+  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/Readers/FR1200/FR1200-2.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
 
-  // 6. FR1500S (3 items)
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-2.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/FR1500S/FR1500S-3.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
+  // 6. SF100 (3 items)
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-2.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-3.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
 
-  // 7. MR1010 MR1020 (2 items)
-  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.jpg', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'MR1010 MR1020', name: 'MR1010 MR1020', sub: 'Multi-Frequency RFID Reader', tags: ['MR1010 MR1020', 'RFID'], image: '/images/products/Access Control/MR1010 MR1020/MR1010 MR1020.png', specs: { 'Frequency': '125kHz & 13.56MHz', 'Interface': 'Wiegand' } },
+  // 7. SF1005 (6 items)
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_01_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_02_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_03_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_04_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
 
-  // 8. MA300 (2 items)
-  { category: 'access-control', subCategory: 'MA300', name: 'MA300', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'MA300', name: 'MA300', sub: 'Vandalproof Outdoor Biometric Terminal', tags: ['MA300', 'Biometric Reader'], image: '/images/products/Access Control/MA300/MA300-2.png', specs: { 'Housing': 'Metallic IP65 Vandalproof', 'Capacity': '1,500 Fingerprints' } },
+  // 8. Atlas Prox Series (4 items)
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-3.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-4.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
 
-  // 9. FR1200 (2 items)
-  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
-  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/FR1200/FR1200-2.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
+  // 9. Atlas Bio Series (2 items)
+  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Bio Series/Atlas Bio Series-2.png', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
+  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Bio Series/Atlas Bio Series.png', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
 
-  // 10. SF100 (3 items)
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-2.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/SF100/SF100-3.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  // 10. EC16 & DEX16 (2 items)
+  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/Elevator Access Controller/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
+  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/Elevator Access Controller/EC16 & DEX16/EC16 & DEX16-2.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
 
-  // 11. SF1005 (6 items)
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_01_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_02_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_03_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_04_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  // 11. SC405 (2 items)
+  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC405/SC405.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
+  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC405/SC405-2.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
 
-  // 12. Atlas Prox Series (4 items)
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-3.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Prox Series/Atlas Prox Series-4.jpg', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
+  // 12. SA40 (1 item)
+  { category: 'access-control', subCategory: 'SA40', name: 'SA40', sub: 'Touch Keypad Standalone Controller', tags: ['SA40', 'Keypad'], image: '/images/products/Access Control/Standalone Devices/SA40/SA40.png', specs: { 'Keypad': 'Touch Keypad with Backlight', 'Capacity': '1,000 Users' } },
 
-  // 13. Atlas Bio Series (2 items)
-  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
-  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series-2.jpg', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
+  // 13. MK-V1 (2 items)
+  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/MK-V1/MK-V1_01.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
 
-  // 14. EC16 & DEX16 (2 items)
-  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
-  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16-2.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
+  // 14. F22 (3 items)
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/Standalone Devices/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F22/F22-2.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F22/F22-3.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
 
-  // 15. SC405 (2 items)
-  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
-  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/SC405/SC405-2.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
+  // 15. F18 (2 items)
+  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F18/F18-2.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
 
-  // 16. SA40 (1 item)
-  { category: 'access-control', subCategory: 'SA40', name: 'SA40', sub: 'Touch Keypad Standalone Controller', tags: ['SA40', 'Keypad'], image: '/images/products/Access Control/SA40/SA40.jpg', specs: { 'Keypad': 'Touch Keypad with Backlight', 'Capacity': '1,000 Users' } },
+  // 16. SC800 (2 items)
+  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC800/SC800.png', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC800/SC800-2.png', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
 
-  // 17. ProMA (3 items)
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], badge: 'new', image: '/images/products/Access Control/ProMA/ProMA_02_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_03_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
-  { category: 'access-control', subCategory: 'ProMA', name: 'ProMA', sub: 'High-End Outdoor Android Biometric Terminal', tags: ['ProMA', 'Android Device'], image: '/images/products/Access Control/ProMA/ProMA_04_500x500.png', specs: { 'Rating': 'IP66 & IK07 Metal Casing', 'Platform': 'Android OS' } },
+  // 17. F09 (3 items)
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09-1.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09-2.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
 
-  // 18. MK-V1 (2 items)
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/MK-V1/MK-V1_01.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
+  // 18. EC10 & EX16 (3 items)
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16-2.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
+  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
 
-  // 19. F22 (3 items)
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-2.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/F22/F22-3.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  // 19. DM10 (1 item)
+  { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/DM10/DM10.jpg', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
 
-  // 20. F21 (2 items)
-  { category: 'access-control', subCategory: 'F21', name: 'F21', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
-  { category: 'access-control', subCategory: 'F21', name: 'F21', sub: 'Advanced Fingerprint & Photo ID Terminal', tags: ['F21', 'Fingerprint'], image: '/images/products/Access Control/F21/F21-2.png', specs: { 'Sensor': 'SilkID Sensor', 'Camera': 'Built-in Photo Camera' } },
+  // 20. X7 (3 items)
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7-2.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
 
-  // 21. F18 (2 items)
-  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/F18/F18-2.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
+  // 21. InBio PC Series & DE10 (2 items)
+  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC Series & DE10.jpg', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
+  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
 
-  // 22. SC800 (2 items)
-  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/SC800/SC800-2.jpg', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
+  // 22. C3-100 Plus (3 items)
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-100 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-200 Plus', sub: 'IP-Based 2-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-200 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
+  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-400 Plus', sub: 'IP-Based 4-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-400 Plus-A.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
 
-  // 23. F09 (3 items)
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-1.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/F09/F09-2.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-
-  // 24. EC10 & EX16 (3 items)
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-2.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-
-  // 25. DM10 (1 item)
-  { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/DM10/DM10.jpg', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
-
-  // 26. X7 (3 items)
-  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-2.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-
-  // 27. InBio PC Series & DE10 (2 items)
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC Series & DE10.jpg', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
-
-  // 28. C3-100 Plus (3 items)
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/C3-100 Plus/C3-100 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-200 Plus', sub: 'IP-Based 2-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/C3-100 Plus/C3-200 Plus-01.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
-  { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-400 Plus', sub: 'IP-Based 4-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/C3-100 Plus/C3-400 Plus-A.jpg', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
-
-  // 29. inBio-160 Pro Plus (3 items)
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-160 Pro Plus', sub: 'High Security 1-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], badge: 'popular', featured: true, image: '/images/products/Access Control/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-260 Pro Plus', sub: 'High Security 2-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500 (1).png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-460 Pro Plus', sub: 'High Security 4-Door Biometric Control Package B', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/inBio-160  Pro Plus/inBio460Pro Plus Package B_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
+  // 23. inBio-160 Pro Plus (3 items)
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-160 Pro Plus', sub: 'High Security 1-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], badge: 'popular', featured: true, image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-260 Pro Plus', sub: 'High Security 2-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500 (1).png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-460 Pro Plus', sub: 'High Security 4-Door Biometric Control Package B', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio460Pro Plus Package B_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
 
   // Time Attendance Sub-Categories
 
@@ -326,7 +294,7 @@ const PRODUCTS = [
   { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Turnstile & Wall Mount Facial Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-3.png', specs: { 'Display': '7-inch Touch Panel', 'Mounting': 'Turnstile / Stand Mount' } },
 
   // 24. MiniAC Plus (3 items)
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.jpg', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.png', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' } },
   { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Multi-Biometric Facial Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.jpg', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
   { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.jpg', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
 
@@ -371,27 +339,27 @@ const PRODUCTS = [
   // ----------------------------------------------------
   // ARMATURA CATEGORY PRODUCTS
   // ----------------------------------------------------
-  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC20', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC20', 'Standalone'], image: '/images/products/Access Control/ProMA/ProMA_02_500x500.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
-  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC30', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC30', 'Standalone'], image: '/images/products/Access Control/ProMA/ProMA_03_500x500.png', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC20', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC20', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC20/OmniAC20-1.jpg', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
+  { category: 'armatura', subCategory: 'Armatura Standalone Terminals', name: 'OmniAC30', sub: 'Advanced Armatura Standalone Terminal', tags: ['OmniAC30', 'Standalone'], image: '/images/products/Armatura/Armatura Standalone Terminals/OmniAC30/OmniAC30.jpg', specs: { 'Platform': 'Armatura', 'Type': 'Standalone Terminal' } },
 
-  { category: 'armatura', subCategory: 'Armatura One', name: 'Armatura Datasheet', sub: 'Armatura One comprehensive specifications', tags: ['Armatura One'], image: '/images/products/Access Control/ProMA/ProMA_04_500x500.png', specs: { 'Platform': 'Armatura One', 'Document': 'Datasheet' } },
+  { category: 'armatura', subCategory: 'Armatura One', name: 'Armatura One', sub: 'Armatura One comprehensive specifications', tags: ['Armatura One'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.jpg', specs: { 'Platform': 'Armatura One', 'Document': 'Datasheet' } },
 
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'VG10CKQ', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVR-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVS-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVS-50', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVR-10', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP10C', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP30CF', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
-  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP20 Series', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Access Control/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'VG10CKQ', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/VG10CKQ/VG10CKQ-1.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVR-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVR-30/AMT-FAPVR-30-1.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-FAPVS-30', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVS-30/AMT-FAPVS-30.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVS-50', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-PVS-50/AMT-PVS-50.png', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'AMT-PVR-10', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (3).jpg', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP10C', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP10C/EP10C.jpg', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP30CF', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP30CF/EP30CF.jpg', specs: { 'Type': 'Reader' } },
+  { category: 'armatura', subCategory: 'Armatura Reader', name: 'EP20 Series', sub: 'High Security Armatura Reader', tags: ['Reader'], image: '/images/products/Armatura/Armatura Reader/EP20 Series/EP20C Series.png', specs: { 'Type': 'Reader' } },
 
-  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHDU Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
-  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHEB Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
-  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHSC-1000', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Access Control/Atlas Bio Series/Atlas Bio Series.jpg', specs: { 'Type': 'Controller' } },
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHDU Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVR-30/AMT-FAPVR-30-2.png', specs: { 'Type': 'Controller' } },
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHEB Series', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Armatura/Armatura Reader/AMT-FAPVS-30/AMT-FAPVS-30-2.png', specs: { 'Type': 'Controller' } },
+  { category: 'armatura', subCategory: 'Armatura Controller', name: 'AHSC-1000', sub: 'Armatura Multi-Door Controller', tags: ['Controller'], image: '/images/products/Armatura/Armatura Reader/AMT-PVS-50/AMT-PVS-50-4.png', specs: { 'Type': 'Controller' } },
 
-  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'AMTL-BGM1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
-  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
-  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'AMTL-BGM1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP20 Series/EP20CKQ-2.png', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP30CF/Aegis-2000.jpg', specs: { 'Type': 'Entrance Control' } },
+  { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (5).jpg', specs: { 'Type': 'Entrance Control' } },
 
   // ----------------------------------------------------
   // SMART ENTRANCE CONTROL PRODUCTS
@@ -511,22 +479,31 @@ const PRODUCTS = [
 export default function Products({ navigate }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeSubcategory, setActiveSubcategory] = useState(null);
-  const [accessControlOpen, setAccessControlOpen] = useState(true);
-  const [timeAttendanceOpen, setTimeAttendanceOpen] = useState(true);
-  const [armaturaOpen, setArmaturaOpen] = useState(true);
-  const [smartEntranceOpen, setSmartEntranceOpen] = useState(true);
-  const [securityInspectionOpen, setSecurityInspectionOpen] = useState(true);
-  const [videoSurveillanceOpen, setVideoSurveillanceOpen] = useState(true);
+  const [accessControlOpen, setAccessControlOpen] = useState(false);
+  const [timeAttendanceOpen, setTimeAttendanceOpen] = useState(false);
+  const [armaturaOpen, setArmaturaOpen] = useState(false);
+  const [smartEntranceOpen, setSmartEntranceOpen] = useState(false);
+  const [securityInspectionOpen, setSecurityInspectionOpen] = useState(false);
+  const [videoSurveillanceOpen, setVideoSurveillanceOpen] = useState(false);
+  const [softwareOpen, setSoftwareOpen] = useState(false);
+  const [ajaxOpen, setAjaxOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (selectedProduct) setSelectedImageIndex(0);
+  }, [selectedProduct]);
   const [timeSubOpen, setTimeSubOpen] = useState({});
   const [accessSubOpen, setAccessSubOpen] = useState({});
   const [armaturaSubOpen, setArmaturaSubOpen] = useState({});
   const [smartEntranceSubOpen, setSmartEntranceSubOpen] = useState({});
   const [securityInspectionSubOpen, setSecurityInspectionSubOpen] = useState({});
   const [videoSurveillanceSubOpen, setVideoSurveillanceSubOpen] = useState({});
+  const [softwareSubOpen, setSoftwareSubOpen] = useState({});
+  const [ajaxSubOpen, setAjaxSubOpen] = useState({});
 
   useEffect(() => {
     const handleProductSearch = (e) => {
@@ -572,11 +549,12 @@ export default function Products({ navigate }) {
     navigate(to);
   };
 
-  const getFilteredProducts = (catId) => {
+  const getFilteredProducts = (catId, subCatOverride = null) => {
     let productsInCat = PRODUCTS.filter(p => p.category === catId);
+    const subCat = subCatOverride || activeSubcategory;
 
-    if (activeSubcategory) {
-      if (activeSubcategory === 'Visible Series') {
+    if (subCat) {
+      if (subCat === 'Visible Series') {
         const visibleList = [
           'miniac', 'miniac plus', 'facedepot 7cl', 'facedepot 7c', 'probio plus series',
           'speedface - v5l', 'speedface-v5l', 'minita', 'd3', 'speedfacem4', 'speedface m4',
@@ -586,18 +564,45 @@ export default function Products({ navigate }) {
         productsInCat = productsInCat.filter(p =>
           visibleList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
-      } else if (activeSubcategory === 'Fingerprint Attendance') {
+      } else if (subCat === 'Fingerprint Attendance') {
         const fpList = ['k40 pro', 'k45 pro', 'in01-a'];
         productsInCat = productsInCat.filter(p =>
           fpList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
-      } else if (activeSubcategory === 'Face Attendance') {
+      } else if (subCat === 'Face Attendance') {
         const faceList = ['mb30', 'mb360'];
         productsInCat = productsInCat.filter(p =>
           faceList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
+      } else if (catId === 'access-control') {
+        if (subCat === 'Multi Door Controller') {
+          const list = ['c3-', 'inbio pc', 'inbio-160', 'dm10', 'atlas prox', 'atlas bio'];
+          productsInCat = productsInCat.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s)));
+        } else if (subCat === 'Standalone Devices') {
+          const list = ['f09', 'sf1005', 'mk-v1', 'f18', 'f22', 'sf100', 'x7', 'sc405', 'sc800', 'sa40'];
+          productsInCat = productsInCat.filter(p => list.some(s => p.subCategory.toLowerCase() === s || p.name.toLowerCase().includes(s) || p.subCategory.toLowerCase().includes(s)));
+        } else if (subCat === 'Readers') {
+          const list = ['qr600', 'fr1200', 'fr1500s', 'kr500', 'rs485 reader'];
+          productsInCat = productsInCat.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s)));
+        } else if (subCat === 'Elevator Access Controller') {
+          const list = ['ec16 & dex16', 'ec10 & ex16'];
+          productsInCat = productsInCat.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s)));
+        } else {
+          let lookupCat = subCat;
+          if (lookupCat === 'C3 Plus Series') lookupCat = 'C3-100 Plus';
+          if (lookupCat === 'InBioPC Series & DE-10') lookupCat = 'InBio PC Series & DE10';
+          if (lookupCat === 'InBio Pro Plus Series') lookupCat = 'inBio-160 Pro Plus';
+          
+          productsInCat = productsInCat.filter(p =>
+            p.subCategory === lookupCat ||
+            p.name === lookupCat ||
+            p.tags.includes(lookupCat) ||
+            p.subCategory.toLowerCase().includes(lookupCat.toLowerCase()) ||
+            p.name.toLowerCase().includes(lookupCat.toLowerCase())
+          );
+        }
       } else {
-        let lookupCat = activeSubcategory;
+        let lookupCat = subCat;
         if (lookupCat === 'C3 Plus Series') lookupCat = 'C3-100 Plus';
         if (lookupCat === 'InBioPC Series & DE-10') lookupCat = 'InBio PC Series & DE10';
         if (lookupCat === 'InBio Pro Plus Series') lookupCat = 'inBio-160 Pro Plus';
@@ -624,6 +629,7 @@ export default function Products({ navigate }) {
 
   const filteredCategories = CATEGORIES.filter(cat => {
     if (activeCategory !== 'all' && cat.id !== activeCategory) return false;
+    if (cat.id === 'software') return true;
     const matchedProducts = getFilteredProducts(cat.id);
     return matchedProducts.length > 0;
   });
@@ -631,19 +637,35 @@ export default function Products({ navigate }) {
   return (
     <>
       {/* PAGE HERO */}
-      <section className="page-hero">
-        <div className="hero-grid"></div>
-        <div className="hero-orb hero-orb-1"></div>
-        <div className="hero-orb hero-orb-2"></div>
-        <div className="container page-hero-inner">
-          <div className="tag">Full Catalogue</div>
-          <h1>Our <em>Product</em> Range</h1>
-          <p>Enterprise-grade biometric devices, access control systems, software platforms, and security inspection tools — all engineered for India's most demanding environments.</p>
-          <div className="search-wrap">
-            <span className="search-icon">🔍</span>
+      <section className="page-hero" style={{ position: 'relative', padding: '8rem 0 6rem', textAlign: 'center', background: 'radial-gradient(circle at 50% 0%, #0c2540 0%, #041221 70%)', overflow: 'hidden' }}>
+        <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, backgroundImage: 'linear-gradient(rgba(0,180,216,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px', maskImage: 'radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 100%)' }}></div>
+        
+        {/* Animated Glow Orbs */}
+        <div style={{ position: 'absolute', top: '-10%', left: '10%', width: '400px', height: '400px', background: 'var(--primary)', filter: 'blur(150px)', opacity: 0.15, borderRadius: '50%' }}></div>
+        <div style={{ position: 'absolute', bottom: '-20%', right: '10%', width: '500px', height: '500px', background: '#00d4fc', filter: 'blur(150px)', opacity: 0.1, borderRadius: '50%' }}></div>
+
+        <div className="container page-hero-inner" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          
+          <div style={{ padding: '0.5rem 1.5rem', borderRadius: '50px', background: 'rgba(0, 180, 216, 0.08)', border: '1px solid rgba(0, 180, 216, 0.3)', color: 'var(--primary)', fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', gap: '10px', boxShadow: '0 0 20px rgba(0,180,216,0.15)', backdropFilter: 'blur(5px)' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--primary)', boxShadow: '0 0 10px var(--primary)' }}></span>
+            Full Catalogue
+          </div>
+          
+          <h1 style={{ fontSize: 'clamp(2.8rem, 6vw, 4.8rem)', fontWeight: 900, marginBottom: '1.5rem', lineHeight: 1.1, fontFamily: 'var(--font-h)' }}>
+            <span style={{ color: 'var(--white)' }}>Explore Our</span> <br />
+            <span style={{ background: 'linear-gradient(90deg, #00B4D8, #48cae4, #00B4D8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% auto' }}>Premium Range</span>
+          </h1>
+          
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.15rem', maxWidth: '650px', lineHeight: 1.6, marginBottom: '3.5rem' }}>
+            Enterprise-grade biometric devices, access control systems, software platforms, and security inspection tools — all engineered for India's most demanding environments.
+          </p>
+
+          <div style={{ position: 'relative', width: '100%', maxWidth: '700px', display: 'flex', alignItems: 'center' }}>
+            <div style={{ position: 'absolute', left: '1.8rem', fontSize: '1.2rem', color: 'var(--primary)', display: 'flex', pointerEvents: 'none' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
             <input
               type="text"
-              className="search-input"
               id="searchInput"
               placeholder="Search products, e.g. SpeedFace, Atlas controller, armatura…"
               value={searchQuery}
@@ -652,7 +674,37 @@ export default function Products({ navigate }) {
                 setActiveCategory('all');
                 setActiveSubcategory(null);
               }}
+              style={{
+                width: '100%',
+                padding: '1.3rem 1.3rem 1.3rem 4rem',
+                fontSize: '1.05rem',
+                color: 'var(--white)',
+                background: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '50px',
+                backdropFilter: 'blur(12px)',
+                boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
+                outline: 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onFocus={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 0.06)';
+                e.target.style.borderColor = 'rgba(0, 180, 216, 0.5)';
+                e.target.style.boxShadow = '0 15px 50px rgba(0, 180, 216, 0.15), inset 0 0 0 1px rgba(0, 180, 216, 0.2)';
+              }}
+              onBlur={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 0.03)';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                e.target.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05)';
+              }}
             />
+            <button 
+              style={{ position: 'absolute', right: '0.6rem', padding: '0.8rem 2rem', borderRadius: '50px', background: 'var(--primary)', color: '#041221', fontSize: '1rem', fontWeight: 'bold', border: 'none', cursor: 'pointer', transition: 'all 0.3s', boxShadow: '0 4px 15px rgba(0, 180, 216, 0.4)' }} 
+              onMouseEnter={e => { e.target.style.background = '#00d4fc'; e.target.style.transform = 'scale(1.05)'; }} 
+              onMouseLeave={e => { e.target.style.background = 'var(--primary)'; e.target.style.transform = 'scale(1)'; }}
+            >
+              Search
+            </button>
           </div>
         </div>
       </section>
@@ -725,6 +777,8 @@ export default function Products({ navigate }) {
                 const isSmartEntrance = cat.id === 'smart-entrance';
                 const isSecurityInspection = cat.id === 'security-inspection';
                 const isVideoSurveillance = cat.id === 'video-surveillance';
+                const isSoftware = cat.id === 'software';
+                const isAjax = cat.id === 'ajax';
                 const count = PRODUCTS.filter(p => p.category === cat.id).length;
                 return (
                   <div key={cat.id} style={{ width: '100%' }}>
@@ -751,43 +805,29 @@ export default function Products({ navigate }) {
                         if (isVideoSurveillance) {
                           setVideoSurveillanceOpen(!videoSurveillanceOpen);
                         }
+                        if (isSoftware) {
+                          setSoftwareOpen(!softwareOpen);
+                        }
+                        if (isAjax) {
+                          setAjaxOpen(!ajaxOpen);
+                        }
                         setSidebarOpen(false);
                         const el = document.getElementById(cat.id);
                         if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
                       }}
                     >
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        <span>{cat.label}</span>
-                        {isAccessControl && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {accessControlOpen ? '▲' : '▼'}
-                          </span>
-                        )}
-                        {isTimeAttendance && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {timeAttendanceOpen ? '▲' : '▼'}
-                          </span>
-                        )}
-                        {isArmatura && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {armaturaOpen ? '▲' : '▼'}
-                          </span>
-                        )}
-                        {isSmartEntrance && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {smartEntranceOpen ? '▲' : '▼'}
-                          </span>
-                        )}
-                        {isSecurityInspection && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {securityInspectionOpen ? '▲' : '▼'}
-                          </span>
-                        )}
-                        {isVideoSurveillance && (
-                          <span style={{ fontSize: '0.7rem', opacity: 0.75 }}>
-                            {videoSurveillanceOpen ? '▲' : '▼'}
-                          </span>
-                        )}
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ fontWeight: activeCategory === cat.id ? 700 : 500 }}>{cat.label}</span>
+                        <span style={{ fontSize: '0.65rem', opacity: 0.7 }}>
+                          {isAccessControl ? (accessControlOpen ? '▲' : '▼') :
+                           isTimeAttendance ? (timeAttendanceOpen ? '▲' : '▼') :
+                           isArmatura ? (armaturaOpen ? '▲' : '▼') :
+                           isSmartEntrance ? (smartEntranceOpen ? '▲' : '▼') :
+                           isSecurityInspection ? (securityInspectionOpen ? '▲' : '▼') :
+                           isVideoSurveillance ? (videoSurveillanceOpen ? '▲' : '▼') :
+                           isSoftware ? (softwareOpen ? '▲' : '▼') : 
+                           isAjax ? (ajaxOpen ? '▲' : '▼') : null}
+                        </span>
                       </span>
                       <span className="cat-count">{count}</span>
                     </button>
@@ -824,7 +864,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('access-control');
                                   setActiveSubcategory(subName);
-                                  setAccessSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setAccessSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -916,7 +956,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('time-attendance');
                                   setActiveSubcategory(subName);
-                                  setTimeSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setTimeSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -989,7 +1029,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('armatura');
                                   setActiveSubcategory(subName);
-                                  setArmaturaSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setArmaturaSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -1063,7 +1103,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('smart-entrance');
                                   setActiveSubcategory(subName);
-                                  setSmartEntranceSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSmartEntranceSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -1137,7 +1177,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('security-inspection');
                                   setActiveSubcategory(subName);
-                                  setSecurityInspectionSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setSecurityInspectionSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -1211,7 +1251,7 @@ export default function Products({ navigate }) {
                                 onClick={() => {
                                   setActiveCategory('video-surveillance');
                                   setActiveSubcategory(subName);
-                                  setVideoSurveillanceSubOpen(prev => ({ ...prev, [subName]: !prev[subName] }));
+                                  setVideoSurveillanceSubOpen(prev => ({ [subName]: !prev[subName] }));
                                   setSearchQuery('');
                                 }}
                               >
@@ -1268,6 +1308,127 @@ export default function Products({ navigate }) {
                         })}
                       </div>
                     )}
+
+                    {/* Software Categories Subcategory Dropdown */}
+                    {isSoftware && softwareOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(SOFTWARE_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'software' && activeSubcategory === subName;
+                          const isExpanded = softwareSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'software');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('software');
+                                  setActiveSubcategory(subName);
+                                  setSoftwareSubOpen(prev => ({ [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '−' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+
+                              {/* Nested Dropdown for models */}
+                              {isExpanded && (
+                                <div className="subcat-menu" style={{ paddingLeft: '1.5rem', marginTop: '0.2rem', paddingBottom: '0.2rem' }}>
+                                  {SOFTWARE_HIERARCHY[subName].map(modelName => {
+                                    const isModelActive = activeCategory === 'software' && activeSubcategory === modelName;
+                                    const modelCount = subProds.filter(p => p.subCategory === subName && p.name === modelName).length;
+                                    
+                                    return (
+                                      <button
+                                        key={modelName}
+                                        className={`subcat-btn ${isModelActive ? 'active' : ''}`}
+                                        onClick={() => {
+                                          setActiveCategory('software');
+                                          setActiveSubcategory(modelName);
+                                          setSearchQuery('');
+                                          setSidebarOpen(false);
+                                        }}
+                                        style={{ padding: '0.4rem 1rem' }}
+                                      >
+                                        <span>{modelName}</span>
+                                        <span className="cat-count" style={{ fontSize: '0.65rem' }}>{modelCount}</span>
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    {/* Ajax Categories Subcategory Dropdown */}
+                    {isAjax && ajaxOpen && (
+                      <div className="subcat-menu">
+                        {Object.keys(AJAX_HIERARCHY).map((subName) => {
+                          const isSubActive = activeCategory === 'ajax' && activeSubcategory === subName;
+                          const isExpanded = ajaxSubOpen[subName];
+                          const subProds = PRODUCTS.filter(p => p.category === 'ajax');
+                          let subCount = subProds.filter(p => p.subCategory === subName).length;
+                          
+                          return (
+                            <div key={subName} style={{ width: '100%' }}>
+                              <button
+                                className={`subcat-btn ${isSubActive ? 'active' : ''}`}
+                                onClick={() => {
+                                  setActiveCategory('ajax');
+                                  setActiveSubcategory(subName);
+                                  setAjaxSubOpen(prev => ({ [subName]: !prev[subName] }));
+                                  setSearchQuery('');
+                                }}
+                              >
+                                <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                  <span style={{ 
+                                    display: 'inline-flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center',
+                                    width: '14px', 
+                                    height: '14px', 
+                                    fontSize: '0.75rem', 
+                                    fontWeight: 'bold',
+                                    backgroundColor: isExpanded ? '#8BC34A' : 'transparent',
+                                    color: isExpanded ? '#fff' : 'inherit',
+                                    border: isExpanded ? 'none' : '1px solid currentColor',
+                                    borderRadius: '2px',
+                                    lineHeight: '1'
+                                  }}>
+                                    {isExpanded ? '-' : '+'}
+                                  </span>
+                                  <span>{subName}</span>
+                                </span>
+                                <span className="cat-count" style={{ fontSize: '0.7rem' }}>{subCount}</span>
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -1289,27 +1450,456 @@ export default function Products({ navigate }) {
                 const matchedProducts = getFilteredProducts(cat.id);
                 return (
                   <div key={cat.id} className="cat-section reveal" id={cat.id}>
-                    <div className="cat-section-title">
-                      <div>
-                        <div className="cat-section-label">{cat.label}</div>
-                        <div className="cat-section-desc">{cat.desc}</div>
-                      </div>
-                    </div>
-                    <div className="product-grid">
-                      {matchedProducts.map((p, idx) => (
-                        <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
-                          {/* Real Transparent Product Image */}
-                          <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
-                            <img src={p.image} alt={p.name} className="product-card-img" />
+                    {cat.id === 'software' ? (
+                      <div className="software-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Time Attendance Software') && (
+                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Time Attendance Software</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              ZKTeco Time Attendance Software is a powerful workforce management solution that simplifies attendance tracking, automates calculations, and provides valuable insights. With its comprehensive features, integration capabilities, and user-friendly interface, this software enhances efficiency, accuracy, and productivity in managing employee attendance.
+                            </p>
+                            <img src="/images/products/Software/Time Attendance Software.jpg" alt="Time Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
+                              {[
+                                { title: 'easy GymFit', logo: 'easy GymFit', pdf: '/pdfs/easy Gym fit_Data Sheet_01 1 (1).pdf' },
+                                { title: 'easy TimePro', logo: 'easy TimePro', pdf: '/pdfs/easy TimePro_Data Sheet_2025 3 (1).pdf' },
+                                { title: 'easy WDMS', logo: 'easy WDMS', pdf: '/pdfs/easy WDMS_Data Sheet_2025 3.pdf' }
+                              ].map((item, idx) => (
+                                <div key={idx} style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', position: 'relative', height: '280px', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)', color: 'var(--white)', transition: 'transform 0.3s, border-color 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                                  {item.isNew && <div style={{ position: 'absolute', top: '15px', left: '15px', backgroundColor: '#7CB342', color: '#fff', padding: '3px 10px', fontSize: '0.75rem', borderRadius: '4px', fontWeight: 'bold', boxShadow: '0 2px 10px rgba(124, 179, 66, 0.4)' }}>🏷️ New</div>}
+                                  
+                                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--white)', margin: 0, fontFamily: 'Arial, sans-serif' }}>
+                                      {item.logo.startsWith('easy') ? (
+                                        <><span style={{ color: 'var(--primary)', fontStyle: 'italic', fontWeight: '900' }}>e</span>asy {item.logo.substring(5)}</>
+                                      ) : item.logo}
+                                    </h3>
+                                  </div>
+                                  
+                                  <div style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--muted)' }}>
+                                    {item.title}
+                                  </div>
+                                  
+                                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <a href={item.pdf || '#'} download={!!item.pdf} onClick={(e) => { if(!item.pdf) { e.preventDefault(); alert('PDF not available yet.'); } }} style={{ background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', borderRadius: '20px', padding: '0.5rem 1.5rem', fontSize: '0.8rem', fontWeight: 'bold', cursor: 'pointer', color: 'var(--primary)', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 180, 216, 0.1)'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                      Download
+                                    </a>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
                           </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Cloud Attendance Software') && (
+                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Cloud Attendance Software</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              ZKTeco Cloud Attendance Software is a powerful, cloud-based time and attendance solution designed to streamline workforce management for businesses of all sizes. With real-time data access, advanced biometric integration, and intelligent reporting, it enables organizations to monitor employee attendance from anywhere, at any time.
+                            </p>
+                            <img src="/images/products/Software/Cloud Attendance Sotware.jpg" alt="Cloud Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
+                              {[
+                                { title: 'BioTime Cloud 2.0', logo: 'BioTime Cloud 2.0', pdf: '/pdfs/ZK_BioTime Cloud 2.0_Datasheet_2024 1.pdf' }
+                              ].map((item, idx) => (
+                                <div key={idx} style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', position: 'relative', height: '280px', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)', color: 'var(--white)', transition: 'transform 0.3s, border-color 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--white)', margin: 0, fontFamily: 'Arial, sans-serif' }}>
+                                      {item.logo}
+                                    </h3>
+                                  </div>
+                                  
+                                  <div style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--muted)' }}>
+                                    {item.title}
+                                  </div>
+                                  
+                                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <a href={item.pdf || '#'} download={!!item.pdf} onClick={(e) => { if(!item.pdf) { e.preventDefault(); alert('PDF not available yet.'); } }} style={{ background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', borderRadius: '20px', padding: '0.5rem 1.5rem', fontSize: '0.8rem', fontWeight: 'bold', cursor: 'pointer', color: 'var(--primary)', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 180, 216, 0.1)'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                      Download
+                                    </a>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'ZKBio Security Software') && (
+                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>ZKBio Security Software</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              The ZKBioSecurity "All-in-One" Web security platform features multiple integrated modules for Personnel Management, Access Control, Attendance Management, Hotel Module, Consumption Management, Elevator Control (online/offline) With an optimized system architecture designed for high level biometric identification and a modern user friendly interface, it brings a whole new experience to users.
+                            </p>
+                            <img src="/images/products/Software/ZKBio Security Software.jpg" alt="ZKBio Security Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
+                              {[
+                                { title: 'ZKBio CVSecurity SmartLock', logo: 'ZKBio CVSecurity SmartLock', pdf: '/pdfs/ZKBio CVSecurity SmartLock_Datasheet_2025.pdf' },
+                                { title: 'ZKBio CVSecurity', logo: 'ZKBio CVSecurity', pdf: '/pdfs/ZKBio CVSecurity 6.8.0_Datasheet_2026_00.pdf' }
+                              ].map((item, idx) => (
+                                <div key={idx} style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', position: 'relative', height: '280px', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)', color: 'var(--white)', transition: 'transform 0.3s, border-color 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 1rem', textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: 'var(--white)', margin: 0, fontFamily: 'Arial, sans-serif' }}>
+                                      <span style={{ color: 'var(--primary)' }}>ZKBio</span> <br />{item.logo.replace('ZKBio ', '')}
+                                    </h3>
+                                  </div>
+                                  
+                                  <div style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--muted)' }}>
+                                    {item.title}
+                                  </div>
+                                  
+                                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <a href={item.pdf || '#'} download={!!item.pdf} onClick={(e) => { if(!item.pdf) { e.preventDefault(); alert('PDF not available yet.'); } }} style={{ background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', borderRadius: '20px', padding: '0.5rem 1.5rem', fontSize: '0.8rem', fontWeight: 'bold', cursor: 'pointer', color: 'var(--primary)', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 180, 216, 0.1)'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                      Download
+                                    </a>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : cat.id === 'access-control' ? (
+                      <div className="access-control-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Multi Door Controller') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Multi Door Controller</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Astra Technologies offers ZKTeco Multi-Door Controllers, designed to manage and secure multiple access points from a centralized platform. Supporting card readers, biometric devices, and electric locks, these scalable controllers provide reliable access control, enhanced security, and efficient entry management for offices, commercial buildings, educational institutions, and industrial facilities.
+                            </p>
+                            <img src="/images/products/Access Control/Multi Door COntroller.png" alt="Multi Door Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('access-control', 'Multi Door Controller').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
 
-                          {/* Clean Product Name without any leading Emojis */}
-                          <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
-                            {p.name}
+                        {(!activeSubcategory || activeSubcategory === 'Standalone Devices') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Standalone Devices</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Comprehensive range of ZKTeco Access Control solutions, including Face Recognition, Fingerprint, Finger Vein, Palm Recognition, and RFID-based systems. Our portfolio also includes IP-based access control panels, readers, and accessories with web and mobile applications for secure, centralized, and hassle-free access management.
+                            </p>
+                            <img src="/images/products/Access Control/Standalone Devices.png" alt="Standalone Devices" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('access-control', 'Standalone Devices').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Readers') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Readers</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Comprehensive range of ZKTeco Access Control solutions, including Face Recognition, Fingerprint, Finger Vein, Palm Recognition, and RFID-based systems. Our portfolio also includes IP-based access control panels, readers, and accessories with web and mobile applications for secure, centralized, and hassle-free access management.
+                            </p>
+                            <img src="/images/products/Access Control/Readers.png" alt="Readers" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('access-control', 'Readers').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Elevator Access Controller') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Elevator Access Controller</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              We are a leading provider of advanced and innovative elevator control solutions designed to enhance the safety, efficiency, and convenience of elevator systems. Our Elevator Control panels are meticulously engineered to meet the highest industry standards, ensuring reliable and secure operation of elevators in various commercial, residential, and industrial settings.
+                            </p>
+                            <img src="/images/products/Access Control/Elevator Access Controller.png" alt="Elevator Access Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('access-control', 'Elevator Access Controller').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : cat.id === 'armatura' ? (
+                      <div className="armatura-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Armatura Standalone Terminals') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Standalone Terminals</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Armatura Smart Standalone Terminal offers a compact, self-contained, and cost-effective solution for access control. With its built-in reader, controller, and user interface, it provides secure and efficient access control without the need for additional hardware or software.
+                            </p>
+                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Standalone Terminals" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('armatura', 'Armatura Standalone Terminals').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Armatura One') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura One</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Armatura One offers an all-in-one solution for security management, integrating access control, video surveillance, alarm management, and visitor management into a single web-based platform. It provides convenience, efficiency, and comprehensive security control for various applications and organizations.
+                            </p>
+                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura One" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
+                              {[
+                                { title: 'ARMATURA ONE Datasheet', logo: 'Armatura One', pdf: '/images/products/Armatura/Armatura One/ARMATURA ONE Datesheet 20240827 (1).pdf' }
+                              ].map((item, idx) => (
+                                <div key={idx} style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', position: 'relative', height: '280px', boxShadow: '0 8px 32px rgba(0,0,0,0.2)', backdropFilter: 'blur(10px)', color: 'var(--white)', transition: 'transform 0.3s, border-color 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                                  <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 1rem', textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '1.6rem', fontWeight: 'bold', color: 'var(--white)', margin: 0, fontFamily: 'Arial, sans-serif' }}>
+                                      <span style={{ color: 'var(--primary)' }}>Armatura</span> <br />One
+                                    </h3>
+                                  </div>
+                                  
+                                  <div style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--muted)' }}>
+                                    {item.title}
+                                  </div>
+                                  
+                                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                                    <a href={item.pdf || '#'} download={!!item.pdf} onClick={(e) => { if(!item.pdf) { e.preventDefault(); alert('PDF not available yet.'); } }} style={{ background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', borderRadius: '20px', padding: '0.5rem 1.5rem', fontSize: '0.8rem', fontWeight: 'bold', cursor: 'pointer', color: 'var(--primary)', transition: 'all 0.2s', display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 180, 216, 0.1)'; e.currentTarget.style.color = 'var(--primary)'; }}>
+                                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                      Download
+                                    </a>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Armatura Reader') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Reader</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Reader-Armatura's RFID readers provide a reliable, secure, and efficient solution for access control. They offer advanced features, support various RFID card technologies, and can be seamlessly integrated with other access control systems to provide a comprehensive access control solution.
+                            </p>
+                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Reader" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('armatura', 'Armatura Reader').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Armatura Controller') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Controller</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Armatura's controllers are reliable, secure, and efficient solutions that enhance the security and access management of various facilities. They offer advanced features, multiple authentication options, and seamless integration with other security systems to provide a comprehensive access control solution.
+                            </p>
+                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('armatura', 'Armatura Controller').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {(!activeSubcategory || activeSubcategory === 'Armatura Entrance Control') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Entrance Control</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Armatura's smart entrance control systems provide advanced security and visitor flow control. Meticulously designed for speed gates, turnstiles, and barriers, these systems deliver accurate pedestrian and vehicle control, robust durability, and seamless integration with the Armatura One platform.
+                            </p>
+                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Entrance Control" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('armatura', 'Armatura Entrance Control').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : cat.id === 'time-attendance' ? (
+                      <div className="time-attendance-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Visible Series') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Visible Light Series</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Astra Technologies offers the ZKTeco Visible Light Series, a Linux-based facial recognition attendance and access control solution with advanced features such as automatic face tracking, accurate palm verification, and two-factor authentication. Ideal for offices, schools, hospitals, warehouses, and factories, it delivers fast, secure, and reliable attendance and access management.
+                            </p>
+                            <img src="/images/products/Time Attendance/Visible Light series.png" alt="Visible Light Series" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {[
+                                'MiniAC', 'MiniAC Plus', 'FaceDepot 7CL', 'ProBio Plus Series', 'SpeedFace - V5L', 'FaceDepot 7C', 'MiniTA', 'D3', 'SpeedFaceM4', 'Eface 10', 'FaceDepot-7BL', 'FaceDepot 8AL', 'FaceDepot 4A', 'SpeedFace H5L'
+                              ].map((subName) => PRODUCTS.find(p => p.category === 'time-attendance' && (p.subCategory === subName || p.name === subName))).filter(Boolean).map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Fingerprint Attendance') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Fingerprint Attendance</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
+                              As an authorized distributor of ZKTeco, Astra Technologies provides smart and innovative biometric attendance solutions to organizations across India. Powered by ZKTeco's globally trusted technology, used in more than 100 countries, we offer a comprehensive range of biometric attendance systems, including fingerprint attendance machines, facial recognition devices, RFID card-based systems, and multi-biometric solutions.
+                            </p>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Our biometric attendance systems are user-friendly, easy to deploy, and supported by intelligent cloud-based technology for seamless workforce management. They accurately record employee check-in and check-out times, generate detailed attendance reports, and help organizations improve productivity, security, and operational efficiency. Whether for small businesses or large enterprises, Astra Technologies delivers reliable ZKTeco biometric solutions tailored to your attendance management needs.
+                            </p>
+                            <img src="/images/products/Time Attendance/Fingerprint Attendance.png" alt="Fingerprint Attendance" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {[
+                                'K40 Pro', 'K45 Pro', 'IN01-A'
+                              ].map((subName) => PRODUCTS.find(p => p.category === 'time-attendance' && (p.subCategory === subName || p.name === subName))).filter(Boolean).map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Face Attendance') && (
+                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Face Attendance</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
+                              As an authorized distributor of ZKTeco, Astra Technologies delivers industry-leading biometric attendance and access control solutions across India. Backed by ZKTeco's globally recognized technology, trusted in over 100 countries, we offer advanced facial recognition, fingerprint, RFID card, and multi-biometric attendance systems designed for accuracy, security, and ease of use.
+                            </p>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              Our intelligent, cloud-enabled biometric solutions simplify workforce attendance management by accurately recording employee check-in and check-out times while generating comprehensive attendance reports. With user-friendly deployment and reliable performance, Astra Technologies helps organizations streamline attendance tracking, improve operational efficiency, and enhance workplace security through innovative ZKTeco solutions.
+                            </p>
+                            <img src="/images/products/Time Attendance/Face Time Attendance.png" alt="Face Attendance" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {[
+                                'MB30', 'MB360'
+                              ].map((subName) => PRODUCTS.find(p => p.category === 'time-attendance' && (p.subCategory === subName || p.name === subName))).filter(Boolean).map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <>
+                        <div className="cat-section-title">
+                          <div>
+                            <div className="cat-section-label">{cat.label}</div>
+                            <div className="cat-section-desc">{cat.desc}</div>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                        
+                        {cat.id === 'ajax' && (
+                          <img src="/images/Home Page Slide/Ajax.png" alt="Ajax Systems" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                        )}
+
+                        <div className="product-grid">
+                          {matchedProducts.map((p, idx) => (
+                            <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                              {/* Real Transparent Product Image */}
+                              <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                <img src={p.image} alt={p.name} className="product-card-img" />
+                              </div>
+
+                              {/* Clean Product Name without any leading Emojis */}
+                              <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                {p.name}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
                 );
               })
@@ -1328,49 +1918,99 @@ export default function Products({ navigate }) {
       {/* DYNAMIC TECHNICAL SPECS MODAL */}
       {selectedProduct && (
         <div className="specs-modal-overlay" onClick={() => setSelectedProduct(null)}>
-          <div className="specs-modal" onClick={(e) => e.stopPropagation()}>
+          <div className="specs-modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '850px' }}>
             <button className="specs-modal-close" onClick={() => setSelectedProduct(null)}>×</button>
-            <div className="specs-modal-header">
-              <div className="specs-modal-visual">
-                <img src={selectedProduct.image} alt={selectedProduct.name} className="specs-modal-img" />
+            <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap', alignItems: 'flex-start', marginTop: '1rem' }}>
+              <div style={{ flex: '1 1 280px', maxWidth: '350px' }}>
+                {(() => {
+                  const productImages = PRODUCTS.filter(p => p.name === selectedProduct.name).map(p => p.image);
+                  const currentImg = productImages[selectedImageIndex] || selectedProduct.image;
+                  return (
+                    <div className="specs-modal-visual" style={{ background: 'transparent', border: 'none', padding: '1rem', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', height: 'auto', flexShrink: 0, boxShadow: 'none' }}>
+                      <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', marginBottom: productImages.length > 1 ? '1rem' : '0', minHeight: '150px' }}>
+                        <img src={currentImg} alt={selectedProduct.name} className="specs-modal-img" style={{ maxWidth: '100%', maxHeight: '300px', objectFit: 'contain', filter: 'none' }} />
+                      </div>
+                      {productImages.length > 1 && (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px', width: '100%', padding: '5px 0' }}>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(prev => Math.max(0, prev - 1)) }}
+                            style={{ background: 'none', border: 'none', color: selectedImageIndex === 0 ? '#ccc' : '#888', cursor: selectedImageIndex === 0 ? 'default' : 'pointer', fontSize: '1.2rem', padding: '0 5px' }}
+                            disabled={selectedImageIndex === 0}
+                          >
+                            ◀
+                          </button>
+                          <div style={{ display: 'flex', gap: '10px', flex: 1, overflowX: 'auto', justifyContent: 'center' }}>
+                            {productImages.map((imgUrl, idx) => (
+                              <img 
+                                key={idx} 
+                                src={imgUrl} 
+                                alt={`${selectedProduct.name} view ${idx + 1}`} 
+                                onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(idx) }}
+                                style={{ 
+                                  width: '45px', 
+                                  height: '45px', 
+                                  objectFit: 'contain', 
+                                  cursor: 'pointer', 
+                                  border: selectedImageIndex === idx ? '2px solid var(--primary)' : '2px solid transparent',
+                                  borderRadius: '4px',
+                                  background: 'transparent'
+                                }} 
+                              />
+                            ))}
+                          </div>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); setSelectedImageIndex(prev => Math.min(productImages.length - 1, prev + 1)) }}
+                            style={{ background: 'none', border: 'none', color: selectedImageIndex === productImages.length - 1 ? '#ccc' : '#888', cursor: selectedImageIndex === productImages.length - 1 ? 'default' : 'pointer', fontSize: '1.2rem', padding: '0 5px' }}
+                            disabled={selectedImageIndex === productImages.length - 1}
+                          >
+                            ▶
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
-              <div>
-                <h2>{selectedProduct.name}</h2>
-                <div className="specs-modal-meta">
-                  <span className="specs-modal-badge">{CATEGORIES.find(c => c.id === selectedProduct.category)?.label}</span>
-                  {selectedProduct.badge && (
-                    <span className={`specs-modal-status ${selectedProduct.badge}`}>
-                      {selectedProduct.badge.toUpperCase()}
-                    </span>
-                  )}
+
+              <div style={{ flex: '2 1 400px', display: 'flex', flexDirection: 'column' }}>
+                <div className="specs-modal-header" style={{ borderBottom: 'none', paddingBottom: '0', marginBottom: '1.5rem', display: 'block' }}>
+                  <h2 style={{ fontSize: '2.2rem', marginBottom: '0.8rem' }}>{selectedProduct.name}</h2>
+                  <div className="specs-modal-meta">
+                    <span className="specs-modal-badge">{CATEGORIES.find(c => c.id === selectedProduct.category)?.label}</span>
+                    {selectedProduct.badge && (
+                      <span className={`specs-modal-status ${selectedProduct.badge}`}>
+                        {selectedProduct.badge.toUpperCase()}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="specs-modal-body" style={{ padding: '0', border: 'none' }}>
+                  <p className="specs-modal-desc" style={{ marginBottom: '2rem' }}>{selectedProduct.sub}</p>
+
+                  <div className="specs-table-title">⚡ Technical Specifications</div>
+                  <div className="specs-table">
+                    {Object.entries(selectedProduct.specs).map(([key, val]) => (
+                      <div className="specs-row" key={key}>
+                        <span className="specs-label">{key}</span>
+                        <span className="specs-value">{val}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="specs-modal-footer" style={{ marginTop: '2rem', justifyContent: 'flex-start', borderTop: 'none', paddingTop: '0' }}>
+                  <a href="#contact" className="btn btn-primary" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={(e) => {
+                    setSelectedProduct(null);
+                    handleLinkClick(e, '#contact');
+                  }}>
+                    Enquire Now
+                  </a>
+                  <button className="btn btn-outline" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={() => setSelectedProduct(null)}>
+                    Close
+                  </button>
                 </div>
               </div>
-            </div>
-
-            <div className="specs-modal-body">
-              <p className="specs-modal-desc">{selectedProduct.sub}</p>
-
-              <div className="specs-table-title">⚡ Technical Specifications</div>
-              <div className="specs-table">
-                {Object.entries(selectedProduct.specs).map(([key, val]) => (
-                  <div className="specs-row" key={key}>
-                    <span className="specs-label">{key}</span>
-                    <span className="specs-value">{val}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="specs-modal-footer">
-              <a href="#contact" className="btn btn-primary" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={(e) => {
-                setSelectedProduct(null);
-                handleLinkClick(e, '#contact');
-              }}>
-                Enquire Now
-              </a>
-              <button className="btn btn-outline" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={() => setSelectedProduct(null)}>
-                Close
-              </button>
             </div>
           </div>
         </div>

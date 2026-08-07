@@ -83,7 +83,7 @@ export default function Header({ currentPath, navigate }) {
             onClick={(e) => handleLinkClick(e, 'index.html')}
           >
             <img 
-              src="https://astratechnologies.in/wp-content/uploads/2025/11/astra-technologies.png" 
+              src="/images/LOgo/Astra.png" 
               alt="Astra Technologies" 
               className="mobile-nav-logo" 
               onError={(e) => { 
@@ -255,7 +255,7 @@ export default function Header({ currentPath, navigate }) {
         <div className="container nav-inner">
           <a href="index.html" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: '.6rem' }} onClick={(e) => handleLinkClick(e, 'index.html')}>
             <img 
-              src="https://astratechnologies.in/wp-content/uploads/2025/11/astra-technologies.png" 
+              src="/images/LOgo/Astra.png" 
               alt="Astra Technologies" 
               className="nav-logo" 
               onError={(e) => { 
@@ -289,7 +289,6 @@ export default function Header({ currentPath, navigate }) {
                   <a href="products.html#time-attendance-software" onClick={(e) => handleLinkClick(e, 'products.html#time-attendance-software')}>Time Attendance Software</a>
                   <a href="products.html#cloud-attendance-software" onClick={(e) => handleLinkClick(e, 'products.html#cloud-attendance-software')}>Cloud Attendance Software</a>
                   <a href="products.html#zkbio-security-software" onClick={(e) => handleLinkClick(e, 'products.html#zkbio-security-software')}>ZKBio Security Software</a>
-                  <a href="products.html#zkbio-partner" onClick={(e) => handleLinkClick(e, 'products.html#zkbio-partner')}>ZKBio Partner</a>
                   <a href="products.html#software-platforms" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#software-platforms')}>More &gt;</a>
                   
                   <h4 style={{marginTop: '1.5rem'}}>Multi Purpose Integration</h4>

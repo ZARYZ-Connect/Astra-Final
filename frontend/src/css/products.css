@@ -148,8 +148,9 @@
         }
 
         .nav-logo {
-            height: 36px;
-            filter: brightness(0) invert(1)
+            height: 44px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -471,11 +472,14 @@
             position: relative;
             z-index: 2;
             max-width: 480px;
-            margin: 2rem auto 0
+            width: 100%;
+            margin: 2rem auto 0;
+            box-sizing: border-box;
         }
 
         .search-input {
             width: 100%;
+            box-sizing: border-box;
             background: rgba(255, 255, 255, .06);
             border: 1px solid var(--border);
             border-radius: 50px;
@@ -504,6 +508,22 @@
             color: var(--muted);
             font-size: 1rem;
             pointer-events: none
+        }
+
+        @media(max-width: 600px) {
+            .search-wrap {
+                max-width: 100%;
+                padding: 0 1rem;
+                margin: 1.5rem auto 0;
+            }
+            .search-input {
+                font-size: .82rem;
+                padding: .65rem 1rem .65rem 2.6rem;
+            }
+            .search-icon {
+                left: 1.2rem;
+                font-size: .9rem;
+            }
         }
 
         /* STATS BAR */

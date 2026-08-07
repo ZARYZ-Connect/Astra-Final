@@ -232,8 +232,10 @@ export default function Solutions({ navigate }) {
               const email = formData.get('email');
               const phone = formData.get('phone');
               const licenseType = formData.get('licenseType');
+              const deviceCount = formData.get('deviceCount');
+              const userCount = formData.get('userCount');
               const note = formData.get('note');
-              const msg = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ALicense Type: ${licenseType}%0A%0A${note}`;
+              const msg = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ALicense Type: ${licenseType}%0ADevice Count: ${deviceCount}%0AUser Count: ${userCount}%0A%0A${note}`;
               window.location.href = `mailto:sales@astratechnologies.in?subject=License Enquiry: ${licenseType}&body=${msg}`;
               setIsModalOpen(false);
             }}>
@@ -289,6 +291,32 @@ export default function Solutions({ navigate }) {
                     </svg>
                   </span>
                   <input type="tel" name="phone" placeholder="Enter your phone number" required />
+                </div>
+              </div>
+              <div className="le-form-group">
+                <label>DEVICE COUNT</label>
+                <div className="le-input-wrap">
+                  <span className="le-input-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </span>
+                  <input type="number" name="deviceCount" placeholder="Enter device count" min="0" />
+                </div>
+              </div>
+              <div className="le-form-group">
+                <label>USER COUNT</label>
+                <div className="le-input-wrap">
+                  <span className="le-input-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </span>
+                  <input type="number" name="userCount" placeholder="Enter user count" min="0" />
                 </div>
               </div>
               <div className="le-form-group">

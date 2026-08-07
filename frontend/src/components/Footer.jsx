@@ -90,7 +90,7 @@ export default function Footer({ currentPath, navigate }) {
             <div className="ft-brand">
               <div className="ft-logo-row">
                 <img
-                  src="https://astratechnologies.in/wp-content/uploads/2025/11/astra-technologies.png"
+                  src="/images/LOgo/Astra.png"
                   alt="Astra Technologies"
                   className="ft-logo"
                   onError={(e) => {
