@@ -86,7 +86,7 @@ export default function Home({ navigate }) {
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
-        style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 900', maxHeight: 'calc(100vh - 6.5rem)', minHeight: '350px', overflow: 'hidden', background: '#041221', marginTop: '6.5rem' }}
+        style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 900', maxHeight: 'calc(100vh - 7.8rem)', minHeight: '350px', overflow: 'hidden', background: '#041221', marginTop: '7.8rem' }}
       >
         {slides.map((slide, index) => (
           <div 
