@@ -46,9 +46,8 @@ const SECURITY_INSPECTION_HIERARCHY = {
 };
 
 const VIDEO_SURVEILLANCE_HIERARCHY = {
-  "Dome Series": [],
-  "Bullet Series": [],
-  "PTZ Series": [],
+  "Lumina": [],
+  "PixelSense": [],
   "NVR": []
 };
 
@@ -93,101 +92,66 @@ const PRODUCTS = [
 
   // 1. RS485 Reader Series (3 items)
   { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series-2.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
-  { category: 'access-control', subCategory: 'RS485 Reader Series', name: 'RS485 Reader Series', sub: 'High Speed RS485 Biometric & RFID Reader', tags: ['RS485 Reader Series', 'Reader'], image: '/images/products/Access Control/Readers/RS485 Reader Series/RS485 Reader Series-3.png', specs: { 'Interface': 'RS485', 'Protection': 'IP65 Water Resistant' } },
 
   // 2. QR600 Series (4 items)
   { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-2.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-3.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
-  { category: 'access-control', subCategory: 'QR600 Series', name: 'QR600 Series', sub: 'QR Code & RFID Access Control Reader', tags: ['QR600 Series', 'QR Code'], image: '/images/products/Access Control/Readers/QR600 Series/QR600 Series-4.png', specs: { 'Scanning': 'Dynamic QR Code & RFID', 'Interface': 'Wiegand & RS485' } },
 
   // 3. KR500 Series (3 items)
   { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series-2.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
-  { category: 'access-control', subCategory: 'KR500 Series', name: 'KR500 Series', sub: 'Compact Outdoor RFID Reader', tags: ['KR500 Series', 'RFID'], image: '/images/products/Access Control/Readers/KR500 Series/KR500 Series-3.png', specs: { 'Ingress Protection': 'IP65 Waterproof', 'Interface': 'Wiegand' } },
 
   // 4. FR1500S (3 items)
   { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S-2.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
-  { category: 'access-control', subCategory: 'FR1500S', name: 'FR1500S', sub: 'Flush-Mounted Stainless Steel Fingerprint Reader', tags: ['FR1500S', 'Fingerprint'], image: '/images/products/Access Control/Readers/FR1500S/FR1500S-3.png', specs: { 'Installation': 'Flush-Mounted', 'Sensor': 'SilkID Optical Sensor' } },
 
   // 5. FR1200 (2 items)
   { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/Readers/FR1200/FR1200.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
-  { category: 'access-control', subCategory: 'FR1200', name: 'FR1200', sub: 'Outdoor Biometric RS485 Slave Reader', tags: ['FR1200', 'Biometric'], image: '/images/products/Access Control/Readers/FR1200/FR1200-2.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Interface': 'RS485 Slave' } },
 
   // 6. SF100 (3 items)
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-2.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-3.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' } },
+  { category: 'access-control', subCategory: 'SF100', name: 'SF100', sub: 'Sleek IP Biometric Access Control Terminal', tags: ['SF100', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/SF100/SF100-1.png', specs: { 'Display': '2.8-inch Color Touch', 'Capacity': '1,500 Fingerprints' ,  'Authentication': 'Fingerprint'} },
 
   // 7. SF1005 (6 items)
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_01_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_02_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_03_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_04_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
-  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_05_500x500.png', specs: { 'Type': 'Biometrics Terminal' } },
+  { category: 'access-control', subCategory: 'SF1005', name: 'SF1005', sub: 'Biometric Access Control & Attendance Terminal', tags: ['SF1005', 'Biometrics'], image: '/images/products/Access Control/Standalone Devices/SF1005/SF1005_00_500x500.png', specs: { 'Type': 'Biometrics Terminal' ,  'Authentication': 'Fingerprint / Card', 'Capacity': '3000'} },
 
   // 8. Atlas Prox Series (4 items)
   { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-2.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-3.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'Atlas Prox Series', name: 'Atlas Prox Series', sub: 'Web-Based RFID Control Panel', tags: ['Atlas Prox Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Prox Series/Atlas Prox Series-4.png', specs: { 'Management': 'Embedded Web Server', 'Doors': '1, 2, 4 Door Options' } },
 
   // 9. Atlas Bio Series (2 items)
   { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Bio Series/Atlas Bio Series-2.png', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
-  { category: 'access-control', subCategory: 'Atlas Bio Series', name: 'Atlas Bio Series', sub: 'Web-Based Biometric Control Panel', tags: ['Atlas Bio Series', 'Atlas Series'], image: '/images/products/Access Control/Multi Door Controller/Atlas Bio Series/Atlas Bio Series.png', specs: { 'Management': 'Embedded Web Server', 'Biometric Engine': 'Primary Matching' } },
 
   // 10. EC16 & DEX16 (2 items)
   { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/Elevator Access Controller/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
-  { category: 'access-control', subCategory: 'EC16 & DEX16', name: 'EC16 & DEX16', sub: 'Elevator & Floor Control Expansion Module', tags: ['EC16 & DEX16', 'Elevator'], image: '/images/products/Access Control/Elevator Access Controller/EC16 & DEX16/EC16 & DEX16-2.png', specs: { 'Floors Controlled': '16 Floors per board', 'Expansion': 'Up to 128 floors' } },
 
   // 11. SC405 (2 items)
   { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC405/SC405.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
-  { category: 'access-control', subCategory: 'SC405', name: 'SC405', sub: 'RFID Standalone Access Terminal', tags: ['SC405', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC405/SC405-2.png', specs: { 'Display': '2.0-inch Color Screen', 'Capacity': '10,000 Cards' } },
 
   // 12. SA40 (1 item)
   { category: 'access-control', subCategory: 'SA40', name: 'SA40', sub: 'Touch Keypad Standalone Controller', tags: ['SA40', 'Keypad'], image: '/images/products/Access Control/Standalone Devices/SA40/SA40.png', specs: { 'Keypad': 'Touch Keypad with Backlight', 'Capacity': '1,000 Users' } },
 
   // 13. MK-V1 (2 items)
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/MK-V1/MK-V1_01.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' } },
+  { category: 'access-control', subCategory: 'MK-V1', name: 'MK-V1', sub: 'Vandalproof Metallic Keypad & RFID Terminal', tags: ['MK-V1', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/MK-V1/MK-V1.png', specs: { 'Housing': 'Zinc Alloy Vandalproof', 'Protection': 'IP65 Waterproof' ,  'Authentication': 'Card', 'Capacity': '888'} },
 
   // 14. F22 (3 items)
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/Standalone Devices/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F22/F22-2.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F22/F22-3.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F22', name: 'F22', sub: 'Ultra Thin Fingerprint & Card Terminal', tags: ['F22', 'Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Access Control/Standalone Devices/F22/F22.png', specs: { 'Sensor': 'BioID Sensor', 'Connectivity': 'Wi-Fi & TCP/IP' ,  'Authentication': 'Fingerprint/Card', 'Capacity': '3000'} },
 
   // 15. F18 (2 items)
-  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F18/F18-2.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'F18', name: 'F18', sub: 'Classic Biometric Fingerprint Standalone', tags: ['F18', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F18/F18.png', specs: { 'Display': 'TFT Color Screen', 'Capacity': '3,000 Fingerprints' ,  'Authentication': 'Fingerprint/Card'} },
 
   // 16. SC800 (2 items)
   { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC800/SC800.png', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
-  { category: 'access-control', subCategory: 'SC800', name: 'SC800', sub: 'Waterproof Linux RFID Access Terminal', tags: ['SC800', 'RFID'], image: '/images/products/Access Control/Standalone Devices/SC800/SC800-2.png', specs: { 'Display': '2.4-inch Color Touchscreen', 'Protection': 'IP65 Waterproof' } },
 
   // 17. F09 (3 items)
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09-1.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
-  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09-2.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' } },
+  { category: 'access-control', subCategory: 'F09', name: 'F09', sub: 'Standalone Fingerprint Access Control', tags: ['F09', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/F09/F09.png', specs: { 'Display': 'OLED Screen', 'Interface': 'Wiegand & TCP/IP' ,  'Authentication': 'Fingerprint / Face / Card', 'Capacity': '3000'} },
 
   // 18. EC10 & EX16 (3 items)
   { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16-2.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
-  { category: 'access-control', subCategory: 'EC10 & EX16', name: 'EC10 & EX16', sub: 'Elevator Control Panel & Floor Expansion', tags: ['EC10 & EX16', 'Elevator Access Controller'], image: '/images/products/Access Control/Elevator Access Controller/EC10 & EX16/EC10 & EX16-3.png', specs: { 'Base Board': '10 Floors', 'Expansion': 'Up to 58 floors' } },
 
   // 19. DM10 (1 item)
   { category: 'access-control', subCategory: 'DM10', name: 'DM10', sub: 'Door Expansion Module for Control Panels', tags: ['DM10', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/DM10/DM10.png', specs: { 'RS485': 'RS485 Communication', 'Control': '1 Door Expansion' } },
 
   // 20. X7 (3 items)
   { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7-2.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
-  { category: 'access-control', subCategory: 'X7', name: 'X7', sub: 'Basic Fingerprint & Card Reader Terminal', tags: ['X7', 'Fingerprint'], image: '/images/products/Access Control/Standalone Devices/X7/X7-3.png', specs: { 'Keypad': '16-key PIN Pad', 'Capacity': '500 Fingerprints' } },
 
   // 21. InBio PC Series & DE10 (2 items)
   { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC Series & DE10.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
-  { category: 'access-control', subCategory: 'InBio PC Series & DE10', name: 'InBio PC Series & DE10', sub: 'Biometric Multi-Door Control Panel', tags: ['InBio PC Series & DE10', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/InBio PC Series & DE10/InBio PC 400_01_500x500.png', specs: { 'Matching': 'Hardware Biometric Engine', 'Doors': '1, 2, 4 Door Options' } },
 
   // 22. C3-100 Plus (3 items)
   { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-100 Plus', sub: 'IP-Based 1-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-100 Plus-01.png', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
@@ -195,108 +159,86 @@ const PRODUCTS = [
   { category: 'access-control', subCategory: 'C3-100 Plus', name: 'C3-400 Plus', sub: 'IP-Based 4-Door RFID Control Panel', tags: ['C3-100 Plus', 'RFID'], image: '/images/products/Access Control/Multi Door Controller/C3-100 Plus/C3-400 Plus-A.png', specs: { 'Communication': 'TCP/IP & RS485', 'Capacity': '30,000 Cards' } },
 
   // 23. inBio-160 Pro Plus (3 items)
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-160 Pro Plus', sub: 'High Security 1-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], badge: 'popular', featured: true, image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-260 Pro Plus', sub: 'High Security 2-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500 (1).png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
-  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-460 Pro Plus', sub: 'High Security 4-Door Biometric Control Package B', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio460Pro Plus Package B_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' } },
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-160 Pro Plus', sub: 'High Security 1-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], badge: 'popular', featured: true, image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' ,  'Authentication': 'Card / Password / Fingerprint'} },
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-260 Pro Plus', sub: 'High Security 2-Door Biometric Control Panel', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio-160  Pro Plus_500x500 (1).png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' ,  'Authentication': 'Card / Password / Fingerprint'} },
+  { category: 'access-control', subCategory: 'inBio-160 Pro Plus', name: 'inBio-460 Pro Plus', sub: 'High Security 4-Door Biometric Control Package B', tags: ['inBio-160 Pro Plus', 'Biometric'], image: '/images/products/Access Control/Multi Door Controller/inBio-160  Pro Plus/inBio460Pro Plus Package B_500x500.png', specs: { 'Security': 'Push Firmware & Push Data', 'Capacity': '20,000 Fingerprints' ,  'Authentication': 'Card / Password / Fingerprint'} },
 
   // Time Attendance Sub-Categories
 
   // 1. MB360 (3 items)
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Time Attendance & Access Control Terminal', tags: ['MB360', 'Face & Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/MB360/MB360.png', specs: { 'Recognition': 'Face & Fingerprint', 'Capacity': '1,500 Faces / 2,000 Fingerprints', 'Display': '2.8-inch TFT Screen' } },
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Terminal with Card Reader', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-1.png', specs: { 'Recognition': 'Face & Fingerprint & Card', 'Display': '2.8-inch Color Display' } },
-  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Advanced Hybrid Biometric Terminal', tags: ['MB360', 'Biometric'], image: '/images/products/Time Attendance/MB360/MB360-2.png', specs: { 'Communication': 'TCP/IP, USB Host', 'Display': '2.8-inch Color Display' } },
+  { category: 'time-attendance', subCategory: 'MB360', name: 'MB360', sub: 'Multi-Biometric Time Attendance & Access Control Terminal', tags: ['MB360', 'Face & Fingerprint'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/MB360/MB360.png', specs: { 'Recognition': 'Face & Fingerprint', 'Capacity': '1,500 Faces / 2,000 Fingerprints', 'Display': '2.8-inch TFT Screen' ,  'Authentication': 'Face/Fingerprint/card'} },
 
   // 2. MB30 (1 item)
-  { category: 'time-attendance', subCategory: 'MB30', name: 'MB30', sub: 'Multi-Biometric Time Attendance Terminal', tags: ['MB30', 'Face & Fingerprint'], image: '/images/products/Time Attendance/MB30/MB30.png', specs: { 'Recognition': 'Face & Fingerprint', 'Display': '2.8-inch TFT Screen', 'Capacity': '1,000 Faces' } },
+  { category: 'time-attendance', subCategory: 'MB30', name: 'MB30', sub: 'Multi-Biometric Time Attendance Terminal', tags: ['MB30', 'Face & Fingerprint'], image: '/images/products/Time Attendance/MB30/MB30.png', specs: { 'Recognition': 'Face & Fingerprint', 'Display': '2.8-inch TFT Screen', 'Capacity': '1,000 Faces' ,  'Authentication': 'Face/Finger'} },
 
   // 3. MB10-VL (1 item)
-  { category: 'time-attendance', subCategory: 'MB10-VL', name: 'MB10-VL', sub: 'Visible Light Facial Recognition Terminal', tags: ['MB10-VL', 'Visible Light'], image: '/images/products/Time Attendance/MB10-VL/MB10-VL.png', specs: { 'Recognition': 'Visible Light Facial', 'Display': '2.8-inch TFT Screen', 'Capacity': '500 Faces' } },
+  { category: 'time-attendance', subCategory: 'MB10-VL', name: 'MB10-VL', sub: 'Visible Light Facial Recognition Terminal', tags: ['MB10-VL', 'Visible Light'], image: '/images/products/Time Attendance/MB30/MB30.png', specs: { 'Recognition': 'Visible Light Facial', 'Display': '2.8-inch TFT Screen', 'Capacity': '500 Faces' } },
 
   // 4. K40 Pro (2 items)
-  { category: 'time-attendance', subCategory: 'K40 Pro', name: 'K40 Pro', sub: 'Fingerprint Time Attendance Terminal with Battery Backup', tags: ['K40 Pro', 'Fingerprint Attendance'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/K40 Pro/K40 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch TFT Screen', 'Battery': 'Built-in Backup Battery' } },
+  { category: 'time-attendance', subCategory: 'K40 Pro', name: 'K40 Pro', sub: 'Fingerprint Time Attendance Terminal with Battery Backup', tags: ['K40 Pro', 'Fingerprint Attendance'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/K40 Pro/K40 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch TFT Screen', 'Battery': 'Built-in Backup Battery' ,  'Authentication': 'Fingerprint/Card', 'Capacity': '2000'} },
   { category: 'time-attendance', subCategory: 'K40 Pro', name: 'K40 Pro (HD)', sub: 'Fingerprint Attendance Terminal with Access Control Interface', tags: ['K40 Pro', 'Fingerprint Attendance'], image: '/images/products/Time Attendance/K40 Pro/K40 Pro_500x500.png', specs: { 'Capacity': '3,000 Fingerprints', 'Communication': 'TCP/IP, USB Host' } },
 
   // 5. K45 Pro (1 item)
-  { category: 'time-attendance', subCategory: 'K45 Pro', name: 'K45 Pro', sub: 'Biometric Time Attendance & Simple Access Control Terminal', tags: ['K45 Pro', 'Fingerprint Attendance'], image: '/images/products/Time Attendance/K45 Pro/K45 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch Color Display', 'Backup': 'Integrated Battery' } },
+  { category: 'time-attendance', subCategory: 'K45 Pro', name: 'K45 Pro', sub: 'Biometric Time Attendance & Simple Access Control Terminal', tags: ['K45 Pro', 'Fingerprint Attendance'], image: '/images/products/Time Attendance/K45 Pro/K45 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch Color Display', 'Backup': 'Integrated Battery' ,  'Authentication': 'FingerPrint/Card'} },
 
   // 6. LX50 (1 item)
-  { category: 'time-attendance', subCategory: 'LX50', name: 'LX50', sub: 'Standalone Desktop & Wall-Mount Fingerprint Terminal', tags: ['LX50', 'Fingerprint Attendance'], image: '/images/products/Time Attendance/LX50/LX50.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch TFT Screen', 'Reports': 'SSR Excel Reports' } },
+  { category: 'time-attendance', subCategory: 'LX50', name: 'LX50', sub: 'Standalone Desktop & Wall-Mount Fingerprint Terminal', tags: ['LX50', 'Fingerprint Attendance'], image: '/images/products/Time Attendance/K40 Pro/K40 Pro.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '2.8-inch TFT Screen', 'Reports': 'SSR Excel Reports' } },
 
   // 7. IN01-A (1 item)
-  { category: 'time-attendance', subCategory: 'IN01-A', name: 'IN01-A', sub: 'Door Access & Time Attendance Fingerprint Terminal', tags: ['IN01-A', 'IN Series'], image: '/images/products/Time Attendance/IN01-A/IN01-A.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '3.0-inch Color TFT', 'Capacity': '3,000 Fingerprints' } },
+  { category: 'time-attendance', subCategory: 'IN01-A', name: 'IN01-A', sub: 'Door Access & Time Attendance Fingerprint Terminal', tags: ['IN01-A', 'IN Series'], image: '/images/products/Time Attendance/IN01-A/IN01-A.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '3.0-inch Color TFT', 'Capacity': '3,000 Fingerprints' ,  'Authentication': 'FingerPrint/Card'} },
 
   // 8. iClock700 (1 item)
-  { category: 'time-attendance', subCategory: 'iClock700', name: 'iClock700', sub: 'Enterprise Biometric Time Attendance Terminal', tags: ['iClock700', 'iClock Series'], image: '/images/products/Time Attendance/iClock700/iClock700.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '3.5-inch TFT Screen', 'Camera': 'Built-in Camera' } },
+  { category: 'time-attendance', subCategory: 'iClock700', name: 'iClock700', sub: 'Enterprise Biometric Time Attendance Terminal', tags: ['iClock700', 'iClock Series'], image: '/images/products/Time Attendance/IN01-A/IN01-A.png', specs: { 'Sensor': 'Optical Fingerprint Sensor', 'Display': '3.5-inch TFT Screen', 'Camera': 'Built-in Camera' } },
 
   // 9. SpeedFace-V5 (2 items)
-  { category: 'time-attendance', subCategory: 'SpeedFace-V5', name: 'SpeedFace-V5', sub: 'Touchless Face Recognition Terminal', tags: ['SpeedFace-V5', 'Face Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/speedface-v5-palm.png', specs: { 'Recognition': 'Touchless Face', 'Display': '5-inch Touch Screen', 'Platform': 'Linux' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace-V5', name: 'SpeedFace-V5', sub: 'Touchless Multi-Biometric Attendance Unit', tags: ['SpeedFace-V5', 'Face Recognition'], image: '/images/products/Time Attendance/SpeedFace-V5 Palm/SpeedFace-V5 Palm-2.png', specs: { 'Recognition': 'Facial AI', 'Display': '5-inch Touch Screen' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace-V5', name: 'SpeedFace-V5', sub: 'Touchless Face Recognition Terminal', tags: ['SpeedFace-V5', 'Face Recognition'], image: '/images/products/Time Attendance/MiniTA/SpeedFace-V5 Palm.png', specs: { 'Recognition': 'Touchless Face', 'Display': '5-inch Touch Screen', 'Platform': 'Linux' } },
 
   // 10. SpeedFaceM4 (3 items)
-  { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4', sub: 'Outdoor Visible Light Facial Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_500x500.png', specs: { 'Ingress Protection': 'IP66 Waterproof', 'Recognition': 'Visible Light Facial', 'Display': '4-inch Touch Screen' } },
+  { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4', sub: 'Outdoor Visible Light Facial Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_500x500.png', specs: { 'Ingress Protection': 'IP66 Waterproof', 'Recognition': 'Visible Light Facial', 'Display': '4-inch Touch Screen' ,  'Authentication': 'Face / Card', 'Capacity': '10,000'} },
   { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4 (Capacitive)', sub: 'Visible Light & QR Code Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_cap_500x500.png', specs: { 'Display': '4-inch Capacitive Touch', 'Protection': 'IP66 Waterproof' } },
   { category: 'time-attendance', subCategory: 'SpeedFaceM4', name: 'SpeedFaceM4 (Side View)', sub: 'Slim Outdoor Biometric Terminal', tags: ['SpeedFaceM4', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFaceM4/SpeedFaceM4_Side_500x500.png', specs: { 'Display': '4-inch Touch Screen', 'Housing': 'Vandal-proof & IP66' } },
 
   // 11. SpeedFace H5L (2 items)
   { category: 'time-attendance', subCategory: 'SpeedFace H5L', name: 'SpeedFace H5L', sub: 'Visible Light Facial Recognition Terminal', tags: ['SpeedFace H5L', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace H5L/SpeedFace H5L.png', specs: { 'Display': '5-inch Color LCD', 'Recognition': 'Visible Light AI', 'Capacity': '6,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace H5L', name: 'SpeedFace H5L', sub: 'Visible Light Terminal with RFID Support', tags: ['SpeedFace H5L', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace H5L/SpeedFace H5L-2.png', specs: { 'Display': '5-inch Touchscreen', 'Verification': '<0.35s High Speed' } },
 
   // 12. FaceDepot-7BL (3 items)
-  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Indoor Visible Light Facial Recognition Station', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL.png', specs: { 'Display': '7-inch Touch Screen', 'Capacity': '10,000 Face Templates', 'Platform': 'Android' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Facial Terminal with Turnstile Integration', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-2.png', specs: { 'Display': '7-inch Screen', 'Mounting': 'Turnstile / Wall Mount' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Visible Light Station for High-Traffic Entry', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL-3.png', specs: { 'Display': '7-inch HD Display', 'Capacity': '10,000 Face Templates' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot-7BL', name: 'FaceDepot-7BL', sub: 'Indoor Visible Light Facial Recognition Station', tags: ['FaceDepot-7BL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot-7BL/FaceDepot-7BL.png', specs: { 'Display': '7-inch Touch Screen', 'Capacity': '10,000 Face Templates', 'Platform': 'Android' ,  'Authentication': 'Face/Fingerprint/card'} },
 
   // 13. FaceDepot 8AL (3 items)
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor Facial Recognition Terminal with Large Screen', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL.png', specs: { 'Display': '8-inch Touchscreen', 'Protection': 'IP68 Waterproof', 'Capacity': '30,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor High-Capacity Facial Terminal', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-2.png', specs: { 'Display': '8-inch Screen', 'Protection': 'IP68 Rating' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Biometric Access & Attendance Station', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL-3.png', specs: { 'Display': '8-inch Touchscreen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 8AL', name: 'FaceDepot 8AL', sub: 'Outdoor Facial Recognition Terminal with Large Screen', tags: ['FaceDepot 8AL', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 8AL/FaceDepot 8AL.png', specs: { 'Display': '8-inch Touchscreen', 'Protection': 'IP68 Waterproof', 'Capacity': '30,000 Face Templates' ,  'Authentication': 'Face/card'} },
 
   // 14. FaceDepot 4A (1 item)
-  { category: 'time-attendance', subCategory: 'FaceDepot 4A', name: 'FaceDepot 4A', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['FaceDepot 4A', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 4A/FaceDepot 4A.png', specs: { 'Display': '4-inch Color Touch', 'Recognition': 'Visible Light Facial AI', 'Capacity': '3,000 Faces' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 4A', name: 'FaceDepot 4A', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['FaceDepot 4A', 'FaceDepot'], image: '/images/products/Time Attendance/FaceDepot 4A/FaceDepot 4A.png', specs: { 'Display': '4-inch Color Touch', 'Recognition': 'Visible Light Facial AI', 'Capacity': '3,000 Faces' ,  'Authentication': 'Fingerprint / Face / Card'} },
 
   // 15. Eface 10 (2 items)
-  { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10', sub: 'Economical Visible Light Facial Recognition Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10.png', specs: { 'Display': '4.3-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Capacity': '500 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10', sub: 'Compact Facial Attendance Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10-2.png', specs: { 'Display': '4.3-inch Touch Screen', 'Communication': 'TCP/IP, USB Host' } },
+  { category: 'time-attendance', subCategory: 'Eface 10', name: 'Eface 10', sub: 'Economical Visible Light Facial Recognition Terminal', tags: ['Eface 10', 'Visible Light'], image: '/images/products/Time Attendance/Eface 10/Eface 10.png', specs: { 'Display': '4.3-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Capacity': '500 Face Templates' ,  'Authentication': 'Card/Face'} },
 
   // 16. D3 (3 items)
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'Desktop Visible Light Facial Recognition Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-1.png', specs: { 'Design': 'Desktop Ergonomic Form Factor', 'Display': '4-inch Touchscreen', 'Recognition': 'Visible Light Facial' } },
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'Smart Desktop Attendance Unit', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-2.png', specs: { 'Display': '4-inch Touch Panel', 'Communication': 'Wi-Fi & TCP/IP' } },
-  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'AI Visible Light Desktop Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-4.png', specs: { 'Display': '4-inch Touchscreen', 'Camera': 'Wide Angle HD Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'D3', name: 'D3', sub: 'Desktop Visible Light Facial Recognition Terminal', tags: ['D3', 'Desktop Terminal'], image: '/images/products/Time Attendance/D3/D3-1.png', specs: { 'Design': 'Desktop Ergonomic Form Factor', 'Display': '4-inch Touchscreen', 'Recognition': 'Visible Light Facial' ,  'Authentication': 'Face/ Fingerprint', 'Capacity': '1000'} },
 
   // 17. MiniTA (2 items)
-  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA', sub: 'Ultra-Compact Time Attendance Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA.png', specs: { 'Display': '2.8-inch TFT Color Screen', 'Recognition': 'Facial & Fingerprint', 'Form Factor': 'Ultra-Compact' } },
-  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA', sub: 'Mini Time Attendance & Access Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA-2.png', specs: { 'Display': '2.8-inch Color Screen', 'Communication': 'TCP/IP, USB' } },
+  { category: 'time-attendance', subCategory: 'MiniTA', name: 'MiniTA', sub: 'Ultra-Compact Time Attendance Terminal', tags: ['MiniTA', 'Compact Terminal'], image: '/images/products/Time Attendance/MiniTA/MiniTA.png', specs: { 'Display': '2.8-inch TFT Color Screen', 'Recognition': 'Facial & Fingerprint', 'Form Factor': 'Ultra-Compact' ,  'Authentication': 'Face', 'Capacity': '800'} },
 
   // 18. SpeedFace V3L Series (2 items)
-  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series', sub: 'Slim Visible Light Facial & RFID Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-1.png', specs: { 'Display': '2.4-inch Touch Screen', 'Protection': 'IP65 Water & Dust Resistant', 'Recognition': 'Visible Light Facial' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series', sub: 'Slim Facial & Fingerprint Attendance Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace V3L Series/SpeedFace V3L Series-2.png', specs: { 'Display': '2.4-inch Touch Screen', 'Sensor': 'Fingerprint & Facial AI' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace V3L Series', name: 'SpeedFace V3L Series', sub: 'Slim Visible Light Facial & RFID Terminal', tags: ['SpeedFace V3L Series', 'Visible Light'], image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L.png', specs: { 'Display': '2.4-inch Touch Screen', 'Protection': 'IP65 Water & Dust Resistant', 'Recognition': 'Visible Light Facial' } },
 
   // 19. SpeedFace - V5L (2 items)
-  { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L', sub: 'High-Performance Visible Light Facial Recognition Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L.png', specs: { 'Display': '5-inch Touch Screen', 'Capacity': '6,000 Face Templates', 'Verification': '<0.35s Speed' } },
-  { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L', sub: 'Visible Light & RFID Reader Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L-2.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wiegand, RS485' } },
+  { category: 'time-attendance', subCategory: 'SpeedFace - V5L', name: 'SpeedFace - V5L', sub: 'High-Performance Visible Light Facial Recognition Terminal', tags: ['SpeedFace - V5L', 'Facial AI'], badge: 'popular', featured: true, image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L.png', specs: { 'Display': '5-inch Touch Screen', 'Capacity': '6,000 Face Templates', 'Verification': '<0.35s Speed' ,  'Authentication': 'Face/ Fingerprint/ Card'} },
 
   // 20. ProBio Plus Series (1 item)
-  { category: 'time-attendance', subCategory: 'ProBio Plus Series', name: 'ProBio Plus Series', sub: 'High-Security Biometric Access & Attendance Terminal', tags: ['ProBio Plus Series', 'ProBio'], image: '/images/products/Time Attendance/ProBio Plus Series/ProBio Plus Series.png', specs: { 'Sensor': 'SilkID Fingerprint Sensor', 'Display': '2.8-inch Color Display', 'Security': 'Push Data & Firmware' } },
+  { category: 'time-attendance', subCategory: 'ProBio Plus Series', name: 'ProBio Plus Series', sub: 'High-Security Biometric Access & Attendance Terminal', tags: ['ProBio Plus Series', 'ProBio'], image: '/images/products/Time Attendance/ProBio Plus Series/ProBio Plus Series.png', specs: { 'Sensor': 'SilkID Fingerprint Sensor', 'Display': '2.8-inch Color Display', 'Security': 'Push Data & Firmware' ,  'Authentication': 'Face/ Fingerprint/ Card', 'Capacity': '3000'} },
 
   // 21. MiniAC (3 items)
-  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC.png', specs: { 'Display': '5-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Platform': 'Linux' } },
-  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Linux-Based Visible Light Station', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-2.png', specs: { 'Display': '5-inch Touch Display', 'Capacity': '3,000 Face Templates' } },
-  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Smart Facial Access & Attendance Unit', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC-3.png', specs: { 'Display': '5-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
+  { category: 'time-attendance', subCategory: 'MiniAC', name: 'MiniAC', sub: 'Compact Visible Light Facial Recognition Terminal', tags: ['MiniAC', 'Visible Light'], image: '/images/products/Time Attendance/MiniAC/MiniAC.png', specs: { 'Display': '5-inch Touch Screen', 'Recognition': 'Visible Light Facial', 'Platform': 'Linux' ,  'Authentication': 'Face + Card', 'Capacity': '3000'} },
 
   // 22. FaceDepot 7C (3 items)
-  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: '7-inch Visible Light Facial Recognition Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C.png', specs: { 'Display': '7-inch Touch Screen', 'Recognition': 'Visible Light Facial AI', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: 'Indoor Facial Attendance Station', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-2.png', specs: { 'Display': '7-inch Touch Panel', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: 'Large Display Visible Light Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C-3.png', specs: { 'Display': '7-inch Touch Screen', 'Communication': 'TCP/IP, Wi-Fi' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7C', name: 'FaceDepot 7C', sub: '7-inch Visible Light Facial Recognition Terminal', tags: ['FaceDepot 7C', 'FaceDepot'], image: '/images/products/Time Attendance/facedepot 7C/FaceDepot 7C.png', specs: { 'Display': '7-inch Touch Screen', 'Recognition': 'Visible Light Facial AI', 'Capacity': '10,000 Faces' ,  'Authentication': 'Face/Fingerprint/ Card'} },
 
   // 23. FaceDepot 7CL (3 items)
-  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Outdoor Visible Light Facial Recognition Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL.png', specs: { 'Display': '7-inch Touch Screen', 'Ingress Protection': 'Weatherproof Rating', 'Capacity': '10,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'High-Capacity Outdoor Facial Terminal', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-2.png', specs: { 'Display': '7-inch Touch Screen', 'Camera': 'Wide Angle 2MP HD' } },
-  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Turnstile & Wall Mount Facial Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL-3.png', specs: { 'Display': '7-inch Touch Panel', 'Mounting': 'Turnstile / Stand Mount' } },
+  { category: 'time-attendance', subCategory: 'FaceDepot 7CL', name: 'FaceDepot 7CL', sub: 'Outdoor Visible Light Facial Recognition Station', tags: ['FaceDepot 7CL', 'FaceDepot'], image: '/images/products/Time Attendance/Facedepot 7CL/Facedepot 7CL.png', specs: { 'Display': '7-inch Touch Screen', 'Ingress Protection': 'Weatherproof Rating', 'Capacity': '10,000 Faces' ,  'Authentication': 'Face / Card'} },
 
   // 24. MiniAC Plus (3 items)
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.png', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Multi-Biometric Facial Unit', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-2.png', specs: { 'Display': '5-inch Color Touch Screen', 'Communication': 'TCP/IP, Wi-Fi, RS485' } },
-  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Access Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus-3.png', specs: { 'Display': '5-inch Touch Screen', 'Camera': '2MP Dual Lens' } },
+  { category: 'time-attendance', subCategory: 'MiniAC Plus', name: 'MiniAC Plus', sub: 'Visible Light Facial Recognition Terminal', tags: ['MiniAC Plus', 'MiniAC'], image: '/images/products/Time Attendance/MiniAC Plus/MiniAC Plus.png', specs: { 'Display': '5-inch Color Touch', 'Recognition': 'Visible Light', 'Capacity': '3,000 Faces' ,  'Authentication': 'Face + Card'} },
 
   // Additional Software & Terminals
   {
@@ -307,7 +249,7 @@ const PRODUCTS = [
     tags: ['Android OS', '4-inch Screen', 'API Integration'],
     badge: 'new',
     featured: true,
-    image: 'https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211210/4e39c8665c47095ab4fd384d98808b1a.png',
+    image: '/images/products/Time Attendance/SpeedFace - V5L/SpeedFace - V5L-2.png',
     specs: {
       'Face Capacity': '8,000 templates',
       'Operating System': 'Android OS with security layer',
@@ -325,7 +267,7 @@ const PRODUCTS = [
     name: 'ZKBio Time',
     sub: 'Powerful web-based real-time time attendance and payroll integration software.',
     tags: ['Time Attendance', 'Real-Time Sync', 'Payroll Middleware'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
+    image: '/images/products/Software/Time Attendance Software.png',
     specs: {
       'System Type': 'Web-based time attendance platform',
       'Synchronization': 'Real-time automatic terminal log capture',
@@ -360,120 +302,80 @@ const PRODUCTS = [
   { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'AMTL-BGM1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP20 Series/EP20CKQ-2.png', specs: { 'Type': 'Entrance Control' } },
   { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-2000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/EP30CF/Aegis-2000.png', specs: { 'Type': 'Entrance Control' } },
   { category: 'armatura', subCategory: 'Armatura Entrance Control', name: 'Aegis-1000', sub: 'Armatura Smart Entrance Solution', tags: ['Entrance Control'], image: '/images/products/Armatura/Armatura Reader/AMT-PVR-10/AMT-PVR-10 (5).png', specs: { 'Type': 'Entrance Control' } },
-
   // ----------------------------------------------------
   // SMART ENTRANCE CONTROL PRODUCTS
   // ----------------------------------------------------
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL3000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200L', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200DL', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-F1000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Zophon-S1000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-T1000', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL8000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-S2000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT3000S', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL700 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL500 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS200 Pro', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS1000 Plus Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'mTS1000 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn S1000 & S1200', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Pro Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL500', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Comet Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Mars-S100 Series', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL320', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL200', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL320', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL220', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT2000S', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000D-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000S-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000D-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000S-LA', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
-  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2300', sub: 'Smart Security Gate', tags: ['Security Gate'], image: '/images/products/Access Control/FR1500S/FR1500S.png', specs: { 'Type': 'Smart Security Gate' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Comet Series', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Comet Series.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL200', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FBL200.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '600 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'fbl220', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/fbl220.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL300', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FBL300.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '600 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL320', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FBL320.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '600 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL700', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FBL700.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '600 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FBL_500', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FBL_500.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '600 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200DL_500x500px', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT2200DL_500x500px.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2200L', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT2200L.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT2300', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT2300.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000D-LA', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT3000D-LA.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT3000S-LA_500x500', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT3000S-LA_500x500.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000D', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT4000D.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'FHT4000S-LA', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/FHT4000S-LA.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1400 * 1395 * 2220 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Mars_S100_03', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Mars_S100_03.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'mTS1000 Series', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/mTS1000 Series.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn Plus Series', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Saturn Plus Series.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn S1000 & S1200', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Saturn S1000 & S1200.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn S2000-A-2', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Saturn S2000-A-2.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-F1000-1', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Saturn-F1000-1.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Saturn-T1000', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Saturn-T1000.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT2000S', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBT2000S.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBT3000S', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBT3000S.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL300-1', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBTL300-1.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL3000', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBTL3000.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL320-1', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBTL320-1.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL8000 Series Swing Barrier', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBTL8000 Series Swing Barrier.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'SBTL_500_01', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/SBTL_500_01.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Lane Width': '900 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS1000 plus series', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/TS1000 plus series.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS200 Pro', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/TS200 Pro.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Plus', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/TS2000 Plus.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'TS2000 Pro Series', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/TS2000 Pro Series.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Security Gate', name: 'Zophon-S1000', sub: '', tags: ['Smart Security Gate'], image: '/images/products/Smart Entrance Gate/Smart Security Gate/Zophon-S1000.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Working Temperature': '-28°C ~ 60°C', 'Throughput': 'RFID max 30/minute', 'Dimension (L*W*H)': '1200 * 280 * 980 mm' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BG2000 Series', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - BG2000 Series.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM1000 Series', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - BGM1000 Series.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM300', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - BGM300.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM400', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - BGM400.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM500', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - BGM500.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - CMP200', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier - CMP200.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier- BG300', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/Boom Barrier- BG300.png', specs: { 'Power Supply': 'AC 110V/220V, 50/60Hz', 'Working Temperature': '-35°C ~ 70°C', 'Boom Length': 'Up to 6m', 'Opening Time': '1.5s - 6s adjustable' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LPRS1000', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/LPRS1000.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Communication': 'TCP/IP, RS485', 'Camera Resolution': '2 Megapixel', 'Recognition Rate': '> 99%' } },
+  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LRM300', sub: '', tags: ['Smart Vehicle & Inspection'], image: '/images/products/Smart Entrance Gate/Smart Vehicle & Inspection/LRM300.png', specs: { 'Power Supply': 'AC110V/220V, 50/60Hz', 'Communication': 'TCP/IP, RS485', 'Camera Resolution': '2 Megapixel', 'Recognition Rate': '> 99%' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030A', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/Baggage Scanners ZKX5030A.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030C', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/Baggage Scanners ZKX5030C.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6040', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/Baggage Scanners ZKX6040.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6550', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/Baggage Scanners ZKX6550.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX100100', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/ZKX100100.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6040A_01_500x500', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/ZKX6040A_01_500x500.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6550A', sub: '', tags: ['Baggage Scanner'], image: '/images/products/Security Inspection/Baggage Scanner/ZKX6550A.png', specs: { 'Tunnel Size (W*H)': '500 * 300 mm', 'Conveyor Speed': '0.20 m/s', 'Max Load': '150 kg', 'X-ray Dose': '<1.0 μGy/h' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'AMD1800 Pro', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/AMD1800 Pro.png', specs: { 'Power Supply': 'Standard 9V Battery', 'Working Temperature': '-15°C ~ 55°C', 'Alarm': 'Sound/Vibration & LED', 'Sensitivity': 'High/Low Adjustable' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1010L', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D1010L.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D1065.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065L', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D1065L.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065S', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D1065S.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1090', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D1090.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2110', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D2110.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2180', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D2180.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D3180V', sub: '', tags: ['Door Frame Metal Detector'], image: '/images/products/Security Inspection/Door Frame Metal Detector/ZK-D3180V.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D100S', sub: '', tags: ['Hand Held Metal Detector'], image: '/images/products/Security Inspection/Hand Held Metal Detector/ZK-D100S.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D160', sub: '', tags: ['Hand Held Metal Detector'], image: '/images/products/Security Inspection/Hand Held Metal Detector/ZK-D160.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D180', sub: '', tags: ['Hand Held Metal Detector'], image: '/images/products/Security Inspection/Hand Held Metal Detector/ZK-D180.png', specs: { 'Power Supply': 'AC100V ~ 240V', 'Working Temperature': '-20°C ~ 50°C', 'Zones': '18 / 33 Overlapping Zones', 'Alarm': 'Sound & LED Alarm' } },
+  // Lumina & PixelSense products will go here
 
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM500', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM400', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BGM1000 Series', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier- BG300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - BG2000 Series', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'Boom Barrier - CMP200', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LRM300', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-  { category: 'smart-entrance', subCategory: 'Smart Vehicle & Inspection', name: 'LPRS1000', sub: 'Smart Vehicle Inspection', tags: ['Vehicle Inspection'], image: '/images/products/Access Control/SA32-E/SA32-E.png', specs: { 'Type': 'Vehicle Inspection' } },
-
-  // ----------------------------------------------------
-  // SECURITY INSPECTION PRODUCTS
-  // ----------------------------------------------------
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6040A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX6550A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030C', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX5030A', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6040', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'Baggage Scanners ZKX6550', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-  { category: 'security-inspection', subCategory: 'Baggage Scanner', name: 'ZKX100100', sub: 'Security Inspection', tags: ['Baggage Scanner'], image: '/images/products/Access Control/EC16 & DEX16/EC16 & DEX16.png', specs: { 'Type': 'Baggage Scanner' } },
-
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D3180V', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1090', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1010L', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2110', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'AMD1800 Pro', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065S', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D1065L', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Door Frame Metal Detector', name: 'ZK-D2180', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/FR1200/FR1200.png', specs: { 'Type': 'Door Frame Metal Detector' } },
-
-  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D100S', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D180', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
-  { category: 'security-inspection', subCategory: 'Hand Held Metal Detector', name: 'ZK-D160', sub: 'Security Inspection', tags: ['Metal Detector'], image: '/images/products/Access Control/KR600 Series/KR600M_01.png', specs: { 'Type': 'Hand Held Metal Detector' } },
-
-  // Video Surveillance - Dome Series
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Mini Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Mini Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Fixed Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '8MP Fixed Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/8MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '8MP', 'Type': 'Fixed Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Vandalproof Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Vandalproof Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Vandalproof Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Vandalproof Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '2MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Varifocal Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '5MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/5MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Varifocal Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: '8MP Motorized Varifocal Dome', sub: 'IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/8MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '8MP', 'Type': 'Motorized Varifocal Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: 'GV-DNC8742', sub: '12MP Fisheye Dome IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Fixed Mini Dome Ip Network Camera.png', specs: { 'Resolution': '12MP', 'Type': 'Fisheye Dome' } },
-  { category: 'video-surveillance', subCategory: 'Dome Series', name: 'GV-DNC283(C)', sub: '2MP Color Dome IP Network Camera', tags: ['Dome Series', 'IP Camera'], image: '/images/products/Video Surveillance/2MP Mini Dome Ip Network Camera.png', specs: { 'Resolution': '2MP', 'Type': 'Color Dome' } },
-
-  // Video Surveillance - Bullet Series
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Mini Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Fixed Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Fixed Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Mini Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Mini Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '8MP Fixed Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '8MP', 'Type': 'Fixed Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Varifocal Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Varifocal Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '8MP Motorized Varifocal Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '8MP', 'Type': 'Motorized Varifocal Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Motorized Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '5MP Motorized Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '5MP', 'Type': 'Motorized Bullet' } },
-  { category: 'video-surveillance', subCategory: 'Bullet Series', name: '2MP Color Bullet', sub: 'IP Network Camera', tags: ['Bullet Series', 'IP Camera'], image: '/images/products/Video Surveillance/Bullet Placeholder.png', specs: { 'Resolution': '2MP', 'Type': 'Color Bullet' } },
 
   // Video Surveillance - NVR
-  { category: 'video-surveillance', subCategory: 'NVR', name: '8CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '8', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Thin.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR Placeholder Medium.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '256CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/Recording Server Placeholder.png', specs: { 'Channels': '256', 'Type': 'Recording Server' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '128CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/Recording Server Placeholder.png', specs: { 'Channels': '128', 'Type': 'Recording Server' } }
+  { category: 'video-surveillance', subCategory: 'NVR', name: '8CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/8ch HD Network Video Recorde.png', specs: { 'Channels': '8', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/16ch HD Network Video Recorder.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/32ch HD NetworkVideo Recorder.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/64ch HD Network Video Recorder.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '256CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/NVR/256CH HD Recording Server.png', specs: { 'Channels': '256', 'Type': 'Recording Server' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '128CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/NVR/128CH HD Recording Server.png', specs: { 'Channels': '128', 'Type': 'Recording Server' } }
 ];
 
 export default function Products({ navigate }) {
@@ -1870,6 +1772,125 @@ export default function Products({ navigate }) {
                           </div>
                         )}
                       </div>
+                    ) : cat.id === 'security-inspection' ? (
+                      <div className="security-inspection-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Baggage Scanner') && (
+                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Baggage Scanner</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              ZKTeco offers dependable and flexible products for Security Check ranging from Metal Detectors including Hand Held Metal Detector, Walk Through Metal Detector, Baggage Scanners, X ray baggage scanner increases an operator's ability to identify potential threats, designed to scan briefcases, carry-on luggage and small cargo parcels. It uses reliable high quality dual energy X-ray generator and superb image algorithm technology. The ZKTeco X-ray inspection system is an advanced X-ray system designed for use in hotels, airports and other high-security areas. Its reliable high-quality X-ray generator and superb image algorithm produce clear scanning images that enable operators to quickly and accurately identify potential threats quickly and accurately.
+                            </p>
+                            <img src="/images/products/Security Inspection/Baggage Scanner Banner.png" alt="Baggage Scanner" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('security-inspection', 'Baggage Scanner').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Door Frame Metal Detector') && (
+                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Door Frame Metal Detector</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              ZKTeco Door Frame Metal Detector (DFMD) is a cutting-edge security inspection solution, capable of identifying concealed metallic objects on individuals. Ideally suited for facilities requiring enhanced security measures, ZKTeco's Door Frame metal detectors are suitable for a wide range of applications, including airports, train stations, bus terminals, seaports, government buildings, correctional facilities, event venues, and more
+                            </p>
+                            <img src="/images/products/Security Inspection/Door Frame Metal Detector Banner.png" alt="Door Frame Metal Detector" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('security-inspection', 'Door Frame Metal Detector').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Hand Held Metal Detector') && (
+                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Hand Held Metal Detector</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              ZKTeco offers dependable and flexible products for Security Check ranging from Metal Detectors including Hand Held Metal Detector or simply Hand Metal Detector or HHMD, Walk Through Metal Detector, otherwise known as Door Frame Metal Detector or DFMD to Baggage Scanners. We built a comprehensive Security Equipment System to protect your premises as well the people in it from potential threats and anti-social elements.
+                            </p>
+                            <img src="/images/products/Security Inspection/Hand Held Metal Detector Banner.png" alt="Hand Held Metal Detector" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('security-inspection', 'Hand Held Metal Detector').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ) : cat.id === 'smart-entrance' ? (
+                      <div className="smart-entrance-showcase">
+                        {(!activeSubcategory || activeSubcategory === 'Smart Security Gate') && (
+                          <div className="smart-entrance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Smart Security Gate</h2>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
+                              ZKTeco provides effective entrance control management for regulating people traffic as well as vehicle control with wide range of systems including Tripod Turnstiles, Swing Barriers, Flap Barrier Gates, Full Height Turnstiles for Pedestrian Entrance Control as well as Boom Barriers, Parking Management System, Automatic Car Parking System, Parking Locks, and other Automated Parking System for effortless Vehicle Entrance Control Management.
+                            </p>
+                            <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                              These solutions are designed to work in different environments and suitable for various verticals.
+                            </p>
+                            <img src="/images/products/Smart Entrance Gate/Smart Security Gate Banner.png" alt="Smart Security Gate" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('smart-entrance', 'Smart Security Gate').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        
+                        {(!activeSubcategory || activeSubcategory === 'Smart Vehicle & Inspection') && (
+                          <div className="smart-entrance-block" style={{ marginBottom: '5rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Smart Vehicle & Inspection</h2>
+                            <img src="/images/products/Smart Entrance Gate/Smart Vehicle & Inspection Banner.png" alt="Smart Vehicle & Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            
+                            <div className="product-grid">
+                              {getFilteredProducts('smart-entrance', 'Smart Vehicle & Inspection').map((p, idx) => (
+                                <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                  <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                    <img src={p.image} alt={p.name} className="product-card-img" />
+                                  </div>
+                                  <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                    {p.name}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ) : (
                       <>
                         <div className="cat-section-title">
@@ -2000,9 +2021,9 @@ export default function Products({ navigate }) {
                 </div>
 
                 <div className="specs-modal-footer" style={{ marginTop: '2rem', justifyContent: 'flex-start', borderTop: 'none', paddingTop: '0' }}>
-                  <a href="#contact" className="btn btn-primary" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={(e) => {
+                  <a href="/contact" className="btn btn-primary" style={{ padding: '.65rem 1.4rem', fontSize: '.88rem' }} onClick={(e) => {
                     setSelectedProduct(null);
-                    handleLinkClick(e, '#contact');
+                    handleLinkClick(e, '/contact');
                   }}>
                     Enquire Now
                   </a>

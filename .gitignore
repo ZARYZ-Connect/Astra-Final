@@ -57,3 +57,10 @@ backend/media/
 # ================================
 Thumbs.db
 *.zip
+scratch/
+temp_about.txt
+extracted_svg.txt
+access_products.json
+generated_products.txt
+frontend/dedup.py
+frontend/dedup_check.py

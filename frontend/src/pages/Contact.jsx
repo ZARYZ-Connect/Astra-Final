@@ -82,7 +82,6 @@ export default function Contact({ navigate }) {
                       <option value="Security Inspection Equipment">Security Inspection Equipment</option>
                       <option value="Video Surveillance">Video Surveillance</option>
                       <option value="Software / Integration">Software / Integration</option>
-                      <option value="AMC / Support">AMC / Support</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>

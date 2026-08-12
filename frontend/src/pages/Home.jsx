@@ -7,12 +7,35 @@ export default function Home({ navigate }) {
   const [scanState, setScanState] = useState(0);
 
   const slides = [
-    '/images/Home Page Slide/Zkteco.png',
-    '/images/Home Page Slide/Ajax.png',
-    '/images/Home Page Slide/Armatura.png',
-    '/images/Home Page Slide/GVD.png'
+    { src: '/images/Home Page Slide/Zkteco.png', bg: '#fefdfd' },
+    { src: '/images/Home Page Slide/Ajax.png', bg: '#060b0f' },
+    { src: '/images/Home Page Slide/Armatura.png', bg: '#010511' },
+    { src: '/images/Home Page Slide/GVD.png', bg: '#041221' }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 40;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      setCurrentSlide(prev => (prev + 1) % slides.length);
+    } else if (distance < -minSwipeDistance) {
+      setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1));
+    }
+  };
 
   useEffect(() => {
     const slideTimer = setInterval(() => {
@@ -58,27 +81,36 @@ export default function Home({ navigate }) {
   return (
     <>
       {/* ─── HERO SLIDER ─── */}
-      <section className="hero-slider" style={{ position: 'relative', width: '100%', height: '80vh', minHeight: '500px', overflow: 'hidden', background: '#041221', marginTop: '5rem' }}>
+      <section 
+        className="hero-slider" 
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 900', maxHeight: 'calc(100vh - 6.5rem)', minHeight: '350px', overflow: 'hidden', background: '#041221', marginTop: '6.5rem' }}
+      >
         {slides.map((slide, index) => (
           <div 
             key={index} 
+            className="slide-item"
             style={{ 
               position: 'absolute', 
               inset: 0, 
               opacity: currentSlide === index ? 1 : 0, 
-              transition: 'opacity 1s ease-in-out',
+              transition: 'opacity 0.8s ease-in-out',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              zIndex: currentSlide === index ? 1 : 0
+              zIndex: currentSlide === index ? 1 : 0,
+              background: slide.bg
             }}
           >
-            <img src={slide} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={slide.src} alt={`Slide ${index + 1}`} className="slide-img" />
           </div>
         ))}
 
         {/* Navigation Buttons */}
         <button 
+          className="slider-arrow slider-arrow-prev"
           onClick={() => setCurrentSlide(prev => (prev === 0 ? slides.length - 1 : prev - 1))}
           style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.3s' }}
           onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,180,216,0.8)'}
@@ -87,6 +119,7 @@ export default function Home({ navigate }) {
           &#10094;
         </button>
         <button 
+          className="slider-arrow slider-arrow-next"
           onClick={() => setCurrentSlide(prev => (prev + 1) % slides.length)}
           style={{ position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.5)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: '#fff', fontSize: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.3s' }}
           onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,180,216,0.8)'}
@@ -96,10 +129,11 @@ export default function Home({ navigate }) {
         </button>
 
         {/* Dots */}
-        <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem', zIndex: 10 }}>
+        <div className="slider-dots" style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem', zIndex: 10 }}>
           {slides.map((_, index) => (
             <button
               key={index}
+              className="slider-dot"
               onClick={() => setCurrentSlide(index)}
               style={{
                 width: '12px', height: '12px', borderRadius: '50%', border: 'none', cursor: 'pointer', transition: 'all 0.3s',
@@ -317,7 +351,6 @@ export default function Home({ navigate }) {
                       <option value="Security Inspection Equipment">Security Inspection Equipment</option>
                       <option value="Video Surveillance">Video Surveillance</option>
                       <option value="Software / Integration">Software / Integration</option>
-                      <option value="AMC / Support">AMC / Support</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>

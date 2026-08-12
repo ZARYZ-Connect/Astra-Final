@@ -31,7 +31,7 @@ export default function About({ navigate }) {
     <>
 
 
-      <section className="about-intro" style={{ padding: '6rem 0', background: 'radial-gradient(circle at center, #0B2742 0%, #041221 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section className="about-intro" style={{ padding: '8.5rem 0 6rem', background: 'radial-gradient(circle at center, #0B2742 0%, #041221 100%)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.05, backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
           <div style={{ display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
