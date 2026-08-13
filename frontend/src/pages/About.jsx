@@ -37,13 +37,27 @@ export default function About({ navigate }) {
           <div style={{ display: 'inline-block', padding: '0.4rem 1.2rem', borderRadius: '50px', background: 'rgba(0, 180, 216, 0.1)', border: '1px solid rgba(0, 180, 216, 0.3)', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             Who We Are
           </div>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, marginBottom: '2rem', lineHeight: 1.2, color: 'var(--white)', fontFamily: 'var(--font-h)' }}>
-            India's Trusted Partner in <br />
-            <span style={{ color: 'var(--primary)' }}>Biometric Security</span>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.2, color: 'var(--white)', fontFamily: 'var(--font-h)' }}>
+            India's Trusted Partner for <br />
+            <span style={{ color: 'var(--primary)' }}>Integrated Security Solutions</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.15rem', maxWidth: '800px', margin: '0 auto', lineHeight: 1.8 }}>
-            Astra Technologies is a Bengaluru-based systems integrator and authorised distributor of ZKTeco biometric products across India. We combine world-class hardware with deep local expertise to deliver identity and access control solutions that are reliable, scalable, and affordable.
+          <p style={{ color: '#00b4d8', fontSize: '1.3rem', fontWeight: 700, marginBottom: '2.5rem', letterSpacing: '0.5px' }}>
+            Smarter Security. Stronger Protection. Complete Control.
           </p>
+          <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', maxWidth: '850px', margin: '0 auto', lineHeight: 1.8, display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <p>
+              Astra Technologies is a Bengaluru-based security solutions company and authorised distributor of leading global brands including ZKTeco, GVD, AJAX, and Armatura.
+            </p>
+            <p>
+              We bring together advanced biometric identification, access control, video surveillance, intrusion detection, and security automation to deliver integrated solutions for businesses, institutions, industries, and critical environments across India.
+            </p>
+            <p>
+              With a strong focus on technology, reliability, and local expertise, we help our partners and customers design, deploy, and support security systems that are scalable, intelligent, and built for the future.
+            </p>
+            <p style={{ marginTop: '0.75rem', fontSize: '1.15rem', fontWeight: 700, color: 'var(--white)', fontStyle: 'italic', background: 'rgba(0, 180, 216, 0.08)', padding: '1.25rem 1.75rem', borderRadius: '12px', border: '1px solid rgba(0, 180, 216, 0.2)' }}>
+              From identity to access. From surveillance to protection — we secure what matters.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -103,7 +117,7 @@ export default function About({ navigate }) {
                 </svg>
               </div>
               <h3 style={{ fontFamily: 'var(--font-h)' }}>Authorised Distributor</h3>
-              <p style={{ margin: '0 auto' }}>Direct access to the full biometric product range with genuine warranty, firmware support, and replacement guarantees.</p>
+              <p style={{ margin: '0 auto' }}>Direct access to leading global brands (ZKTeco, GVD, AJAX, Armatura) with genuine warranty, firmware support, and technical expertise.</p>
               
             </div>
           </div>

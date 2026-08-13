@@ -149,7 +149,10 @@ export default function Footer({ currentPath, navigate }) {
                   <span className="ft-contact-icon"><LuPhone size={18} /></span>
                   <div>
                     <strong>Phone</strong>
-                    <a href="tel:+919483201072">+91 94832 01072</a>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                      <a href="tel:+919483201072">+91 94832 01072</a>
+                      <a href="tel:+919886157696">+91 98861 57696</a>
+                    </div>
                   </div>
                 </div>
                 <div className="ft-contact-item">
@@ -198,6 +201,9 @@ export default function Footer({ currentPath, navigate }) {
                     <span className="ft-phone-label">Tap to dial</span>
                     <a href="tel:+919483201072" className="ft-phone-number">
                       +91 94832 01072
+                    </a>
+                    <a href="tel:+919886157696" className="ft-phone-number">
+                      +91 98861 57696
                     </a>
                   </div>
                 )}
