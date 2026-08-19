@@ -10,6 +10,7 @@
         }
 
         :root {
+            --primary: #00b4d8;
             --navy: #05101f;
             --navy2: #0a1f3a;
             --blue: #0d3b72;
@@ -127,31 +128,60 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 0.5rem 0;
-            transition: var(--transition);
-            background: transparent
+            height: 76px;
+            display: flex;
+            align-items: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(5, 16, 31, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.15);
         }
 
         nav.scrolled {
-            background: rgba(5, 16, 31, .92);
-            backdrop-filter: blur(18px);
-            padding: 0.3rem 0;
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, .3)
+            background: rgba(5, 16, 31, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            height: 64px;
+            border-bottom: 1px solid rgba(0, 180, 216, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-inner {
+            width: min(1320px, 94vw);
+            margin-inline: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem
+            gap: 1.5rem;
+            height: 100%;
         }
 
         .nav-logo {
-            height: 85px;
+            height: 52px;
             width: auto;
             object-fit: contain;
             display: block;
+            transition: height 0.3s ease;
+        }
+
+        nav.scrolled .nav-logo {
+            height: 42px;
+        }
+
+        @media (max-width: 860px) {
+            nav {
+                height: 64px !important;
+            }
+            nav.scrolled {
+                height: 56px !important;
+            }
+            .nav-logo {
+                height: 42px !important;
+            }
+            nav.scrolled .nav-logo {
+                height: 36px !important;
+            }
         }
 
         .nav-links {
@@ -280,7 +310,7 @@
 
         /* PAGE HERO */
         .page-hero {
-            padding: 9.5rem 0 5rem;
+            padding: 5.5rem 0 3.5rem;
             position: relative;
             overflow: hidden;
             text-align: center
@@ -1611,4 +1641,50 @@
             gap: 0.8rem;
             border-top: 1px solid rgba(0, 180, 216, 0.15);
             padding-top: 1.4rem;
+        }
+
+        /* Responsive Viewport Fold & Partial Peek Calibration */
+        .page-hero {
+            padding: 7.5rem 0 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 6rem 0 2rem;
+            }
+            .products-layout {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .page-hero {
+                padding: 5rem 0 1.5rem;
+            }
+        }
+
+        /* Next Section Affordance Cue */
+        .next-section-cue {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 4rem 0 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 180, 216, 0.12);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .next-section-cue svg {
+            color: var(--primary);
+            animation: cueBounce 2s infinite ease-in-out;
+        }
+
+        @keyframes cueBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
         }

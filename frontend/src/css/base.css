@@ -7,6 +7,7 @@
     }
 
     :root {
+      --primary: #00b4d8;
       --navy: #05101f;
       --navy2: #0a1f3a;
       --blue: #0d3b72;
@@ -26,6 +27,10 @@
     html {
       scroll-behavior: smooth;
     }
+    html, body {
+      scrollbar-color: var(--primary) var(--navy);
+      scrollbar-width: thin;
+    }
 
     body {
       background: var(--navy);
@@ -36,9 +41,10 @@
       overflow-x: hidden;
     }
 
-    /* ─── Scrollbar ─── */
+    /* ─── Scrollbar Affordance ─── */
     ::-webkit-scrollbar {
-      width: 5px;
+      width: 8px;
+      height: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -46,8 +52,92 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--accent);
+      background: linear-gradient(180deg, var(--primary) 0%, #0077b6 100%);
       border-radius: 4px;
+      border: 1px solid rgba(5, 16, 31, 0.5);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00d4fc;
+      box-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+    }
+
+    /* ─── Bottom Fade + Scroll Hint Overlay ─── */
+    .scroll-indicator-overlay {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: linear-gradient(to bottom, rgba(5, 16, 31, 0) 0%, rgba(5, 16, 31, 0.95) 100%);
+      pointer-events: none;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 1.2rem;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s ease;
+    }
+
+    .scroll-indicator-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .scroll-indicator-overlay.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-hint-btn {
+      pointer-events: auto;
+      background: rgba(10, 31, 58, 0.85);
+      border: 1px solid rgba(0, 180, 216, 0.45);
+      color: var(--white);
+      backdrop-filter: blur(12px);
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-h);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 180, 216, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .scroll-hint-btn:hover {
+      background: var(--primary);
+      color: #000000;
+      border-color: #00d4fc;
+      box-shadow: 0 8px 30px rgba(0, 180, 216, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .scroll-hint-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scrollBounce 1.8s infinite cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+    }
+
+    /* Reduced Motion Override */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-hint-icon {
+        animation: none;
+      }
     }
 
     /* ─── Helpers ─── */
@@ -141,32 +231,60 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 0.5rem 0;
-      transition: var(--transition);
-      background: transparent;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(5, 16, 31, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
     }
 
     nav.scrolled {
-      background: rgba(5, 16, 31, .92);
-      backdrop-filter: blur(18px);
-      padding: 0.3rem 0;
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, .3);
+      background: rgba(5, 16, 31, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      height: 64px;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.25);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
 
     .nav-inner {
+      width: min(1320px, 94vw);
+      margin-inline: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      position: relative;
+      gap: 1.5rem;
+      height: 100%;
     }
 
     .nav-logo {
-      height: 85px;
+      height: 52px;
       width: auto;
       object-fit: contain;
       display: block;
+      transition: height 0.3s ease;
+    }
+
+    nav.scrolled .nav-logo {
+      height: 42px;
+    }
+
+    @media (max-width: 860px) {
+      nav {
+        height: 64px !important;
+      }
+      nav.scrolled {
+        height: 56px !important;
+      }
+      .nav-logo {
+        height: 42px !important;
+      }
+      nav.scrolled .nav-logo {
+        height: 36px !important;
+      }
     }
 
     .nav-links {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import '../css/products.css';
 
@@ -261,13 +261,46 @@ const PRODUCTS = [
       'Dimensions': '148 x 78 x 16.5 mm'
     }
   },
+  // ----------------------------------------------------
+  // SOFTWARE PRODUCTS
+  // ----------------------------------------------------
+  {
+    category: 'software',
+    subCategory: 'Time Attendance Software',
+    name: 'easy GymFit',
+    sub: 'Comprehensive Gym & Fitness Center Membership & Access Software.',
+    tags: ['GymFit', 'Fitness Software', 'Membership Management'],
+    image: '/images/products/Software/Time Attendance Software.jpg',
+    pdf: '/pdfs/easy Gym fit_Data Sheet_01 1 (1).pdf',
+    specs: { 'Application': 'Gym & Fitness Center', 'Type': 'Desktop/Server Software', 'Module': 'Membership & Attendance' }
+  },
+  {
+    category: 'software',
+    subCategory: 'Time Attendance Software',
+    name: 'easy TimePro',
+    sub: 'Professional Attendance & Roster Management Software.',
+    tags: ['TimePro', 'Attendance', 'Payroll Integration'],
+    image: '/images/products/Software/Time Attendance Software.jpg',
+    pdf: '/pdfs/easy TimePro_Data Sheet_2025 3 (1).pdf',
+    specs: { 'Application': 'Corporate Attendance', 'Type': 'Web/Desktop Platform', 'Module': 'Leave & Shift Roster' }
+  },
+  {
+    category: 'software',
+    subCategory: 'Time Attendance Software',
+    name: 'easy WDMS',
+    sub: 'Web-based Data Management System for Biometric Terminals.',
+    tags: ['WDMS', 'Biometric Push Data', 'Device Management'],
+    image: '/images/products/Software/Time Attendance Software.jpg',
+    pdf: '/pdfs/easy WDMS_Data Sheet_2025 3.pdf',
+    specs: { 'Protocol': 'HTTP/HTTPS Push Data', 'Capacity': 'Unlimited Devices', 'Type': 'Middleware' }
+  },
   {
     category: 'time-attendance',
     subCategory: 'ZKBio Time',
     name: 'ZKBio Time',
     sub: 'Powerful web-based real-time time attendance and payroll integration software.',
     tags: ['Time Attendance', 'Real-Time Sync', 'Payroll Middleware'],
-    image: '/images/products/Software/Time Attendance Software.png',
+    image: '/images/products/Software/Time Attendance Software.jpg',
     specs: {
       'System Type': 'Web-based time attendance platform',
       'Synchronization': 'Real-time automatic terminal log capture',
@@ -276,6 +309,36 @@ const PRODUCTS = [
       'API Integrations': 'Zoho, SAP, ADP, Zoho Peoples, Oracle middleware',
       'Mobile App': 'ZKBio Time Mobile App (Geo-Fencing attendance)'
     }
+  },
+  {
+    category: 'software',
+    subCategory: 'Cloud Attendance Software',
+    name: 'BioTime Cloud 2.0',
+    sub: 'Cloud-Based Multi-Location Workforce & Mobile Attendance Solution.',
+    tags: ['BioTime Cloud', 'Cloud Attendance', 'Geo-Fencing App'],
+    image: '/images/products/Software/Cloud Attendance Software.jpg',
+    pdf: '/pdfs/ZK_BioTime Cloud 2.0_Datasheet_2024 1.pdf',
+    specs: { 'Platform': 'SaaS Cloud', 'Mobile Verification': 'GPS + Facial Recognition', 'Security': 'SSL Encrypted' }
+  },
+  {
+    category: 'software',
+    subCategory: 'ZKBio Security Software',
+    name: 'ZKBio CVSecurity SmartLock',
+    sub: 'Smart Hotel & Residential Lock Management Module.',
+    tags: ['CVSecurity', 'SmartLock', 'Hotel Management'],
+    image: '/images/products/Software/ZKBio Security Software.jpg',
+    pdf: '/pdfs/ZKBio CVSecurity SmartLock_Datasheet_2025.pdf',
+    specs: { 'Module': 'SmartLock & Hotel Security', 'Interface': 'Web Browser', 'Database': 'PostgreSQL / MS SQL' }
+  },
+  {
+    category: 'software',
+    subCategory: 'ZKBio Security Software',
+    name: 'ZKBio CVSecurity 6.8.0',
+    sub: 'All-In-One Enterprise Web Security Platform.',
+    tags: ['CVSecurity', 'Access Control', 'Elevator Control'],
+    image: '/images/products/Software/ZKBio Security Software.jpg',
+    pdf: '/pdfs/ZKBio CVSecurity 6.8.0_Datasheet_2026_00.pdf',
+    specs: { 'Platform': 'All-in-One Security Web Platform', 'Modules': 'Access, Attendance, Elevator, Parking, Video', 'Capacity': 'Enterprise' }
   },
 
   // ----------------------------------------------------
@@ -369,13 +432,37 @@ const PRODUCTS = [
   // Lumina & PixelSense products will go here
 
 
+  // Video Surveillance - Lumina
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 200 Series', sub: 'High Definition Smart AI IP Camera', tags: ['Lumina', 'IP Camera', 'AI'], image: '/images/products/Video Surveillance/Lumina/200-qr5ob9bot0lqk8777jkfx6b8v4ti8pmu7oq1gofs9y.png', specs: { 'Resolution': '2MP HD', 'Sensor': 'CMOS', 'Night Vision': 'IR 30m' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 263 Series', sub: 'Full Color Night Vision Dome Camera', tags: ['Lumina', 'Dome', 'Full Color'], image: '/images/products/Video Surveillance/Lumina/263-1536x1033.png', specs: { 'Resolution': '4MP Super HD', 'Protection': 'IP67 Waterproof', 'Night Vision': 'ColorVu 30m' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 264 Series', sub: 'Smart IR Bullet IP Camera', tags: ['Lumina', 'Bullet'], image: '/images/products/Video Surveillance/Lumina/264-1536x1033.png', specs: { 'Resolution': '4MP Ultra HD', 'Protection': 'IP67', 'WDR': '120dB True WDR' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 264L Series', sub: 'Compact AI Bullet Camera', tags: ['Lumina', 'Bullet'], image: '/images/products/Video Surveillance/Lumina/264l-1536x1033.png', specs: { 'Resolution': '4MP', 'Lens': '2.8mm Fixed', 'Compression': 'H.265+' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 264M Series', sub: 'Motorized Varifocal Bullet Camera', tags: ['Lumina', 'Varifocal'], image: '/images/products/Video Surveillance/Lumina/264m-1536x1033.png', specs: { 'Resolution': '5MP', 'Lens': '2.7-13.5mm Motorized Zoom', 'IR Distance': '50m' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 273 Series', sub: 'Vandal-Proof Turret Dome Camera', tags: ['Lumina', 'Dome', 'IK10'], image: '/images/products/Video Surveillance/Lumina/273-1536x1033.png', specs: { 'Resolution': '4MP', 'Protection': 'IK10 Vandal-Proof, IP67', 'Microphone': 'Built-in Mic' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 273P Series', sub: 'PoE Smart Turret IP Camera', tags: ['Lumina', 'PoE'], image: '/images/products/Video Surveillance/Lumina/273p-1-1536x1033.png', specs: { 'Resolution': '5MP', 'Power': 'PoE (802.3af)', 'Audio': 'Two-Way Audio' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 464 Series', sub: 'Ultra 4K Ultra HD Bullet Camera', tags: ['Lumina', '4K Ultra HD'], image: '/images/products/Video Surveillance/Lumina/464-1536x1033.png', specs: { 'Resolution': '8MP 4K Ultra HD', 'Protection': 'IP67', 'Storage': 'MicroSD Slot up to 256GB' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 473 Series', sub: '4K Full-Color Turret Camera', tags: ['Lumina', '4K', 'Full Color'], image: '/images/products/Video Surveillance/Lumina/473-1536x1033.png', specs: { 'Resolution': '8MP 4K', 'Night Vision': 'Warm Light 40m Color', 'Audio': 'Built-in Mic' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina 8742 Series', sub: 'Enterprise Thermal & Optical Bi-Spectrum Camera', tags: ['Lumina', 'Thermal'], image: '/images/products/Video Surveillance/Lumina/8742-1536x1033.png', specs: { 'Spectrum': 'Thermal + Optical Dual Lens', 'Fire Detection': 'Supported', 'Body Temp': 'High Accuracy' } },
+  { category: 'video-surveillance', subCategory: 'Lumina', name: 'Lumina PTZ Dome', sub: '360° High Speed Optical Zoom PTZ Dome', tags: ['Lumina', 'PTZ', '30x Zoom'], image: '/images/products/Video Surveillance/Lumina/ptz-1536x1033.png', specs: { 'Zoom': '30x Optical Zoom', 'Pan/Tilt': '360° Continuous Pan', 'Tracking': 'Auto Tracking AI' } },
+
+  // Video Surveillance - PixelSense
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2419 Series', sub: 'Deep Learning AI Face Recognition Camera', tags: ['PixelSense', 'Face AI'], image: '/images/products/Video Surveillance/Pixelsense/2419-1536x1033.png', specs: { 'AI Engine': 'Deep Learning Face Match', 'Resolution': '4MP', 'Database': '10,000 Faces' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2629 Series', sub: 'Smart Perimeter Protection AI Camera', tags: ['PixelSense', 'Perimeter AI'], image: '/images/products/Video Surveillance/Pixelsense/2629-1536x1033.png', specs: { 'Analytics': 'Intrusion, Line Crossing, Human/Vehicle Filter', 'Resolution': '4MP' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2639 Series', sub: 'LPR License Plate Recognition Camera', tags: ['PixelSense', 'LPR / ANPR'], image: '/images/products/Video Surveillance/Pixelsense/2639-1536x1033.png', specs: { 'LPR Rate': '>99% License Plate Accuracy', 'Speed Range': 'Up to 120km/h', 'WDR': '140dB Super WDR' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2649 Series', sub: 'Smart People Counting AI Camera', tags: ['PixelSense', 'People Counting'], image: '/images/products/Video Surveillance/Pixelsense/2649-1536x1033.png', specs: { 'Function': 'Dual-Lens Stereo 3D People Counting', 'Accuracy': '>98%', 'Heatmap': 'Supported' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2686 Series', sub: 'Multi-Sensor Panoramic 180° Camera', tags: ['PixelSense', '180° Panorama'], image: '/images/products/Video Surveillance/Pixelsense/2686-1536x1033.png', specs: { 'Field of View': '180° Seamless Panorama', 'Resolution': '8MP Combined', 'Splicing': 'Real-Time Stitching' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2729 Series', sub: 'Active Deterrence Siren & Strobe Camera', tags: ['PixelSense', 'Active Deterrence'], image: '/images/products/Video Surveillance/Pixelsense/2729-1536x1033.png', specs: { 'Deterrence': 'Red/Blue Strobe Light + 110dB Siren', 'Resolution': '5MP', 'Two-Way Audio': 'Supported' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 2739 Series', sub: 'Smart Starlight Ultra Low-Light Camera', tags: ['PixelSense', 'Starlight'], image: '/images/products/Video Surveillance/Pixelsense/2739-1536x1033.png', specs: { 'Sensitivity': '0.0005 Lux Starlight', 'Resolution': '5MP', 'Noise Reduction': '3D DNR' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 5653 Series', sub: 'Ultra HD 4K AI Bullet Camera', tags: ['PixelSense', '4K AI'], image: '/images/products/Video Surveillance/Pixelsense/5653-1-1536x1033.png', specs: { 'Resolution': '8MP 4K', 'AI Analytics': 'Attribute Search, Object Classification', 'Protection': 'IP67 / IK10' } },
+  { category: 'video-surveillance', subCategory: 'PixelSense', name: 'PixelSense 9746 Series', sub: 'Smart Traffic & Vehicle Analytics Camera', tags: ['PixelSense', 'Vehicle AI'], image: '/images/products/Video Surveillance/Pixelsense/9746-1536x1033.png', specs: { 'Vehicle Metadata': 'Color, Make, Type, Plate Recognition', 'Resolution': '8MP' } },
+
   // Video Surveillance - NVR
-  { category: 'video-surveillance', subCategory: 'NVR', name: '8CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/8ch HD Network Video Recorde.png', specs: { 'Channels': '8', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/16ch HD Network Video Recorder.png', specs: { 'Channels': '16', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/32ch HD NetworkVideo Recorder.png', specs: { 'Channels': '32', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD', sub: 'Network Video Recorder', tags: ['NVR', 'Video Recorder'], image: '/images/products/Video Surveillance/NVR/64ch HD Network Video Recorder.png', specs: { 'Channels': '64', 'Type': 'NVR' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '256CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/NVR/256CH HD Recording Server.png', specs: { 'Channels': '256', 'Type': 'Recording Server' } },
-  { category: 'video-surveillance', subCategory: 'NVR', name: '128CH HD', sub: 'Recording Server', tags: ['NVR', 'Recording Server'], image: '/images/products/Video Surveillance/NVR/128CH HD Recording Server.png', specs: { 'Channels': '128', 'Type': 'Recording Server' } }
+  { category: 'video-surveillance', subCategory: 'NVR', name: '8CH HD NVR', sub: '8-Channel Plug & Play PoE Network Video Recorder', tags: ['NVR', '8CH', 'PoE'], image: '/images/products/Video Surveillance/NVR/8ch.png', specs: { 'Channels': '8-Channel PoE', 'Decoding': '4K H.265+', 'HDD Support': '1 SATA up to 10TB' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '16CH HD NVR', sub: '16-Channel Enterprise Network Video Recorder', tags: ['NVR', '16CH'], image: '/images/products/Video Surveillance/NVR/16ch.png', specs: { 'Channels': '16-Channel', 'Decoding': '4K H.265+', 'HDD Support': '2 SATA up to 20TB' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '32CH HD NVR', sub: '32-Channel High-Capacity Network Video Recorder', tags: ['NVR', '32CH'], image: '/images/products/Video Surveillance/NVR/32ch.png', specs: { 'Channels': '32-Channel', 'Decoding': '4K H.265+', 'HDD Support': '4 SATA up to 40TB', 'RAID': 'RAID 0/1/5/6/10' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '64CH HD NVR', sub: '64-Channel Ultra High Density Network Video Recorder', tags: ['NVR', '64CH'], image: '/images/products/Video Surveillance/NVR/64ch.png', specs: { 'Channels': '64-Channel', 'Decoding': '4K H.265+', 'HDD Support': '8 SATA up to 80TB', 'Redundant Power': 'Dual Hot-Swappable PSU' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '128CH HD Recording Server', sub: '128-Channel Enterprise Storage Server', tags: ['NVR', '128CH Server'], image: '/images/products/Video Surveillance/NVR/64ch (1).png', specs: { 'Channels': '128-Channel', 'Throughput': '512Mbps Bandwidth', 'HDD Support': '16 Hot-Swap SAS/SATA' } },
+  { category: 'video-surveillance', subCategory: 'NVR', name: '256CH HD Recording Server', sub: '256-Channel High-Density Enterprise Server', tags: ['NVR', '256CH Server'], image: '/images/products/Video Surveillance/NVR/32ch (1).png', specs: { 'Channels': '256-Channel', 'Throughput': '1024Mbps Bandwidth', 'HDD Support': '24 Hot-Swap Bays', 'Redundancy': 'Dual Redundant Power' } }
 ];
 
 export default function Products({ navigate }) {
@@ -429,6 +516,70 @@ export default function Products({ navigate }) {
     window.addEventListener('product-search', handleProductSearch);
     return () => window.removeEventListener('product-search', handleProductSearch);
   }, []);
+
+  const isClickScrollingRef = useRef(false);
+  const scrollSpyTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (searchQuery) return;
+
+    const sections = document.querySelectorAll('[data-category-section]');
+    if (!sections || sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isClickScrollingRef.current) return;
+
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length === 0) return;
+
+        const mostVisible = visible.reduce((a, b) =>
+          a.intersectionRatio > b.intersectionRatio ? a : b
+        );
+
+        const categoryId = mostVisible.target.dataset.categorySection;
+        const subcategoryName = mostVisible.target.dataset.subcategoryName;
+
+        if (categoryId) {
+          setActiveCategory(categoryId);
+
+          setAccessControlOpen(categoryId === 'access-control');
+          setTimeAttendanceOpen(categoryId === 'time-attendance');
+          setArmaturaOpen(categoryId === 'armatura');
+          setSmartEntranceOpen(categoryId === 'smart-entrance');
+          setSecurityInspectionOpen(categoryId === 'security-inspection');
+          setVideoSurveillanceOpen(categoryId === 'video-surveillance');
+          setSoftwareOpen(categoryId === 'software');
+          setAjaxOpen(categoryId === 'ajax');
+        }
+
+        if (subcategoryName) {
+          setActiveSubcategory(subcategoryName);
+        } else if (categoryId) {
+          setActiveSubcategory(null);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '-30% 0px -60% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [searchQuery]);
+
+  useEffect(() => {
+    if (isClickScrollingRef.current) return;
+    const activeSidebarLink = document.querySelector('.sidebar .cat-btn.active, .sidebar .subcat-btn.active');
+    if (activeSidebarLink) {
+      activeSidebarLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }, [activeCategory, activeSubcategory]);
 
   useScrollReveal([activeCategory, activeSubcategory, searchQuery]);
 
@@ -530,7 +681,7 @@ export default function Products({ navigate }) {
   };
 
   const filteredCategories = CATEGORIES.filter(cat => {
-    if (activeCategory !== 'all' && cat.id !== activeCategory) return false;
+    if (!searchQuery) return true;
     if (cat.id === 'software') return true;
     const matchedProducts = getFilteredProducts(cat.id);
     return matchedProducts.length > 0;
@@ -539,7 +690,7 @@ export default function Products({ navigate }) {
   return (
     <>
       {/* PAGE HERO */}
-      <section className="page-hero" style={{ position: 'relative', padding: '8rem 0 6rem', textAlign: 'center', background: 'radial-gradient(circle at 50% 0%, #0c2540 0%, #041221 70%)', overflow: 'hidden' }}>
+      <section className="page-hero" style={{ position: 'relative', padding: '5.5rem 0 3.5rem', textAlign: 'center', background: 'radial-gradient(circle at 50% 0%, #0c2540 0%, #041221 70%)', overflow: 'hidden' }}>
         <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.5, backgroundImage: 'linear-gradient(rgba(0,180,216,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px', maskImage: 'radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 100%)' }}></div>
         
         {/* Animated Glow Orbs */}
@@ -601,9 +752,9 @@ export default function Products({ navigate }) {
               }}
             />
             <button 
-              style={{ position: 'absolute', right: '0.6rem', padding: '0.8rem 2rem', borderRadius: '50px', background: 'var(--primary)', color: '#041221', fontSize: '1rem', fontWeight: 'bold', border: 'none', cursor: 'pointer', transition: 'all 0.3s', boxShadow: '0 4px 15px rgba(0, 180, 216, 0.4)' }} 
-              onMouseEnter={e => { e.target.style.background = '#00d4fc'; e.target.style.transform = 'scale(1.05)'; }} 
-              onMouseLeave={e => { e.target.style.background = 'var(--primary)'; e.target.style.transform = 'scale(1)'; }}
+              style={{ position: 'absolute', right: '0.6rem', padding: '0.8rem 2rem', borderRadius: '50px', background: 'linear-gradient(135deg, #00b4d8 0%, #0077b6 100%)', color: '#ffffff', fontSize: '1rem', fontWeight: 'bold', border: 'none', cursor: 'pointer', transition: 'all 0.3s', boxShadow: '0 4px 20px rgba(0, 180, 216, 0.5)' }} 
+              onMouseEnter={e => { e.target.style.background = '#00d4fc'; e.target.style.color = '#000000'; e.target.style.transform = 'scale(1.05)'; }} 
+              onMouseLeave={e => { e.target.style.background = 'linear-gradient(135deg, #00b4d8 0%, #0077b6 100%)'; e.target.style.color = '#ffffff'; e.target.style.transform = 'scale(1)'; }}
             >
               Search
             </button>
@@ -686,36 +837,27 @@ export default function Products({ navigate }) {
                   <div key={cat.id} style={{ width: '100%' }}>
                     <button
                       className={`cat-btn ${activeCategory === cat.id && !activeSubcategory ? 'active' : ''}`}
+                      data-category={cat.id}
                       onClick={() => {
+                        isClickScrollingRef.current = true;
                         setActiveCategory(cat.id);
                         setActiveSubcategory(null);
-                        if (isAccessControl) {
-                          setAccessControlOpen(!accessControlOpen);
-                        }
-                        if (isTimeAttendance) {
-                          setTimeAttendanceOpen(!timeAttendanceOpen);
-                        }
-                        if (isArmatura) {
-                          setArmaturaOpen(!armaturaOpen);
-                        }
-                        if (isSmartEntrance) {
-                          setSmartEntranceOpen(!smartEntranceOpen);
-                        }
-                        if (isSecurityInspection) {
-                          setSecurityInspectionOpen(!securityInspectionOpen);
-                        }
-                        if (isVideoSurveillance) {
-                          setVideoSurveillanceOpen(!videoSurveillanceOpen);
-                        }
-                        if (isSoftware) {
-                          setSoftwareOpen(!softwareOpen);
-                        }
-                        if (isAjax) {
-                          setAjaxOpen(!ajaxOpen);
-                        }
+                        setAccessControlOpen(isAccessControl ? !accessControlOpen : false);
+                        setTimeAttendanceOpen(isTimeAttendance ? !timeAttendanceOpen : false);
+                        setArmaturaOpen(isArmatura ? !armaturaOpen : false);
+                        setSmartEntranceOpen(isSmartEntrance ? !smartEntranceOpen : false);
+                        setSecurityInspectionOpen(isSecurityInspection ? !securityInspectionOpen : false);
+                        setVideoSurveillanceOpen(isVideoSurveillance ? !videoSurveillanceOpen : false);
+                        setSoftwareOpen(isSoftware ? !softwareOpen : false);
+                        setAjaxOpen(isAjax ? !ajaxOpen : false);
                         setSidebarOpen(false);
                         const el = document.getElementById(cat.id);
                         if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+
+                        if (scrollSpyTimeoutRef.current) clearTimeout(scrollSpyTimeoutRef.current);
+                        scrollSpyTimeoutRef.current = setTimeout(() => {
+                          isClickScrollingRef.current = false;
+                        }, 700);
                       }}
                     >
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1351,16 +1493,17 @@ export default function Products({ navigate }) {
               filteredCategories.map(cat => {
                 const matchedProducts = getFilteredProducts(cat.id);
                 return (
-                  <div key={cat.id} className="cat-section reveal" id={cat.id}>
+                  <div key={cat.id} className="cat-section reveal" id={cat.id} data-category-section={cat.id}>
                     {cat.id === 'software' ? (
                       <div className="software-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Time Attendance Software') && (
-                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+                        <div className="software-block" id="subcat-time-attendance-software" data-category-section="software" data-subcategory-name="Time Attendance Software" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Time Attendance Software</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco Time Attendance Software is a powerful workforce management solution that simplifies attendance tracking, automates calculations, and provides valuable insights. With its comprehensive features, integration capabilities, and user-friendly interface, this software enhances efficiency, accuracy, and productivity in managing employee attendance.
                             </p>
-                            <img src="/images/products/Software/Time Attendance Software.png" alt="Time Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Software/Time Attendance Software.jpg" alt="Time Attendance Software" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1393,15 +1536,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Cloud Attendance Software') && (
-                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="software-block" id="subcat-cloud-attendance-software" data-category-section="software" data-subcategory-name="Cloud Attendance Software" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Cloud Attendance Software</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco Cloud Attendance Software is a powerful, cloud-based time and attendance solution designed to streamline workforce management for businesses of all sizes. With real-time data access, advanced biometric integration, and intelligent reporting, it enables organizations to monitor employee attendance from anywhere, at any time.
                             </p>
-                            <img src="/images/products/Software/Cloud Attendance Sotware.png" alt="Cloud Attendance Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Software/Cloud Attendance Software.jpg" alt="Cloud Attendance Software" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1428,15 +1571,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'ZKBio Security Software') && (
-                          <div className="software-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="software-block" id="subcat-zkbio-security-software" data-category-section="software" data-subcategory-name="ZKBio Security Software" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>ZKBio Security Software</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               The ZKBioSecurity "All-in-One" Web security platform features multiple integrated modules for Personnel Management, Access Control, Attendance Management, Hotel Module, Consumption Management, Elevator Control (online/offline) With an optimized system architecture designed for high level biometric identification and a modern user friendly interface, it brings a whole new experience to users.
                             </p>
-                            <img src="/images/products/Software/ZKBio Security Software.png" alt="ZKBio Security Software" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Software/ZKBio Security Software.jpg" alt="ZKBio Security Software" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1464,17 +1607,17 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
                       </div>
                     ) : cat.id === 'access-control' ? (
                       <div className="access-control-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Multi Door Controller') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                        <div className="time-attendance-block" id="subcat-multi-door-controller" data-category-section="access-control" data-subcategory-name="Multi Door Controller" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Multi Door Controller</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Astra Technologies offers ZKTeco Multi-Door Controllers, designed to manage and secure multiple access points from a centralized platform. Supporting card readers, biometric devices, and electric locks, these scalable controllers provide reliable access control, enhanced security, and efficient entry management for offices, commercial buildings, educational institutions, and industrial facilities.
                             </p>
-                            <img src="/images/products/Access Control/Multi Door COntroller.png" alt="Multi Door Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Access Control/Multi Door Controller.png" alt="Multi Door Controller" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('access-control', 'Multi Door Controller').map((p, idx) => (
@@ -1489,15 +1632,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Standalone Devices') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-standalone-devices" data-category-section="access-control" data-subcategory-name="Standalone Devices" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Standalone Devices</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Comprehensive range of ZKTeco Access Control solutions, including Face Recognition, Fingerprint, Finger Vein, Palm Recognition, and RFID-based systems. Our portfolio also includes IP-based access control panels, readers, and accessories with web and mobile applications for secure, centralized, and hassle-free access management.
                             </p>
-                            <img src="/images/products/Access Control/Standalone Devices.png" alt="Standalone Devices" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Access Control/Standalone Devices.png" alt="Standalone Devices" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('access-control', 'Standalone Devices').map((p, idx) => (
@@ -1512,15 +1655,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Readers') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-readers" data-category-section="access-control" data-subcategory-name="Readers" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Readers</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Comprehensive range of ZKTeco Access Control solutions, including Face Recognition, Fingerprint, Finger Vein, Palm Recognition, and RFID-based systems. Our portfolio also includes IP-based access control panels, readers, and accessories with web and mobile applications for secure, centralized, and hassle-free access management.
                             </p>
-                            <img src="/images/products/Access Control/Readers.png" alt="Readers" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Access Control/Readers.png" alt="Readers" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('access-control', 'Readers').map((p, idx) => (
@@ -1535,15 +1678,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Elevator Access Controller') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-elevator-access-controller" data-category-section="access-control" data-subcategory-name="Elevator Access Controller" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Elevator Access Controller</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               We are a leading provider of advanced and innovative elevator control solutions designed to enhance the safety, efficiency, and convenience of elevator systems. Our Elevator Control panels are meticulously engineered to meet the highest industry standards, ensuring reliable and secure operation of elevators in various commercial, residential, and industrial settings.
                             </p>
-                            <img src="/images/products/Access Control/Elevator Access Controller.png" alt="Elevator Access Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Access Control/Elevator Access Controller.png" alt="Elevator Access Controller" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('access-control', 'Elevator Access Controller').map((p, idx) => (
@@ -1558,17 +1701,17 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
                       </div>
                     ) : cat.id === 'armatura' ? (
                       <div className="armatura-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Armatura Standalone Terminals') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                        <div className="time-attendance-block" id="subcat-armatura-standalone-terminals" data-category-section="armatura" data-subcategory-name="Armatura Standalone Terminals" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Standalone Terminals</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Armatura Smart Standalone Terminal offers a compact, self-contained, and cost-effective solution for access control. With its built-in reader, controller, and user interface, it provides secure and efficient access control without the need for additional hardware or software.
                             </p>
-                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Standalone Terminals" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Armatura/Armatura.png" alt="Armatura Standalone Terminals" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('armatura', 'Armatura Standalone Terminals').map((p, idx) => (
@@ -1583,15 +1726,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Armatura One') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-armatura-one" data-category-section="armatura" data-subcategory-name="Armatura One" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura One</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Armatura One offers an all-in-one solution for security management, integrating access control, video surveillance, alarm management, and visitor management into a single web-based platform. It provides convenience, efficiency, and comprehensive security control for various applications and organizations.
                             </p>
-                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura One" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Armatura/Armatura.png" alt="Armatura One" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}>
                               {[
@@ -1618,15 +1761,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Armatura Reader') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-armatura-reader" data-category-section="armatura" data-subcategory-name="Armatura Reader" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Reader</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Reader-Armatura's RFID readers provide a reliable, secure, and efficient solution for access control. They offer advanced features, support various RFID card technologies, and can be seamlessly integrated with other access control systems to provide a comprehensive access control solution.
                             </p>
-                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Reader" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Armatura/Armatura.png" alt="Armatura Reader" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('armatura', 'Armatura Reader').map((p, idx) => (
@@ -1641,15 +1784,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Armatura Controller') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-armatura-controller" data-category-section="armatura" data-subcategory-name="Armatura Controller" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Controller</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Armatura's controllers are reliable, secure, and efficient solutions that enhance the security and access management of various facilities. They offer advanced features, multiple authentication options, and seamless integration with other security systems to provide a comprehensive access control solution.
                             </p>
-                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Controller" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Armatura/Armatura.png" alt="Armatura Controller" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('armatura', 'Armatura Controller').map((p, idx) => (
@@ -1664,15 +1807,15 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {(!activeSubcategory || activeSubcategory === 'Armatura Entrance Control') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                          <div className="time-attendance-block" id="subcat-armatura-entrance-control" data-category-section="armatura" data-subcategory-name="Armatura Entrance Control" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Armatura Entrance Control</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Armatura's smart entrance control systems provide advanced security and visitor flow control. Meticulously designed for speed gates, turnstiles, and barriers, these systems deliver accurate pedestrian and vehicle control, robust durability, and seamless integration with the Armatura One platform.
                             </p>
-                            <img src="/images/products/Armatura/Armatura.png" alt="Armatura Entrance Control" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Armatura/Armatura.png" alt="Armatura Entrance Control" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('armatura', 'Armatura Entrance Control').map((p, idx) => (
@@ -1687,17 +1830,17 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
                       </div>
                     ) : cat.id === 'time-attendance' ? (
                       <div className="time-attendance-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Visible Series') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+                        <div className="time-attendance-block" id="subcat-visible-series" data-category-section="time-attendance" data-subcategory-name="Visible Series" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Visible Light Series</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Astra Technologies offers the ZKTeco Visible Light Series, a Linux-based facial recognition attendance and access control solution with advanced features such as automatic face tracking, accurate palm verification, and two-factor authentication. Ideal for offices, schools, hospitals, warehouses, and factories, it delivers fast, secure, and reliable attendance and access management.
                             </p>
-                            <img src="/images/products/Time Attendance/Visible Light series.png" alt="Visible Light Series" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Time Attendance/Visible Light series.png" alt="Visible Light Series" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {[
@@ -1714,10 +1857,8 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Fingerprint Attendance') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="time-attendance-block" id="subcat-fingerprint-attendance" data-category-section="time-attendance" data-subcategory-name="Fingerprint Attendance" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Fingerprint Attendance</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
                               As an authorized distributor of ZKTeco, Astra Technologies provides smart and innovative biometric attendance solutions to organizations across India. Powered by ZKTeco's globally trusted technology, used in more than 100 countries, we offer a comprehensive range of biometric attendance systems, including fingerprint attendance machines, facial recognition devices, RFID card-based systems, and multi-biometric solutions.
@@ -1725,7 +1866,9 @@ export default function Products({ navigate }) {
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Our biometric attendance systems are user-friendly, easy to deploy, and supported by intelligent cloud-based technology for seamless workforce management. They accurately record employee check-in and check-out times, generate detailed attendance reports, and help organizations improve productivity, security, and operational efficiency. Whether for small businesses or large enterprises, Astra Technologies delivers reliable ZKTeco biometric solutions tailored to your attendance management needs.
                             </p>
-                            <img src="/images/products/Time Attendance/Fingerprint Attendance.png" alt="Fingerprint Attendance" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Time Attendance/Fingerprint Attendance.png" alt="Fingerprint Attendance" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {[
@@ -1742,10 +1885,8 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Face Attendance') && (
-                          <div className="time-attendance-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="time-attendance-block" id="subcat-face-attendance" data-category-section="time-attendance" data-subcategory-name="Face Attendance" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Face Attendance</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
                               As an authorized distributor of ZKTeco, Astra Technologies delivers industry-leading biometric attendance and access control solutions across India. Backed by ZKTeco's globally recognized technology, trusted in over 100 countries, we offer advanced facial recognition, fingerprint, RFID card, and multi-biometric attendance systems designed for accuracy, security, and ease of use.
@@ -1753,7 +1894,9 @@ export default function Products({ navigate }) {
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               Our intelligent, cloud-enabled biometric solutions simplify workforce attendance management by accurately recording employee check-in and check-out times while generating comprehensive attendance reports. With user-friendly deployment and reliable performance, Astra Technologies helps organizations streamline attendance tracking, improve operational efficiency, and enhance workplace security through innovative ZKTeco solutions.
                             </p>
-                            <img src="/images/products/Time Attendance/Face Time Attendance.png" alt="Face Attendance" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Time Attendance/Face Time Attendance.png" alt="Face Attendance" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {[
@@ -1770,17 +1913,17 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
                       </div>
                     ) : cat.id === 'security-inspection' ? (
                       <div className="security-inspection-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Baggage Scanner') && (
-                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+                        <div className="security-inspection-block" id="subcat-baggage-scanner" data-category-section="security-inspection" data-subcategory-name="Baggage Scanner" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Baggage Scanner</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco offers dependable and flexible products for Security Check ranging from Metal Detectors including Hand Held Metal Detector, Walk Through Metal Detector, Baggage Scanners, X ray baggage scanner increases an operator's ability to identify potential threats, designed to scan briefcases, carry-on luggage and small cargo parcels. It uses reliable high quality dual energy X-ray generator and superb image algorithm technology. The ZKTeco X-ray inspection system is an advanced X-ray system designed for use in hotels, airports and other high-security areas. Its reliable high-quality X-ray generator and superb image algorithm produce clear scanning images that enable operators to quickly and accurately identify potential threats quickly and accurately.
                             </p>
-                            <img src="/images/products/Security Inspection/Baggage Scanner Banner.png" alt="Baggage Scanner" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Security Inspection/Baggage Scanner Banner.png" alt="Baggage Scanner" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('security-inspection', 'Baggage Scanner').map((p, idx) => (
@@ -1795,10 +1938,8 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Door Frame Metal Detector') && (
-                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="security-inspection-block" id="subcat-door-frame-metal-detector" data-category-section="security-inspection" data-subcategory-name="Door Frame Metal Detector" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Door Frame Metal Detector</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco Door Frame Metal Detector (DFMD) is a cutting-edge security inspection solution, capable of identifying concealed metallic objects on individuals. Ideally suited for facilities requiring enhanced security measures, ZKTeco's Door Frame metal detectors are suitable for a wide range of applications, including airports, train stations, bus terminals, seaports, government buildings, correctional facilities, event venues, and more
@@ -1818,10 +1959,8 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Hand Held Metal Detector') && (
-                          <div className="security-inspection-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="security-inspection-block" id="subcat-hand-held-metal-detector" data-category-section="security-inspection" data-subcategory-name="Hand Held Metal Detector" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Hand Held Metal Detector</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
                               ZKTeco offers dependable and flexible products for Security Check ranging from Metal Detectors including Hand Held Metal Detector or simply Hand Metal Detector or HHMD, Walk Through Metal Detector, otherwise known as Door Frame Metal Detector or DFMD to Baggage Scanners. We built a comprehensive Security Equipment System to protect your premises as well the people in it from potential threats and anti-social elements.
@@ -1841,12 +1980,10 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
                       </div>
                     ) : cat.id === 'smart-entrance' ? (
                       <div className="smart-entrance-showcase">
-                        {(!activeSubcategory || activeSubcategory === 'Smart Security Gate') && (
-                          <div className="smart-entrance-block" style={{ marginBottom: '5rem' }}>
+                        <div className="smart-entrance-block" id="subcat-smart-security-gate" data-category-section="smart-entrance" data-subcategory-name="Smart Security Gate" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Smart Security Gate</h2>
                             <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '100%' }}>
                               ZKTeco provides effective entrance control management for regulating people traffic as well as vehicle control with wide range of systems including Tripod Turnstiles, Swing Barriers, Flap Barrier Gates, Full Height Turnstiles for Pedestrian Entrance Control as well as Boom Barriers, Parking Management System, Automatic Car Parking System, Parking Locks, and other Automated Parking System for effortless Vehicle Entrance Control Management.
@@ -1869,12 +2006,12 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
-                        
-                        {(!activeSubcategory || activeSubcategory === 'Smart Vehicle & Inspection') && (
-                          <div className="smart-entrance-block" style={{ marginBottom: '5rem' }}>
+
+                          <div className="smart-entrance-block" id="subcat-smart-vehicle-inspection" data-category-section="smart-entrance" data-subcategory-name="Smart Vehicle & Inspection" style={{ marginBottom: '5rem' }}>
                             <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Smart Vehicle & Inspection</h2>
-                            <img src="/images/products/Smart Entrance Gate/Smart Vehicle & Inspection Banner.png" alt="Smart Vehicle & Inspection" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                            <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                              <img src="/images/products/Smart Entrance Gate/Smart Vehicle & Inspection Banner.png" alt="Smart Vehicle & Inspection" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                            </div>
                             
                             <div className="product-grid">
                               {getFilteredProducts('smart-entrance', 'Smart Vehicle & Inspection').map((p, idx) => (
@@ -1889,7 +2026,78 @@ export default function Products({ navigate }) {
                               ))}
                             </div>
                           </div>
-                        )}
+                      </div>
+                    ) : cat.id === 'video-surveillance' ? (
+                      <div className="video-surveillance-showcase">
+                        <div style={{ marginBottom: '3.5rem' }}>
+                          <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Video Surveillance Solutions</h2>
+                          <p style={{ color: 'var(--muted)', fontSize: '1rem', lineHeight: '1.8', marginBottom: '2rem', maxWidth: '100%' }}>
+                            Astra Technologies delivers ZKTeco's high-performance Video Surveillance systems, offering AI-powered IP cameras, smart thermal imaging, License Plate Recognition (LPR/ANPR), and high-density Network Video Recorders (NVR). Built with deep-learning video analytics, 4K Ultra HD sensors, and true starlight low-light vision, our solutions provide continuous, intelligent security monitoring for commercial complexes, industrial plants, government facilities, and smart city infrastructure.
+                          </p>
+                          <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                            <img src="/images/products/Video Surveillance/Video Surveillance Banner.png" alt="Video Surveillance Systems" style={{ width: '100%', maxHeight: '420px', objectFit: 'cover', display: 'block' }} />
+                          </div>
+                        </div>
+
+                        <div className="video-surveillance-block" id="subcat-lumina" data-category-section="video-surveillance" data-subcategory-name="Lumina" style={{ marginBottom: '5rem' }}>
+                          <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>Lumina</h2>
+                          <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                            High-definition smart AI video surveillance camera series with full-color night vision, true WDR, and intelligent event detection for commercial and industrial security.
+                          </p>
+                          
+                          <div className="product-grid">
+                            {getFilteredProducts('video-surveillance', 'Lumina').map((p, idx) => (
+                              <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                  <img src={p.image} alt={p.name} className="product-card-img" />
+                                </div>
+                                <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                  {p.name}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="video-surveillance-block" id="subcat-pixelsense" data-category-section="video-surveillance" data-subcategory-name="PixelSense" style={{ marginBottom: '5rem' }}>
+                          <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>PixelSense</h2>
+                          <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                            Advanced deep-learning AI video analytics series offering License Plate Recognition (LPR/ANPR), face recognition, 3D stereo people counting, and perimeter protection.
+                          </p>
+                          
+                          <div className="product-grid">
+                            {getFilteredProducts('video-surveillance', 'PixelSense').map((p, idx) => (
+                              <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                  <img src={p.image} alt={p.name} className="product-card-img" />
+                                </div>
+                                <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                  {p.name}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="video-surveillance-block" id="subcat-nvr" data-category-section="video-surveillance" data-subcategory-name="NVR" style={{ marginBottom: '5rem' }}>
+                          <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--white)', marginBottom: '1.5rem', fontFamily: 'var(--font-h)' }}>NVR</h2>
+                          <p style={{ color: 'var(--muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '100%' }}>
+                            Enterprise-grade Network Video Recorders and high-density recording servers supporting up to 256 channels, RAID redundancy, 4K H.265+ decoding, and hot-swappable storage.
+                          </p>
+                          
+                          <div className="product-grid">
+                            {getFilteredProducts('video-surveillance', 'NVR').map((p, idx) => (
+                              <div key={idx} className={`product-card ${p.featured ? 'featured' : ''}`}>
+                                <div className="product-card-visual" onClick={() => setSelectedProduct(p)}>
+                                  <img src={p.image} alt={p.name} className="product-card-img" />
+                                </div>
+                                <div className="product-card-name" onClick={() => setSelectedProduct(p)}>
+                                  {p.name}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <>
@@ -1901,7 +2109,9 @@ export default function Products({ navigate }) {
                         </div>
                         
                         {cat.id === 'ajax' && (
-                          <img src="/images/Home Page Slide/Ajax.png" alt="Ajax Systems" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)', marginBottom: '2rem' }} />
+                          <div style={{ width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '2.5rem', background: '#05101f', boxShadow: '0 15px 35px rgba(0,0,0,0.4)', border: '1px solid rgba(0, 180, 216, 0.25)' }}>
+                            <img src="/images/Home Page Slide/Ajax.png" alt="Ajax Systems" style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: 'block' }} />
+                          </div>
                         )}
 
                         <div className="product-grid">

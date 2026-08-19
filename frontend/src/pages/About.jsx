@@ -54,9 +54,7 @@ export default function About({ navigate }) {
             <p>
               With a strong focus on technology, reliability, and local expertise, we help our partners and customers design, deploy, and support security systems that are scalable, intelligent, and built for the future.
             </p>
-            <p style={{ marginTop: '0.75rem', fontSize: '1.15rem', fontWeight: 700, color: 'var(--white)', fontStyle: 'italic', background: 'rgba(0, 180, 216, 0.08)', padding: '1.25rem 1.75rem', borderRadius: '12px', border: '1px solid rgba(0, 180, 216, 0.2)' }}>
-              From identity to access. From surveillance to protection — we secure what matters.
-            </p>
+
           </div>
         </div>
       </section>
