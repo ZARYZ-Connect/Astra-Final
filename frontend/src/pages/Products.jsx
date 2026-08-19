@@ -20,6 +20,17 @@ const ACCESS_CONTROL_HIERARCHY = {
   "Elevator Access Controller": []
 };
 
+const TIME_ATTENDANCE_VISIBLE_LIST = [
+  'miniac', 'miniac plus', 'facedepot 7cl', 'facedepot 7c', 'probio plus series',
+  'speedface - v5l', 'speedface-v5l', 'minita', 'd3', 'speedfacem4', 'speedface m4',
+  'eface 10', 'facedepot-7bl', 'facedepot 8al', 'facedepot 4a', 'speedface h5l',
+  'speedface v3l series', 'speedface-v5', 'mb10-vl'
+];
+
+const TIME_ATTENDANCE_FP_LIST = ['k40 pro', 'k45 pro', 'in01-a', 'lx50', 'iclock700'];
+
+const TIME_ATTENDANCE_FACE_LIST = ['mb30', 'mb360'];
+
 const TIME_ATTENDANCE_HIERARCHY = {
   "Visible Series": [],
   "Fingerprint Attendance": [],
@@ -608,24 +619,16 @@ export default function Products({ navigate }) {
 
     if (subCat) {
       if (subCat === 'Visible Series') {
-        const visibleList = [
-          'miniac', 'miniac plus', 'facedepot 7cl', 'facedepot 7c', 'probio plus series',
-          'speedface - v5l', 'speedface-v5l', 'minita', 'd3', 'speedfacem4', 'speedface m4',
-          'eface 10', 'facedepot-7bl', 'facedepot 8al', 'facedepot 4a', 'speedface h5l',
-          'speedface v3l series', 'speedface-v5', 'mb10-vl'
-        ];
         productsInCat = productsInCat.filter(p =>
-          visibleList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+          TIME_ATTENDANCE_VISIBLE_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
       } else if (subCat === 'Fingerprint Attendance') {
-        const fpList = ['k40 pro', 'k45 pro', 'in01-a'];
         productsInCat = productsInCat.filter(p =>
-          fpList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+          TIME_ATTENDANCE_FP_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
       } else if (subCat === 'Face Attendance') {
-        const faceList = ['mb30', 'mb360'];
         productsInCat = productsInCat.filter(p =>
-          faceList.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
+          TIME_ATTENDANCE_FACE_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))
         );
       } else if (catId === 'access-control') {
         if (subCat === 'Multi Door Controller') {
@@ -981,14 +984,11 @@ export default function Products({ navigate }) {
                           let subCount = 0;
                           
                           if (subName === 'Visible Series') {
-                            const list = TIME_ATTENDANCE_HIERARCHY['Visible Series'].map(s => s.toLowerCase());
-                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                            subCount = subProds.filter(p => TIME_ATTENDANCE_VISIBLE_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
                           } else if (subName === 'Fingerprint Attendance') {
-                            const list = TIME_ATTENDANCE_HIERARCHY['Fingerprint Attendance'].map(s => s.toLowerCase());
-                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                            subCount = subProds.filter(p => TIME_ATTENDANCE_FP_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
                           } else if (subName === 'Face Attendance') {
-                            const list = TIME_ATTENDANCE_HIERARCHY['Face Attendance'].map(s => s.toLowerCase());
-                            subCount = subProds.filter(p => list.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
+                            subCount = subProds.filter(p => TIME_ATTENDANCE_FACE_LIST.some(s => p.subCategory.toLowerCase().includes(s) || p.name.toLowerCase().includes(s))).length;
                           } else {
                             subCount = subProds.filter(p => p.subCategory === subName).length;
                           }
