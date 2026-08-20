@@ -335,6 +335,14 @@ export default function Header({ currentPath, navigate }) {
                   <a href="products.html#hand-held-metal-detector" onClick={(e) => handleLinkClick(e, 'products.html#hand-held-metal-detector')}>Hand Held Metal Detector</a>
                   <a href="products.html#smartphone-detector" onClick={(e) => handleLinkClick(e, 'products.html#smartphone-detector')}>Smartphone Detector</a>
                   <a href="products.html#security-inspection" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#security-inspection')}>More &gt;</a>
+
+                  <h4 style={{marginTop: '1.5rem'}}>Ajax Systems</h4>
+                  <a href="products.html#ajax" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>Glass Break Detectors</a>
+                  <a href="products.html#ajax" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>Hubs</a>
+                  <a href="products.html#ajax" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>Motion Detectors</a>
+                  <a href="products.html#ajax" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>Opening Detectors</a>
+                  <a href="products.html#ajax" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>Relays</a>
+                  <a href="products.html#ajax" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#ajax')}>More &gt;</a>
                 </div>
               </div>
             </li>

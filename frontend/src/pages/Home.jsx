@@ -323,6 +323,20 @@ export default function Home({ navigate }) {
                   <div><strong>Email Us</strong><a href="mailto:sales@astratechnologies.in">sales@astratechnologies.in</a></div>
                 </div>
               </div>
+
+              {/* Google Map Embed */}
+              <div style={{ marginTop: '1.8rem', borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(0, 180, 216, 0.3)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}>
+                <iframe
+                  title="Astra Technologies Location Map"
+                  src="https://maps.google.com/maps?q=12.9947281,77.5527344&z=17&output=embed"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
             <div className="contact-right">
               {!formSubmitted ? (
