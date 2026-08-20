@@ -10,7 +10,7 @@ export default function Home({ navigate }) {
     { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#092244' },
     { src: '/images/Home Page Slide/Ajax.png?v=2', bg: '#060b0f' },
     { src: '/images/Home Page Slide/Armatura.png?v=2', bg: '#010511' },
-    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221' }
+    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221', objectPosition: 'center 85%' }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -104,7 +104,12 @@ export default function Home({ navigate }) {
               background: slide.bg
             }}
           >
-            <img src={slide.src} alt={`Slide ${index + 1}`} className="slide-img" />
+            <img 
+              src={slide.src} 
+              alt={`Slide ${index + 1}`} 
+              className="slide-img" 
+              style={slide.objectPosition ? { objectPosition: slide.objectPosition } : {}} 
+            />
           </div>
         ))}
 
