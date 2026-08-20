@@ -10,7 +10,7 @@ export default function Home({ navigate }) {
     { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#092244' },
     { src: '/images/Home Page Slide/Ajax.png?v=2', bg: '#060b0f' },
     { src: '/images/Home Page Slide/Armatura.png?v=2', bg: '#010511' },
-    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221', objectPosition: 'center 85%' }
+    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#0e1014', objectPosition: 'center top' }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
