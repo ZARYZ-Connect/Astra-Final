@@ -7,10 +7,10 @@ export default function Home({ navigate }) {
   const [scanState, setScanState] = useState(0);
 
   const slides = [
-    { src: '/images/Home Page Slide/Zkteco.png', bg: '#fefdfd' },
-    { src: '/images/Home Page Slide/Ajax.png', bg: '#060b0f' },
-    { src: '/images/Home Page Slide/Armatura.png', bg: '#010511' },
-    { src: '/images/Home Page Slide/GVD.png', bg: '#041221' }
+    { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#fefdfd' },
+    { src: '/images/Home Page Slide/Ajax.png?v=2', bg: '#060b0f' },
+    { src: '/images/Home Page Slide/Armatura.png?v=2', bg: '#010511' },
+    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221' }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
