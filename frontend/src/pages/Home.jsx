@@ -10,7 +10,7 @@ export default function Home({ navigate }) {
     { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#092244' },
     { src: '/images/Home Page Slide/Ajax.png?v=2', bg: '#060b0f' },
     { src: '/images/Home Page Slide/Armatura.png?v=2', bg: '#010511' },
-    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#0e1014', objectPosition: 'center top' }
+    { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221' }
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -86,7 +86,7 @@ export default function Home({ navigate }) {
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
-        style={{ position: 'relative', width: '100%', height: 'calc(100vh - 76px)', minHeight: '500px', overflow: 'hidden', background: '#041221', marginTop: '76px' }}
+        style={{ position: 'relative', width: '100%', aspectRatio: '1920 / 900', maxHeight: 'calc(100vh - 76px)', minHeight: '350px', overflow: 'hidden', background: '#041221', marginTop: '76px' }}
       >
         {slides.map((slide, index) => (
           <div 
