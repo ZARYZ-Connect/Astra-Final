@@ -7,7 +7,7 @@ export default function Home({ navigate }) {
   const [scanState, setScanState] = useState(0);
 
   const slides = [
-    { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#fefdfd' },
+    { src: '/images/Home Page Slide/Zkteco.png?v=2', bg: '#092244' },
     { src: '/images/Home Page Slide/Ajax.png?v=2', bg: '#060b0f' },
     { src: '/images/Home Page Slide/Armatura.png?v=2', bg: '#010511' },
     { src: '/images/Home Page Slide/GVD.png?v=2', bg: '#041221' }
