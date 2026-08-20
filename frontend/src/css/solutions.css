@@ -19,13 +19,13 @@
     nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;transition:all 0.35s cubic-bezier(0.4,0,0.2,1);background:rgba(5,16,31,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,180,216,0.15)}
     nav.scrolled{background:rgba(5,16,31,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);height:64px;border-bottom:1px solid rgba(0,180,216,0.25);box-shadow:0 8px 32px rgba(0,0,0,0.4)}
     .nav-inner{width:min(1320px,94vw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:100%}
-    .nav-logo{height:52px;width:auto;object-fit:contain;display:block;transition:height 0.3s ease}
-    nav.scrolled .nav-logo{height:42px}
+    .nav-logo{height:68px;width:auto;object-fit:contain;display:block;transition:height 0.3s ease}
+    nav.scrolled .nav-logo{height:54px}
     @media (max-width: 860px) {
       nav { height: 64px !important; }
       nav.scrolled { height: 56px !important; }
-      .nav-logo { height: 42px !important; }
-      nav.scrolled .nav-logo { height: 36px !important; }
+      .nav-logo { height: 50px !important; }
+      nav.scrolled .nav-logo { height: 44px !important; }
     }
     .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
     .nav-links a{font-family:var(--font-h);font-weight:600;font-size:.88rem;letter-spacing:.04em;color:rgba(255,255,255,.8);text-decoration:none;transition:var(--tr);position:relative;white-space:nowrap}

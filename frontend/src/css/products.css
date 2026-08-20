@@ -158,7 +158,7 @@
         }
 
         .nav-logo {
-            height: 52px;
+            height: 68px;
             width: auto;
             object-fit: contain;
             display: block;
@@ -166,7 +166,7 @@
         }
 
         nav.scrolled .nav-logo {
-            height: 42px;
+            height: 54px;
         }
 
         @media (max-width: 860px) {
@@ -177,10 +177,10 @@
                 height: 56px !important;
             }
             .nav-logo {
-                height: 42px !important;
+                height: 50px !important;
             }
             nav.scrolled .nav-logo {
-                height: 36px !important;
+                height: 44px !important;
             }
         }
 
