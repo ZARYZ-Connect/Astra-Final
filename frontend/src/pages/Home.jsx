@@ -297,7 +297,7 @@ export default function Home({ navigate }) {
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   </span>
-                  <div><strong>Astra Technologies</strong><span>Bengaluru, Karnataka, India</span></div>
+                  <div><strong>Astra Technologies</strong><span>no 72/A, 1st Floor, Chamundi Arcade, 29th Cross, 2nd Block Rajajinagar, Bangalore-560010</span></div>
                 </div>
                 <div className="contact-detail-item">
                   <span className="contact-detail-icon">

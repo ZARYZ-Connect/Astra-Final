@@ -321,12 +321,11 @@ export default function Header({ currentPath, navigate }) {
                   <a href="products.html#smart-vehicle-inspection" onClick={(e) => handleLinkClick(e, 'products.html#smart-vehicle-inspection')}>Smart Vehicle &amp; Inspection</a>
                   <a href="products.html#entrance-control" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#entrance-control')}>More &gt;</a>
 
-                  <h4 style={{marginTop: '1.5rem'}}>Camera Surveillance</h4>
-                  <a href="products.html#dome-series" onClick={(e) => handleLinkClick(e, 'products.html#dome-series')}>Dome Series</a>
-                  <a href="products.html#bullet-series" onClick={(e) => handleLinkClick(e, 'products.html#bullet-series')}>Bullet Series</a>
-                  <a href="products.html#ptz-series" onClick={(e) => handleLinkClick(e, 'products.html#ptz-series')}>PTZ Series</a>
+                  <h4 style={{marginTop: '1.5rem'}}>Video Surveillance</h4>
+                  <a href="products.html#lumina" onClick={(e) => handleLinkClick(e, 'products.html#lumina')}>Lumina</a>
+                  <a href="products.html#pixelsense" onClick={(e) => handleLinkClick(e, 'products.html#pixelsense')}>PixelSense</a>
                   <a href="products.html#nvr" onClick={(e) => handleLinkClick(e, 'products.html#nvr')}>NVR</a>
-                  <a href="products.html#camera-surveillance" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#camera-surveillance')}>More &gt;</a>
+                  <a href="products.html#video-surveillance" className="more-link" onClick={(e) => handleLinkClick(e, 'products.html#video-surveillance')}>More &gt;</a>
                 </div>
 
                 <div className="mega-menu-col">
