@@ -55,6 +55,31 @@ export default function About({ navigate }) {
               With a strong focus on technology, reliability, and local expertise, we help our partners and customers design, deploy, and support security systems that are scalable, intelligent, and built for the future.
             </p>
 
+            <div style={{
+              marginTop: '2.5rem',
+              padding: '1.25rem 2rem',
+              borderRadius: '16px',
+              background: 'rgba(0, 180, 216, 0.04)',
+              border: '1px solid rgba(0, 180, 216, 0.25)',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.35)',
+              backdropFilter: 'blur(12px)',
+              width: '100%',
+              maxWidth: '820px',
+              marginInline: 'auto',
+              textAlign: 'center'
+            }}>
+              <p style={{
+                margin: 0,
+                fontSize: 'clamp(1.05rem, 2.2vw, 1.25rem)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                color: '#ffffff',
+                letterSpacing: '0.4px',
+                lineHeight: 1.5
+              }}>
+                From who you are to what you can access — secured.
+              </p>
+            </div>
           </div>
         </div>
       </section>
